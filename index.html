@@ -1,1303 +1,1760 @@
-<!DOCTYPE html>
-<html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description"
-        content="Jugendra Pal Singh - Senior Backend Engineer Portfolio. 8+ years experience in Node.js, microservices, AI-integrated systems.">
-    <title>Jugendra Pal Singh | Senior Backend Engineer & AI Architect</title>
-    <!-- Google Fonts: Space Grotesk (Display & Tech Sans), JetBrains Mono (Diagnostics) -->
-    <link
-        href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;700&display=swap"
-        rel="stylesheet">
-    <!-- Main Stylesheet -->
-    <link rel="stylesheet" href="style.css">
-</head>
-
-<body>
-
-    <!-- Animated Gradient Background Blobs -->
-    <div class="blob-bg">
-        <div class="blob blob-1"></div>
-        <div class="blob blob-2"></div>
-        <div class="blob blob-3"></div>
-    </div>
-
-    <!-- Scroll Progress Indicator -->
-    <div class="scroll-progress" id="scrollProgress"></div>
-
-    <!-- Custom Smooth Mouse Cursor -->
-    <div class="custom-cursor" id="customCursor"></div>
-    <div class="custom-cursor-dot" id="customCursorDot"></div>
-
-    <!-- Navigation Bar -->
-    <nav class="navbar" id="navbar">
-        <div class="nav-container container">
-            <a href="#hero" class="nav-logo">
-                <span class="nav-logo-dot"></span>
-                &lt;JPS /&gt;
-            </a>
-            <button class="nav-toggle" id="navToggle" aria-label="Toggle menu">
-                <span></span><span></span><span></span>
-            </button>
-            <ul class="nav-menu" id="navMenu">
-                <li><a href="#about" class="nav-link">About</a></li>
-                <li><a href="#skills" class="nav-link">Skills</a></li>
-                <li><a href="#experience" class="nav-link">Experience</a></li>
-                <li><a href="#projects" class="nav-link">AI Projects</a></li>
-                <li><a href="#certifications" class="nav-link">Certifications</a></li>
-                <li><a href="#education" class="nav-link">Education</a></li>
-                <li class="theme-selector-item">
-                    <div class="theme-selector">
-                        <button class="theme-btn theme-btn-brass active" data-theme="brass" title="Obsidian & Gold"></button>
-                        <button class="theme-btn theme-btn-mint" data-theme="mint" title="Hyper Neon Mint"></button>
-                        <button class="theme-btn theme-btn-crimson" data-theme="crimson" title="Cyberpunk Crimson"></button>
-                    </div>
-                </li>
-                <li><a href="#contact" class="nav-link nav-cta">Contact</a></li>
-            </ul>
-        </div>
-    </nav>
-
-    <!-- Hero Section (Typographic & Real-time Live Panel) -->
-    <section class="hero" id="hero">
-        <div class="hero-bg-grid"></div>
-        <div class="hero-container container">
-            <div class="hero-content">
-                <div class="hero-badge animate-in">
-                    <span class="badge-dot"></span> Active Operations
-                </div>
-                <p class="hero-greeting animate-in delay-1">Jugendra Pal Singh</p>
-                <h1 class="hero-name animate-in delay-2">
-                    <span class="gradient-text">Senior Backend</span><br>Engineer
-                </h1>
-                <p class="hero-title animate-in delay-3">
-                    <span id="typewriter"></span><span class="cursor">|</span>
-                </p>
-                <p class="hero-desc animate-in delay-4">
-                    Designing, scaling, and maintaining high-performance microservices, database clusters, and
-                    Retrieval-Augmented Generation (RAG) backend systems.
-                </p>
-                <div class="hero-btns animate-in delay-5">
-                    <a href="#contact" class="btn btn-primary">Connect System</a>
-                    <a href="#projects" class="btn btn-outline">Explore Projects</a>
-                </div>
-
-                <div class="hero-stats animate-in delay-5">
-                    <div class="stat">
-                        <div class="stat-num-wrapper">
-                            <span class="stat-num counter" data-target="8">0</span>
-                            <span class="stat-plus">+</span>
-                        </div>
-                        <span class="stat-label">Years Experience</span>
-                    </div>
-                    <div class="stat">
-                        <div class="stat-num-wrapper">
-                            <span class="stat-num counter" data-target="2">0</span>
-                            <span class="stat-plus">L+</span>
-                        </div>
-                        <span class="stat-label">Users Served</span>
-                    </div>
-                    <div class="stat">
-                        <div class="stat-num-wrapper">
-                            <span class="stat-num counter" data-target="200">0</span>
-                            <span class="stat-plus">GB+</span>
-                        </div>
-                        <span class="stat-label">Data Managed</span>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Live System Diagnostics Dashboard Panel -->
-            <div class="hero-image animate-in delay-2">
-                <div class="dashboard-panel">
-                    <div class="dashboard-header">
-                        <div class="dashboard-dots">
-                            <span class="dashboard-dot active"></span>
-                            <span class="dashboard-dot"></span>
-                            <span class="dashboard-dot"></span>
-                        </div>
-                        <span class="dashboard-title">server-monitor.jps.local</span>
-                    </div>
-                    <div class="dashboard-body">
-                        <div class="monitor-row">
-                            <span class="monitor-label">STATUS</span>
-                            <span class="monitor-val success">ONLINE (ap-south-1)</span>
-                        </div>
-                        <div class="monitor-row">
-                            <span class="monitor-label">ENGINE</span>
-                            <span class="monitor-val">Node.js 22.x LTS</span>
-                        </div>
-                        <div class="monitor-row">
-                            <span class="monitor-label">LATENCY</span>
-                            <span class="monitor-val" id="latencyVal">0.9 ms</span>
-                        </div>
-                        <div class="monitor-row">
-                            <span class="monitor-label">DB SYNC</span>
-                            <span class="monitor-val success">100% OK</span>
-                        </div>
-
-                        <!-- Live Sparkline CPU Graph -->
-                        <div class="sys-chart-container">
-                            <div class="chart-header">
-                                <span>CPU LOAD (REAL-TIME)</span>
-                                <span id="liveCpuText">14.2%</span>
-                            </div>
-                            <canvas id="cpuGraph" class="cpu-graph"></canvas>
-                        </div>
-
-                        <!-- Interactive Diagnostics Terminal -->
-                        <div class="terminal-container">
-                            <div class="terminal-history" id="terminalHistory">
-                                <div class="terminal-line system-msg">SYSTEM DIAGNOSTICS SHELL [v1.0.8]</div>
-                                <div class="terminal-line system-msg">Type 'help' to initialize telemetry commands.</div>
-                            </div>
-                            <div class="terminal-input-row">
-                                <span class="terminal-prompt">jps_local$</span>
-                                <input type="text" id="terminalInput" placeholder="type a command..." autocomplete="off" spellcheck="false">
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- About Section (Bento Grid) -->
-    <section class="section" id="about">
-        <div class="container">
-            <div class="section-header reveal">
-                <span class="section-num">01 // IDENTITY</span>
-                <h2 class="section-title">Overview</h2>
-                <div class="section-line"></div>
-            </div>
-
-            <div class="bento-grid">
-                <!-- Large Biography Cell -->
-                <div class="bento-item bento-lg reveal">
-                    <h3>System Architecture & Operations</h3>
-                    <div class="bento-large-text">
-                        <p>I build high-concurrency, highly resilient backend systems. With a strong grounding in
-                            Node.js, microservices architecture, and API gateways, I design data structures capable of
-                            processing complex transaction payloads for enterprise and national government platforms.
-                        </p>
-                        <p>My technical work focuses on expanding backend capabilities to incorporate AI workflows. This
-                            includes implementing Retrieval-Augmented Generation (RAG) pipelines, setting up vector
-                            database clusters, building semantic search indexing systems, and developing fast
-                            Python/FastAPI microservices.</p>
-                    </div>
-                </div>
-
-                <!-- Mid Stats Cell -->
-                <div class="bento-item bento-md reveal delay-1">
-                    <div>
-                        <h3>Operations Scale</h3>
-                        <p class="bento-desc">Production system metrics managed across unified platforms.</p>
-                    </div>
-
-                    <div class="bento-stat-box">
-                        <div class="bento-stat-num">8+ Yrs</div>
-                        <div class="bento-stat-label">Core Backend Development</div>
-                    </div>
-
-                    <div class="bento-stat-box">
-                        <div class="bento-stat-num">200GB+</div>
-                        <div class="bento-stat-label">Relational & NoSQL Datastores</div>
-                    </div>
-                </div>
-
-                <!-- Small Meta Info Cells -->
-                <div class="bento-item bento-sm reveal delay-1">
-                    <div class="bento-meta-list">
-                        <div class="bento-meta-item">
-                            <div class="bento-meta-icon">
-                                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
-                                    stroke="currentColor">
-                                    <path stroke-linecap="round" stroke-linejoin="round"
-                                        d="M15 10.5a3 3 0 11-6 0 3 3 0 016 0z" />
-                                    <path stroke-linecap="round" stroke-linejoin="round"
-                                        d="M19.5 10.5c0 7.142-7.5 11.25-7.5 11.25S4.5 17.642 4.5 10.5a7.5 7.5 0 1115 0z" />
-                                </svg>
-                            </div>
-                            <div class="bento-meta-info">
-                                <span class="bento-meta-label">Location</span>
-                                <span class="bento-meta-val">India (UTC+5:30)</span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="bento-item bento-sm reveal delay-2">
-                    <div class="bento-meta-list">
-                        <div class="bento-meta-item">
-                            <div class="bento-meta-icon">
-                                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
-                                    stroke="currentColor">
-                                    <path stroke-linecap="round" stroke-linejoin="round"
-                                        d="M4.263 15.918a9 9 0 0015.474 0M12 2.25v19.5m-9.75-9.75h19.5" />
-                                </svg>
-                            </div>
-                            <div class="bento-meta-info">
-                                <span class="bento-meta-label">Specialty</span>
-                                <span class="bento-meta-val">Microservices & AI</span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="bento-item bento-sm reveal delay-3">
-                    <div class="bento-meta-list">
-                        <div class="bento-meta-item">
-                            <div class="bento-meta-icon">
-                                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
-                                    stroke="currentColor">
-                                    <path stroke-linecap="round" stroke-linejoin="round"
-                                        d="M12 6.042A8.967 8.967 0 006 3.75c-1.052 0-2.062.18-3 .512v14.25A8.987 8.987 0 016 18c2.305 0 4.408.867 6 2.292m0-14.25a8.966 8.966 0 016-2.292c1.052 0 2.062.18 3 .512v14.25A8.987 8.987 0 0018 18a8.967 8.967 0 00-6 2.292m0-14.25v14.25" />
-                                </svg>
-                            </div>
-                            <div class="bento-meta-info">
-                                <span class="bento-meta-label">Education</span>
-                                <span class="bento-meta-val">MCA, AMU</span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Skills Section -->
-    <section class="section section-alt" id="skills">
-        <div class="container">
-            <div class="section-header reveal">
-                <span class="section-num">02 // CAPABILITIES</span>
-                <h2 class="section-title">Core Competencies</h2>
-                <div class="section-line"></div>
-            </div>
-
-            <div class="skills-grid">
-                <div class="skill-category reveal">
-                    <div class="skill-cat-header">
-                        <div class="skill-cat-icon">
-                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
-                                stroke="currentColor">
-                                <path stroke-linecap="round" stroke-linejoin="round"
-                                    d="M5.25 14.25h13.5m-13.5 0a3 3 0 01-3-3m3 3a3 3 0 100 6h13.5a3 3 0 100-6m-16.5-3a3 3 0 013-3h13.5a3 3 0 013 3m-19.5 0a3 3 0 003 3m13.5-3a3 3 0 003 3m-9.75-3h.008v.008H12v-.008z" />
-                            </svg>
-                        </div>
-                        <h3>Backend & Architecture</h3>
-                    </div>
-                    <div class="skill-tags">
-                        <span class="tag">Node.js</span>
-                        <span class="tag">JavaScript</span>
-                        <span class="tag">Express.js</span>
-                        <span class="tag">REST APIs</span>
-                        <span class="tag">Microservices</span>
-                        <span class="tag">Scalable Design</span>
-                        <span class="tag">High Concurrency</span>
-                        <span class="tag">System Design</span>
-                    </div>
-                </div>
-
-                <div class="skill-category reveal delay-1">
-                    <div class="skill-cat-header">
-                        <div class="skill-cat-icon">
-                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
-                                stroke="currentColor">
-                                <path stroke-linecap="round" stroke-linejoin="round"
-                                    d="M20.25 6.375c0 2.278-3.694 4.125-8.25 4.125S3.75 8.653 3.75 6.375m16.5 0c0-2.278-3.694-4.125-8.25-4.125S3.75 4.097 3.75 6.375m16.5 0v11.25c0 2.278-3.694 4.125-8.25 4.125s-8.25-1.847-8.25-4.125V6.375m16.5 0v3.75m-16.5-3.75v3.75m16.5 0v3.75C20.25 16.128 16.556 17.97 12 17.97s-8.25-1.842-8.25-4.125v-3.75m16.5 0v3.75" />
-                            </svg>
-                        </div>
-                        <h3>Databases & Caching</h3>
-                    </div>
-                    <div class="skill-tags">
-                        <span class="tag">MongoDB</span>
-                        <span class="tag">MySQL</span>
-                        <span class="tag">Redis Cluster</span>
-                        <span class="tag">Session Store</span>
-                        <span class="tag">Caching Strategies</span>
-                        <span class="tag">Data Indexes</span>
-                        <span class="tag">Transaction Safety</span>
-                    </div>
-                </div>
-
-                <div class="skill-category reveal delay-2">
-                    <div class="skill-cat-header">
-                        <div class="skill-cat-icon">
-                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
-                                stroke="currentColor">
-                                <path stroke-linecap="round" stroke-linejoin="round"
-                                    d="M9.813 15.904L9 21l8.904-4.43c1.002-.5 2.018-1 3.018-1.542.946-.512 1.83-1.127 2.656-1.82a9.016 9.016 0 00-11.458-13.9c-2.483 1.9-4.323 4.7-5.184 7.9a9.022 9.022 0 003.887 9.596z" />
-                            </svg>
-                        </div>
-                        <h3>AI & Advanced Frameworks</h3>
-                    </div>
-                    <div class="skill-tags">
-                        <span class="tag tag-ai">LLM Integration</span>
-                        <span class="tag tag-ai">RAG Pipelines</span>
-                        <span class="tag tag-ai">Semantic Search</span>
-                        <span class="tag tag-ai">Embeddings</span>
-                        <span class="tag tag-ai">Vector DBs</span>
-                        <span class="tag tag-ai">OpenAI APIs</span>
-                        <span class="tag tag-ai">Python</span>
-                        <span class="tag tag-ai">FastAPI</span>
-                        <span class="tag tag-ai">LangChain</span>
-                    </div>
-                </div>
-
-                <div class="skill-category reveal delay-3">
-                    <div class="skill-cat-header">
-                        <div class="skill-cat-icon">
-                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
-                                stroke="currentColor">
-                                <path stroke-linecap="round" stroke-linejoin="round"
-                                    d="M11.42 15.17L17.25 21A2.67 2.67 0 0021 17.25l-5.83-5.83m-3.75 3.75a3.75 3.75 0 11-5.3-5.3 3.75 3.75 0 015.3 5.3zm6.408-9.083a3.75 3.75 0 110 5.3 3.75 3.75 0 010-5.3z" />
-                            </svg>
-                        </div>
-                        <h3>AI Productivity Tools</h3>
-                    </div>
-                    <div class="skill-tags">
-                        <span class="tag">ChatGPT</span>
-                        <span class="tag">DeepSeek</span>
-                        <span class="tag">GitHub Copilot</span>
-                        <span class="tag">Gemini</span>
-                        <span class="tag">Claude</span>
-                        <span class="tag">Perplexity</span>
-                    </div>
-                </div>
-
-                <!-- AWS Cloud Services -->
-                <div class="skill-category reveal delay-4">
-                    <div class="skill-cat-header">
-                        <div class="skill-cat-icon">
-                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
-                                stroke="currentColor">
-                                <path stroke-linecap="round" stroke-linejoin="round"
-                                    d="M2.25 15a4.5 4.5 0 004.5 4.5H18a3.75 3.75 0 001.332-7.257 3 3 0 00-3.758-3.848 5.25 5.25 0 00-10.233 2.33A4.502 4.502 0 002.25 15z" />
-                            </svg>
-                        </div>
-                        <h3>Cloud Services (AWS)</h3>
-                    </div>
-                    <div class="skill-tags">
-                        <span class="tag">AWS IAM</span>
-                        <span class="tag">AWS EC2</span>
-                        <span class="tag">AWS S3</span>
-                        <span class="tag">AWS RDS</span>
-                        <span class="tag">CloudWatch</span>
-                        <span class="tag">Auto Scaling</span>
-                    </div>
-                </div>
-
-                <!-- Containers & DevOps -->
-                <div class="skill-category reveal delay-5">
-                    <div class="skill-cat-header">
-                        <div class="skill-cat-icon">
-                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
-                                stroke="currentColor">
-                                <path stroke-linecap="round" stroke-linejoin="round"
-                                    d="M10.34 15.84c-.68-.69-.68-1.8 0-2.49l3.19-3.19c.68-.69 1.8-.68 2.49 0l3.19 3.19c.69.68.69 1.8 0 2.49l-3.19 3.19c-.69.69-1.8.69-2.49 0l-3.19-3.19z" />
-                                <path stroke-linecap="round" stroke-linejoin="round"
-                                    d="M4.785 8.16l3.19-3.19c.68-.69 1.8-.68 2.49 0l3.19 3.19c.69.68.69 1.8 0 2.49l-3.19 3.19c-.69.69-1.8.69-2.49 0l-3.19-3.19z" />
-                            </svg>
-                        </div>
-                        <h3>Containers & DevOps</h3>
-                    </div>
-                    <div class="skill-tags">
-                        <span class="tag tag-ai">Docker</span>
-                        <span class="tag">Containers</span>
-                        <span class="tag">CI / CD</span>
-                        <span class="tag">GitHub Actions</span>
-                        <span class="tag">Git</span>
-                        <span class="tag">Linux</span>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Experience Section -->
-    <section class="section" id="experience">
-        <div class="container">
-            <div class="section-header reveal">
-                <span class="section-num">03 // HISTORY</span>
-                <h2 class="section-title">Deployments & Systems</h2>
-                <div class="section-line"></div>
-            </div>
-
-            <div class="timeline">
-                <!-- NetProphets -->
-                <div class="timeline-item reveal">
-                    <div class="timeline-dot"></div>
-                    <div class="timeline-content">
-                        <div class="timeline-header">
-                            <div class="timeline-title-group">
-                                <h3>Senior Software Engineer</h3>
-                                <span class="timeline-company">NetProphets Cyberworks Pvt Ltd</span>
-                            </div>
-                            <span class="timeline-date">Nov 2021 – Present</span>
-                        </div>
-                        <div class="timeline-projects">
-                            <div class="project-block">
-                                <h4>🏥 Unified Health Platform <span class="project-sub">(NCD, UWIN, Nikshay, SATH,
-                                        JANANI)</span></h4>
-                                <ul>
-                                    <li>Led backend engineering for health registry platforms, designing secure
-                                        microservice integration schemas.</li>
-                                    <li>Created Patient Master Service utilizing deterministic matching models to filter
-                                        and merge duplicate records.</li>
-                                    <li>Optimized internal service routing schemes, cutting overall system latency by
-                                        20%.</li>
-                                </ul>
-                            </div>
-                            <div class="project-block">
-                                <h4>🏥 Ayushman Arogya Mandir – Pan India</h4>
-                                <ul>
-                                    <li>Architected stable backend systems for national healthcare platform serving 2+
-                                        lakh active registry instances.</li>
-                                    <li>Managed 200GB+ MongoDB and MySQL cluster stores with custom index schemas to
-                                        accelerate analytics queries.</li>
-                                    <li>Structured multi-node Redis replication for high-availability session caching.
-                                    </li>
-                                </ul>
-                            </div>
-                            <div class="project-block">
-                                <h4>🏃 Fit India Movement</h4>
-                                <ul>
-                                    <li>Designed high-throughput REST controllers to support multi-million user event
-                                        registration spikes.</li>
-                                    <li>Configured query queues to prevent database locking bottlenecks during heavy
-                                        traffic windows.</li>
-                                </ul>
-                            </div>
-                            <div class="project-block">
-                                <h4>📋 UKPSC Portal</h4>
-                                <ul>
-                                    <li>Built candidate objection workflows and secure admin review desks supporting
-                                        over 29,000 active users.</li>
-                                </ul>
-                            </div>
-                            <div class="project-block">
-                                <h4>📊 NAS Survey & PGI Analytics</h4>
-                                <ul>
-                                    <li>Constructed scalable data processing services for national education data
-                                        aggregation pipelines.</li>
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Provab -->
-                <div class="timeline-item reveal">
-                    <div class="timeline-dot"></div>
-                    <div class="timeline-content">
-                        <div class="timeline-header">
-                            <div class="timeline-title-group">
-                                <h3>Software Engineer</h3>
-                                <span class="timeline-company">Provab Technosoft</span>
-                            </div>
-                            <span class="timeline-date">Aug 2021 – Oct 2021</span>
-                        </div>
-                        <div class="timeline-projects">
-                            <div class="project-block">
-                                <h4>🎮 Sports Analytics Engine</h4>
-                                <ul>
-                                    <li>Developed clean REST API structures in Express for live tournament tracking
-                                        systems.</li>
-                                    <li>Wrote complex MongoDB aggregate procedures to sync telemetry arrays.</li>
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Day Night -->
-                <div class="timeline-item reveal">
-                    <div class="timeline-dot"></div>
-                    <div class="timeline-content">
-                        <div class="timeline-header">
-                            <div class="timeline-title-group">
-                                <h3>Software Engineer</h3>
-                                <span class="timeline-company">Day Night Technologies Pvt Ltd</span>
-                            </div>
-                            <span class="timeline-date">Feb 2021 – Sep 2021</span>
-                        </div>
-                        <div class="timeline-projects">
-                            <div class="project-block">
-                                <h4>📈 Financial & Trading Services</h4>
-                                <ul>
-                                    <li>Built API modules linking web client dashboards to MetaTrader 4 engines for
-                                        automated trade alerts.</li>
-                                    <li>Wrote back-testing scripts to record execution timing across transactional
-                                        services.</li>
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Loud Medics -->
-                <div class="timeline-item reveal">
-                    <div class="timeline-dot"></div>
-                    <div class="timeline-content">
-                        <div class="timeline-header">
-                            <div class="timeline-title-group">
-                                <h3>Software Engineer</h3>
-                                <span class="timeline-company">Loud Medics</span>
-                            </div>
-                            <span class="timeline-date">May 2019 – Feb 2021</span>
-                        </div>
-                        <div class="timeline-projects">
-                            <div class="project-block">
-                                <h4>🛒 Gaming & E-Commerce Core</h4>
-                                <ul>
-                                    <li>Authored high-performance order routing scripts for scalable inventory checkout
-                                        systems.</li>
-                                    <li>Set up secure real-time notification modules with WebSockets and Node.js.</li>
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- ZMQ -->
-                <div class="timeline-item reveal">
-                    <div class="timeline-dot"></div>
-                    <div class="timeline-content">
-                        <div class="timeline-header">
-                            <div class="timeline-title-group">
-                                <h3>Software Engineer</h3>
-                                <span class="timeline-company">ZMQ, Delhi</span>
-                            </div>
-                            <span class="timeline-date">Feb 2016 – Jun 2018</span>
-                        </div>
-                        <div class="timeline-projects">
-                            <div class="project-block">
-                                <h4>🌍 Healthcare Solutions for Rural Domains</h4>
-                                <ul>
-                                    <li>Designed lightweight, offline-resilient sync REST API engines for health NGO
-                                        portals.</li>
-                                    <li>Configured databases to compress response size in areas with poor network
-                                        conditions.</li>
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- AI Projects Section (Bento Grid / Spec Card Style) -->
-    <section class="section section-alt" id="projects">
-        <div class="container">
-            <div class="section-header reveal">
-                <span class="section-num">04 // PORTFOLIO</span>
-                <h2 class="section-title">AI Projects</h2>
-                <div class="section-line"></div>
-            </div>
-
-            <div class="projects-grid">
-                <!-- Project 1 -->
-                <div class="project-card reveal">
-                    <div class="project-icon">
-                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                            <path stroke-linecap="round" stroke-linejoin="round"
-                                d="M12 18h.008v.008H12V18zm0-4.5h.008v.008H12V13.5l-2.25-2.25m2.25 2.25l2.25-2.25M3 7.5A2.25 2.25 0 015.25 5.25h13.5A2.25 2.25 0 0121 7.5v9a2.25 2.25 0 01-2.25 2.25H5.25A2.25 2.25 0 013 16.5v-9z" />
-                        </svg>
-                    </div>
-                    <h3>DocuMind AI</h3>
-                    <p class="project-subtitle">AI-Powered Document Intelligence System</p>
-
-                    <!-- System Specs Table -->
-                    <table class="project-spec-table">
-                        <tr>
-                            <td class="project-spec-label">Architecture</td>
-                            <td class="project-spec-val">RAG Pipeline</td>
-                        </tr>
-                        <tr>
-                            <td class="project-spec-label">Language</td>
-                            <td class="project-spec-val">Node.js (TypeScript)</td>
-                        </tr>
-                        <tr>
-                            <td class="project-spec-label">Vector Store</td>
-                            <td class="project-spec-val">Pinecone DB (Cosine Sim)</td>
-                        </tr>
-                        <tr>
-                            <td class="project-spec-label">Embeddings</td>
-                            <td class="project-spec-val">OpenAI text-embedding-3-small</td>
-                        </tr>
-                    </table>
-
-                    <ul>
-                        <li>Created a dynamic Retrieval-Augmented Generation (RAG) backend framework for processing
-                            large PDF text arrays.</li>
-                        <li>Developed highly efficient custom token chunking systems, maintaining logical context
-                            blocks.</li>
-                        <li>Integrated Pinecone vector index querying, achieving sub-200ms document response latency.
-                        </li>
-                    </ul>
-
-                    <div class="project-tags">
-                        <span>Node.js</span>
-                        <span>Pinecone</span>
-                        <span>RAG</span>
-                        <span>OpenAI API</span>
-                    </div>
-
-                    <a href="https://github.com/jogi6643/documnind" target="_blank" class="project-link">
-                        Source Code
-                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
-                        </svg>
-                    </a>
-                </div>
-
-                <!-- Project 2 -->
-                <div class="project-card reveal delay-1">
-                    <div class="project-icon">
-                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                            <path stroke-linecap="round" stroke-linejoin="round"
-                                d="M8.625 12a.375.375 0 11-.75 0 .375.375 0 01.75 0zm0 0H8.25m4.125 0a.375.375 0 11-.75 0 .375.375 0 01.75 0zm0 0H12m4.125 0a.375.375 0 11-.75 0 .375.375 0 01.75 0zm0 0h-.375M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z" />
-                        </svg>
-                    </div>
-                    <h3>AI Support Agent</h3>
-                    <p class="project-subtitle">Intelligent Customer Support Backend</p>
-
-                    <!-- System Specs Table -->
-                    <table class="project-spec-table">
-                        <tr>
-                            <td class="project-spec-label">Language</td>
-                            <td class="project-spec-val">Python / FastAPI</td>
-                        </tr>
-                        <tr>
-                            <td class="project-spec-label">Cache Storage</td>
-                            <td class="project-spec-val">Redis Cluster (Memory)</td>
-                        </tr>
-                        <tr>
-                            <td class="project-spec-label">Framework</td>
-                            <td class="project-spec-val">LangChain / OpenAI</td>
-                        </tr>
-                        <tr>
-                            <td class="project-spec-label">Concurrency</td>
-                            <td class="project-spec-val">Asynchronous loop</td>
-                        </tr>
-                    </table>
-
-                    <ul>
-                        <li>Built semantic user query sorting pipelines to automatically categorize incoming support
-                            emails.</li>
-                        <li>Designed Redis-based persistent chatbot conversation memory caches to retain thread context.
-                        </li>
-                        <li>Configured FastAPI router arrays to manage connections synchronously under high concurrent
-                            load.</li>
-                    </ul>
-
-                    <div class="project-tags">
-                        <span>Python</span>
-                        <span>FastAPI</span>
-                        <span>Redis</span>
-                        <span>LangChain</span>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Education Section -->
-    <section class="section" id="education">
-        <div class="container">
-            <div class="section-header reveal">
-                <span class="section-num">05 // EDUCATION</span>
-                <h2 class="section-title">Education</h2>
-                <div class="section-line"></div>
-            </div>
-
-            <div class="education-grid">
-                <div class="edu-card reveal">
-                    <div class="edu-icon">
-                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                            <path stroke-linecap="round" stroke-linejoin="round"
-                                d="M4.26 10.147a60.436 60.436 0 00-.491 6.347A48.62 48.62 0 0112 20.9m10.25-10.753c-.124-2.28-1.9-4.086-4.117-4.092A48.297 48.297 0 0012 4.5c-2.31 0-4.52.26-6.633.758a4.125 4.125 0 00-4.117 4.093v4.22c0 1.01.54 1.94 1.4 2.427l3.6 2.04" />
-                        </svg>
-                    </div>
-                    <h3>Master of Computer Applications</h3>
-                    <p class="edu-school">Aligarh Muslim University</p>
-                    <p class="edu-year">2016</p>
-                </div>
-
-                <div class="edu-card reveal delay-1">
-                    <div class="edu-icon">
-                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                            <path stroke-linecap="round" stroke-linejoin="round"
-                                d="M4.26 10.147a60.436 60.436 0 00-.491 6.347A48.62 48.62 0 0112 20.9m10.25-10.753c-.124-2.28-1.9-4.086-4.117-4.092A48.297 48.297 0 0012 4.5c-2.31 0-4.52.26-6.633.758a4.125 4.125 0 00-4.117 4.093v4.22c0 1.01.54 1.94 1.4 2.427l3.6 2.04" />
-                        </svg>
-                    </div>
-                    <h3>Bachelor of Information Technology</h3>
-                    <p class="edu-school">Aligarh Muslim University</p>
-                    <p class="edu-year">2012</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Certifications Section -->
-    <section class="section section-alt" id="certifications">
-        <div class="container">
-            <div class="section-header reveal">
-                <span class="section-num">06 // CREDENTIALS</span>
-                <h2 class="section-title">Certifications</h2>
-                <div class="section-line"></div>
-            </div>
-            <p class="cert-subtitle reveal">Validated training across advanced statistics, machine learning pipelines,
-                and distributed engineering clusters</p>
-
-            <div class="cert-grid">
-                <!-- Cert 1 -->
-                <div class="cert-card reveal">
-                    <div class="cert-badge">
-                        <svg viewBox="0 0 80 80" fill="none" xmlns="http://www.w3.org/2000/svg">
-                            <circle cx="40" cy="40" r="36" stroke="#27272a" stroke-width="1" />
-                            <path d="M40 22L43 32H54L45 38L48 48L40 42L32 48L35 38L26 32H37L40 22Z" fill="#c2a078"
-                                opacity=".95" />
-                        </svg>
-                    </div>
-                    <h3>Data Science with R</h3>
-                    <p class="cert-issuer">Statistical Computing &amp; Data Analysis</p>
-                    <div class="cert-tag">R Statistics</div>
-                </div>
-
-                <!-- Cert 2 -->
-                <div class="cert-card reveal delay-1">
-                    <div class="cert-badge">
-                        <svg viewBox="0 0 80 80" fill="none" xmlns="http://www.w3.org/2000/svg">
-                            <circle cx="40" cy="40" r="36" stroke="#27272a" stroke-width="1" />
-                            <path d="M40 22L43 32H54L45 38L48 48L40 42L32 48L35 38L26 32H37L40 22Z" fill="#c2a078"
-                                opacity=".95" />
-                        </svg>
-                    </div>
-                    <h3>Data Science with Python</h3>
-                    <p class="cert-issuer">Python Analytics &amp; ML Foundations</p>
-                    <div class="cert-tag">Python</div>
-                </div>
-
-                <!-- Cert 3 -->
-                <div class="cert-card reveal delay-2">
-                    <div class="cert-badge">
-                        <svg viewBox="0 0 80 80" fill="none" xmlns="http://www.w3.org/2000/svg">
-                            <circle cx="40" cy="40" r="36" stroke="#27272a" stroke-width="1" />
-                            <path d="M40 22L43 32H54L45 38L48 48L40 42L32 48L35 38L26 32H37L40 22Z" fill="#c2a078"
-                                opacity=".95" />
-                        </svg>
-                    </div>
-                    <h3>Machine Learning Advanced</h3>
-                    <p class="cert-issuer">Advanced ML Algorithms &amp; Neural Networks</p>
-                    <div class="cert-tag">Machine Learning</div>
-                </div>
-
-                <!-- Cert 4 -->
-                <div class="cert-card reveal">
-                    <div class="cert-badge">
-                        <svg viewBox="0 0 80 80" fill="none" xmlns="http://www.w3.org/2000/svg">
-                            <circle cx="40" cy="40" r="36" stroke="#27272a" stroke-width="1" />
-                            <path d="M40 22L43 32H54L45 38L48 48L40 42L32 48L35 38L26 32H37L40 22Z" fill="#c2a078"
-                                opacity=".95" />
-                        </svg>
-                    </div>
-                    <h3>Python for Data Science</h3>
-                    <p class="cert-issuer">Data Manipulation &amp; Visualization</p>
-                    <div class="cert-tag">Python</div>
-                </div>
-
-                <!-- Cert 5 -->
-                <div class="cert-card reveal delay-1">
-                    <div class="cert-badge">
-                        <svg viewBox="0 0 80 80" fill="none" xmlns="http://www.w3.org/2000/svg">
-                            <circle cx="40" cy="40" r="36" stroke="#27272a" stroke-width="1" />
-                            <path d="M40 22L43 32H54L45 38L48 48L40 42L32 48L35 38L26 32H37L40 22Z" fill="#c2a078"
-                                opacity=".95" />
-                        </svg>
-                    </div>
-                    <h3>Tableau Desktop Qualified</h3>
-                    <p class="cert-issuer">Data Visualization &amp; Business Intelligence</p>
-                    <div class="cert-tag">Tableau</div>
-                </div>
-
-                <!-- Cert 6 -->
-                <div class="cert-card reveal delay-2">
-                    <div class="cert-badge">
-                        <svg viewBox="0 0 80 80" fill="none" xmlns="http://www.w3.org/2000/svg">
-                            <circle cx="40" cy="40" r="36" stroke="#27272a" stroke-width="1" />
-                            <path d="M40 22L43 32H54L45 38L48 48L40 42L32 48L35 38L26 32H37L40 22Z" fill="#c2a078"
-                                opacity=".95" />
-                        </svg>
-                    </div>
-                    <h3>Big Data Hadoop &amp; Spark</h3>
-                    <p class="cert-issuer">Distributed Computing &amp; MapReduce Architectures</p>
-                    <div class="cert-tag">Big Data</div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Contact Section -->
-    <section class="section" id="contact">
-        <div class="container">
-            <div class="section-header reveal">
-                <span class="section-num">07 // SYSTEM ACCESS</span>
-                <h2 class="section-title">Secure Connection</h2>
-                <div class="section-line"></div>
-            </div>
-            <p class="contact-desc reveal">Click on any communications card to copy specific connection credentials to
-                clipboard.</p>
-
-            <div class="contact-grid reveal delay-1">
-                <!-- Email -->
-                <div class="contact-card" data-copy="jogi.amu@gmail.com">
-                    <div class="contact-icon">
-                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                            <path stroke-linecap="round" stroke-linejoin="round"
-                                d="M21.75 6.75v10.5a2.25 2.25 0 01-2.25 2.25h-15a2.25 2.25 0 01-2.25-2.25V6.75m19.5 0A2.25 2.25 0 0019.5 4.5h-15a2.25 2.25 0 00-2.25 2.25m19.5 0v.243a2.25 2.25 0 01-1.07 1.916l-7.5 4.615a2.25 2.25 0 01-2.36 0L3.32 8.91a2.25 2.25 0 01-1.07-1.916V6.75" />
-                        </svg>
-                    </div>
-                    <span class="contact-label">Email</span>
-                    <span class="contact-value">jogi.amu@gmail.com</span>
-                    <span class="copy-tooltip">Copied!</span>
-                </div>
-
-                <!-- Phone -->
-                <div class="contact-card" data-copy="+918700488718">
-                    <div class="contact-icon">
-                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                            <path stroke-linecap="round" stroke-linejoin="round"
-                                d="M2.25 6.75c0 8.284 6.716 15 15 15h2.25a2.25 2.25 0 002.25-2.25v-1.372c0-.516-.351-.966-.852-1.091l-4.423-1.106c-.44-.11-.902.055-1.173.417l-.97 1.293c-2.824-1.802-5.14-4.118-6.943-6.94l1.293-.97c.363-.271.527-.734.417-1.173L6.963 3.102a1.125 1.125 0 00-1.091-.852H4.5A2.25 2.25 0 002.25 4.5v2.25z" />
-                        </svg>
-                    </div>
-                    <span class="contact-label">Phone</span>
-                    <span class="contact-value">+91-8700488718</span>
-                    <span class="copy-tooltip">Copied!</span>
-                </div>
-
-                <!-- LinkedIn -->
-                <a href="https://www.linkedin.com/in/jogi6643/" target="_blank" class="contact-card">
-                    <div class="contact-icon">
-                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                            <path stroke-linecap="round" stroke-linejoin="round"
-                                d="M13.19 8.688a4.5 4.5 0 011.242 7.244l-4.5 4.5a4.5 4.5 0 01-6.364-6.364l1.757-1.757m13.35-.622l1.757-1.757a4.5 4.5 0 00-6.364-6.364l-4.5 4.5a4.5 4.5 0 001.242 7.244" />
-                        </svg>
-                    </div>
-                    <span class="contact-label">LinkedIn</span>
-                    <span class="contact-value">linkedin/in/jogi6643</span>
-                </a>
-
-                <!-- GitHub -->
-                <a href="https://github.com/jogi6643" target="_blank" class="contact-card">
-                    <div class="contact-icon">
-                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                            <path stroke-linecap="round" stroke-linejoin="round"
-                                d="M17.25 6.75L22.5 12l-5.25 5.25m-10.5 0L1.5 12l5.25-5.25m7.5-3l-4.5 16.5" />
-                        </svg>
-                    </div>
-                    <span class="contact-label">GitHub</span>
-                    <span class="contact-value">github.com/jogi6643</span>
-                </a>
-            </div>
-        </div>
-    </section>
-
-    <!-- Footer -->
-    <footer class="footer">
-        <p>&copy; 2026 Jugendra Pal Singh // REST API Core Systems. Built with pure Zinc &amp; Brass.</p>
-    </footer>
-
-    <script>
-        // Custom Cursor Controller
-        const cursor = document.getElementById('customCursor');
-        const cursorDot = document.getElementById('customCursorDot');
-        let mouseX = 0, mouseY = 0;
-        let cursorX = 0, cursorY = 0;
-
-        document.addEventListener('mousemove', (e) => {
-            mouseX = e.clientX;
-            mouseY = e.clientY;
-
-            cursorDot.style.left = mouseX + 'px';
-            cursorDot.style.top = mouseY + 'px';
-        });
-
-        // Clean lerp/easing animation for the trailing circle
-        function animateCursor() {
-            const ease = 0.15;
-            cursorX += (mouseX - cursorX) * ease;
-            cursorY += (mouseY - cursorY) * ease;
-
-            cursor.style.left = cursorX + 'px';
-            cursor.style.top = cursorY + 'px';
-
-            requestAnimationFrame(animateCursor);
-        }
-        animateCursor();
-
-        // Morph cursor ring on hovering interactive nodes
-        document.querySelectorAll('a, button, .contact-card, .btn, .bento-item, .nav-toggle').forEach(el => {
-            el.addEventListener('mouseenter', () => {
-                cursor.classList.add('hover');
-            });
-            el.addEventListener('mouseleave', () => {
-                cursor.classList.remove('hover');
-            });
-        });
-
-        // Navbar Scrolled State Trigger
-        const navbar = document.getElementById('navbar');
-        window.addEventListener('scroll', () => {
-            navbar.classList.toggle('scrolled', window.scrollY > 30);
-        });
-
-        // Mobile burger navigation toggler
-        const navToggle = document.getElementById('navToggle');
-        const navMenu = document.getElementById('navMenu');
-        navToggle.addEventListener('click', () => {
-            navMenu.classList.toggle('active');
-            navToggle.classList.toggle('active');
-        });
-
-        document.querySelectorAll('.nav-link').forEach(link => {
-            link.addEventListener('click', () => {
-                navMenu.classList.remove('active');
-                navToggle.classList.remove('active');
-            });
-        });
-
-        // Scroll animations observer (reveals element & triggers section line expansion)
-        const revealElements = document.querySelectorAll('.reveal, .section-header');
-        const observer = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    entry.target.classList.add('revealed');
-                }
-            });
-        }, { threshold: 0.05, rootMargin: '0px 0px -45px 0px' });
-        revealElements.forEach(el => observer.observe(el));
-
-        // Soft scroll targets
-        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function (e) {
-                e.preventDefault();
-                const target = document.querySelector(this.getAttribute('href'));
-                if (target) {
-                    target.scrollIntoView({ behavior: 'smooth', block: 'start' });
-                }
-            });
-        });
-
-        // Sync current navigation link on scroll
-        const sections = document.querySelectorAll('section');
-        window.addEventListener('scroll', () => {
-            let current = '';
-            sections.forEach(section => {
-                const top = section.offsetTop - 120;
-                if (window.scrollY >= top) {
-                    current = section.getAttribute('id');
-                }
-            });
-            document.querySelectorAll('.nav-link').forEach(link => {
-                link.classList.remove('active');
-                if (link.getAttribute('href') === '#' + current) {
-                    link.classList.add('active');
-                }
-            });
-        });
-
-        // Monospace Typewriter text controller
-        const typewriter = document.getElementById('typewriter');
-        const titles = [
-            'System Architecture // scaling APIs',
-            'Microservices Builder // High Concurrency',
-            'AI Integrations // Vector DB RAG Pipelines'
-        ];
-        let titleIndex = 0;
-        let charIndex = 0;
-        let isDeleting = false;
-
-        function type() {
-            const current = titles[titleIndex];
-            if (isDeleting) {
-                typewriter.textContent = current.substring(0, charIndex--);
-            } else {
-                typewriter.textContent = current.substring(0, charIndex++);
-            }
-
-            let speed = isDeleting ? 25 : 55;
-
-            if (!isDeleting && charIndex > current.length) {
-                speed = 2500;
-                isDeleting = true;
-            } else if (isDeleting && charIndex < 0) {
-                isDeleting = false;
-                titleIndex = (titleIndex + 1) % titles.length;
-                speed = 500;
-            }
-            setTimeout(type, speed);
-        }
-        type();
-
-        // Counter statistics animator
-        const counters = document.querySelectorAll('.counter');
-        const counterObserver = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    const el = entry.target;
-                    const target = +el.dataset.target;
-                    const duration = 1500;
-                    const step = target / (duration / 16);
-                    let current = 0;
-
-                    const updateNum = () => {
-                        current += step;
-                        if (current < target) {
-                            el.textContent = Math.floor(current);
-                            requestAnimationFrame(updateNum);
-                        } else {
-                            el.textContent = target;
-                        }
-                    };
-                    updateNum();
-                    counterObserver.unobserve(el);
-                }
-            });
-        }, { threshold: 0.5 });
-        counters.forEach(c => counterObserver.observe(c));
-
-        // Copy Contact Details trigger
-        document.querySelectorAll('.contact-card[data-copy]').forEach(card => {
-            card.addEventListener('click', () => {
-                const textToCopy = card.getAttribute('data-copy');
-                navigator.clipboard.writeText(textToCopy).then(() => {
-                    const tooltip = card.querySelector('.copy-tooltip');
-                    tooltip.classList.add('show');
-                    setTimeout(() => {
-                        tooltip.classList.remove('show');
-                    }, 1800);
-                });
-            });
-        });
-
-        // Live Sparkline Chart & Diagnostics (DASHBOARD PANEL - Responsive & Glowing)
-        const cpuCanvas = document.getElementById('cpuGraph');
-        const cpuCtx = cpuCanvas.getContext('2d');
-        const liveCpuText = document.getElementById('liveCpuText');
-        const latencyVal = document.getElementById('latencyVal');
-        let cpuData = Array(45).fill(25);
-
-        function drawCpuChart() {
-            cpuCanvas.width = cpuCanvas.clientWidth;
-            cpuCanvas.height = cpuCanvas.clientHeight;
-
-            // Shift points and add random-walk mock cpu telemetry load
-            cpuData.shift();
-            const lastVal = cpuData[cpuData.length - 1];
-            let newVal = lastVal + (Math.random() - 0.5) * 8;
-            newVal = Math.max(12, Math.min(55, newVal));
-            cpuData.push(newVal);
-
-            liveCpuText.textContent = `${newVal.toFixed(1)}%`;
-
-            // Random latency updates (e.g. 0.8ms to 1.5ms)
-            const mockLatency = (0.7 + Math.random() * 0.8).toFixed(1);
-            latencyVal.textContent = `${mockLatency} ms`;
-
-            cpuCtx.clearRect(0, 0, cpuCanvas.width, cpuCanvas.height);
-
-            // Draw fine grid lines
-            cpuCtx.strokeStyle = '#1a1a1a';
-            cpuCtx.lineWidth = 0.5;
-            for (let i = 0; i < cpuCanvas.height; i += 20) {
-                cpuCtx.beginPath();
-                cpuCtx.moveTo(0, i);
-                cpuCtx.lineTo(cpuCanvas.width, i);
-                cpuCtx.stroke();
-            }
-            for (let i = 0; i < cpuCanvas.width; i += 40) {
-                cpuCtx.beginPath();
-                cpuCtx.moveTo(i, 0);
-                cpuCtx.lineTo(i, cpuCanvas.height);
-                cpuCtx.stroke();
-            }
-
-            // Fetch dynamic styles from document body
-            const activeAccent = getComputedStyle(document.body).getPropertyValue('--accent').trim() || '#c2a078';
-            const activeAccentRgb = getComputedStyle(document.body).getPropertyValue('--accent-rgb').trim() || '194, 160, 120';
-
-            // Draw graph line
-            cpuCtx.strokeStyle = activeAccent;
-            cpuCtx.lineWidth = 2.0;
-            cpuCtx.beginPath();
-
-            const step = cpuCanvas.width / (cpuData.length - 1);
-            for (let i = 0; i < cpuData.length; i++) {
-                const x = i * step;
-                const y = cpuCanvas.height - (cpuData[i] / 100) * cpuCanvas.height * 0.7 - 6;
-                if (i === 0) cpuCtx.moveTo(x, y);
-                else cpuCtx.lineTo(x, y);
-            }
-            cpuCtx.stroke();
-
-            // Color fill under line (Translucent Gradient matching theme)
-            cpuCtx.lineTo(cpuCanvas.width, cpuCanvas.height);
-            cpuCtx.lineTo(0, cpuCanvas.height);
-            const gradient = cpuCtx.createLinearGradient(0, 0, 0, cpuCanvas.height);
-            gradient.addColorStop(0, `rgba(${activeAccentRgb}, 0.12)`);
-            gradient.addColorStop(1, `rgba(${activeAccentRgb}, 0)`);
-            cpuCtx.fillStyle = gradient;
-            cpuCtx.fill();
-
-            // Draw glowing leading indicator dot
-            const leadX = cpuCanvas.width;
-            const leadY = cpuCanvas.height - (cpuData[cpuData.length - 1] / 100) * cpuCanvas.height * 0.7 - 6;
-            cpuCtx.shadowColor = activeAccent;
-            cpuCtx.shadowBlur = 10;
-            cpuCtx.fillStyle = '#ffffff';
-            cpuCtx.beginPath();
-            cpuCtx.arc(leadX - 3, leadY, 4, 0, 2 * Math.PI);
-            cpuCtx.fill();
-            cpuCtx.shadowBlur = 0; // Reset shadow blur
-        }
-
-        setInterval(drawCpuChart, 300);
-
-        // --- NEW PREMIUM INTERACTIONS & BEHAVIORS ---
-
-        // 1. Scroll Progress Bar logic
-        const scrollProgress = document.getElementById('scrollProgress');
-        window.addEventListener('scroll', () => {
-            const totalHeight = document.documentElement.scrollHeight - window.innerHeight;
-            if (totalHeight > 0) {
-                const progress = (window.scrollY / totalHeight) * 100;
-                scrollProgress.style.width = progress + '%';
-            }
-        });
-
-        // 2. Theme Toggler / Accent Selector logic
-        const themeBtns = document.querySelectorAll('.theme-btn');
-        themeBtns.forEach(btn => {
-            btn.addEventListener('click', () => {
-                const theme = btn.getAttribute('data-theme');
-                
-                // Set active states
-                themeBtns.forEach(b => b.classList.remove('active'));
-                btn.classList.add('active');
-                
-                // Toggle theme on body
-                document.body.className = '';
-                if (theme !== 'brass') {
-                    document.body.classList.add('theme-' + theme);
-                }
-                
-                // Save choice
-                localStorage.setItem('jps-portfolio-theme', theme);
-            });
-        });
-
-        // Load saved theme
-        const savedTheme = localStorage.getItem('jps-portfolio-theme');
-        if (savedTheme) {
-            const activeBtn = document.querySelector(`.theme-btn[data-theme="${savedTheme}"]`);
-            if (activeBtn) {
-                activeBtn.click();
-            }
-        }
-
-        // 3. Dynamic Cursor-Follow Glow for Cards
-        document.querySelectorAll('.bento-item, .skill-category, .timeline-content, .project-card, .edu-card, .cert-card, .contact-card').forEach(el => {
-            el.classList.add('glow-card');
-        });
-
-        document.querySelectorAll('.glow-card').forEach(card => {
-            card.addEventListener('mousemove', (e) => {
-                const rect = card.getBoundingClientRect();
-                const x = e.clientX - rect.left;
-                const y = e.clientY - rect.top;
-                card.style.setProperty('--mouse-x', `${x}px`);
-                card.style.setProperty('--mouse-y', `${y}px`);
-            });
-        });
-
-        // 4. Interactive Diagnostics Terminal
-        const terminalInput = document.getElementById('terminalInput');
-        const terminalHistory = document.getElementById('terminalHistory');
-
-        const terminalCommands = {
-            help: 'Available operations:\n  about     - Identity profile metadata\n  skills    - Capabilities summary\n  contact   - Secure communications channels\n  ping      - Test network latency\n  matrix    - Toggle green matrix override\n  clear     - Wipe console history',
-            about: 'SYSTEM PROFILE:\nSubject: Jugendra Pal Singh\nRole: Senior Backend Engineer & AI Architect\nExperience: 8+ years\nMission: Build secure, resilient, high-concurrency architectures.',
-            skills: 'CAPABILITIES REGISTRY:\n- Back-end: Node.js (Express, REST, microservices)\n- Cloud (AWS): IAM, EC2, S3, RDS, CloudWatch, Auto Scaling\n- DevOps/Containers: Docker, CI/CD, Git, Linux\n- Databases: MongoDB, MySQL, Redis Cluster\n- Advanced AI: RAG, Pinecone Vector DB, FastAPI',
-            contact: 'COMMUNICATION DESK:\n- Email: jogi.amu@gmail.com\n- Tel: +91-8700488718\n- LinkedIn: linkedin/in/jogi6643\n- GitHub: github.com/jogi6643',
-            ping: 'PINGing 127.0.0.1 with 32 bytes of data:\nReply from 127.0.0.1: bytes=32 time=0.9ms TTL=64\nReply from 127.0.0.1: bytes=32 time=1.1ms TTL=64\nPing statistics: Sent=2, Received=2, Lost=0 (0% loss)'
-        };
-
-        if (terminalInput) {
-            terminalInput.addEventListener('keydown', (e) => {
-                if (e.key === 'Enter') {
-                    const inputVal = terminalInput.value.trim().toLowerCase();
-                    terminalInput.value = '';
-                    
-                    if (!inputVal) return;
-                    
-                    appendTerminalLine(`jps_local$ ${inputVal}`, 'user-cmd');
-                    
-                    setTimeout(() => {
-                        executeTerminalCommand(inputVal);
-                    }, 150);
-                }
-            });
-        }
-
-        function appendTerminalLine(text, className) {
-            const line = document.createElement('div');
-            line.className = `terminal-line ${className}`;
-            line.textContent = text;
-            terminalHistory.appendChild(line);
-            terminalHistory.scrollTop = terminalHistory.scrollHeight;
-        }
-
-        let matrixInterval = null;
-        function executeTerminalCommand(cmd) {
-            if (cmd === 'clear') {
-                terminalHistory.innerHTML = '';
-                return;
-            }
-            
-            if (cmd === 'matrix') {
-                if (matrixInterval) {
-                    clearInterval(matrixInterval);
-                    matrixInterval = null;
-                    appendTerminalLine('Matrix mode deactivated.', 'system-msg');
-                } else {
-                    appendTerminalLine('Initializing Matrix core telemetry...', 'system-msg');
-                    let count = 0;
-                    matrixInterval = setInterval(() => {
-                        const randomBinary = Array(25).fill(0).map(() => Math.random() > 0.5 ? '1' : '0').join(' ');
-                        appendTerminalLine(randomBinary, 'response-msg');
-                        count++;
-                        if (count > 15) {
-                            clearInterval(matrixInterval);
-                            matrixInterval = null;
-                            appendTerminalLine('Telemetry dump complete.', 'system-msg');
-                        }
-                    }, 100);
-                }
-                return;
-            }
-            
-            if (terminalCommands[cmd]) {
-                appendTerminalLine(terminalCommands[cmd], 'response-msg');
-            } else {
-                appendTerminalLine(`Command not found: '${cmd}'. Type 'help' for support.`, 'system-msg');
-            }
-        }
-    </script>
-</body>
-
-</html>
+/* ==========================================================================
+   Awwwards Inspired Design System: Brutalism Brass & Obsidian
+   ========================================================================== */
+
+/* ========== DESIGN TOKENS & SYSTEM VARIABLES ========== */
+:root {
+    --bg-dark: #f8fafc;         /* Clean Light Slate White */
+    --bg-card: #ffffff;         /* Pure White Card */
+    --bg-surface: #f1f5f9;      /* Off-White Surface */
+    
+    --border-dim: #e2e8f0;      /* Soft Slate Border */
+    --border-bright: #cbd5e1;   /* Active Slate Border */
+    
+    --accent: #8f6b3b;          /* Professional Deep Gold */
+    --accent-light: #ab8553;    /* Professional Gold Highlight */
+    --accent-dim: rgba(143, 107, 59, 0.05);
+    --accent-bright: rgba(143, 107, 59, 0.15);
+    --accent-rgb: 143, 107, 59;
+    
+    --text-primary: #0f172a;    /* Deep Slate (Primary Text) */
+    --text-secondary: #475569;  /* Medium Slate (Secondary Text) */
+    --text-muted: #64748b;      /* Slate Gray (Muted Metadata) */
+    
+    --font-display: 'Space Grotesk', system-ui, sans-serif;
+    --font-sans: 'Space Grotesk', system-ui, sans-serif;
+    --font-mono: 'JetBrains Mono', monospace;
+    
+    --transition-liquid: all 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+    --transition-quick: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+/* Alternate Themes */
+body.theme-mint {
+    --accent: #0f766e;          /* Professional Deep Teal */
+    --accent-light: #0d9488;    /* Teal Highlight */
+    --accent-dim: rgba(15, 118, 110, 0.05);
+    --accent-bright: rgba(15, 118, 110, 0.15);
+    --accent-rgb: 15, 118, 110;
+    --bg-dark: #f0fdfa;         /* Soft Light Teal Mint Background */
+    --bg-card: #ffffff;
+    --bg-surface: #ccfbf1;
+    --bg-dark-rgb: 240, 253, 250;
+}
+body.theme-crimson {
+    --accent: #be123c;          /* Professional Deep Rose/Crimson */
+    --accent-light: #e11d48;    /* Rose Highlight */
+    --accent-dim: rgba(190, 18, 60, 0.05);
+    --accent-bright: rgba(190, 18, 60, 0.15);
+    --accent-rgb: 190, 18, 60;
+    --bg-dark: #fff1f2;         /* Soft Light Crimson Rose Background */
+    --bg-card: #ffffff;
+    --bg-surface: #ffe4e6;
+    --bg-dark-rgb: 255, 241, 242;
+}
+
+/* Scroll Progress Bar */
+.scroll-progress {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 0%;
+    height: 3px;
+    background: linear-gradient(90deg, var(--accent) 0%, var(--accent-light) 100%);
+    box-shadow: 0 0 12px var(--accent);
+    z-index: 99999;
+    transition: width 0.1s ease-out;
+}
+
+/* Theme Selector UI in Navbar */
+.theme-selector {
+    display: flex;
+    gap: 8px;
+    align-items: center;
+    padding: 6px 12px;
+    border: 1px solid var(--border-dim);
+    background: rgba(8, 8, 8, 0.5);
+    border-radius: 20px;
+    margin-right: 16px;
+}
+.theme-btn {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    cursor: pointer;
+    border: 1.5px solid transparent;
+    transition: var(--transition-quick);
+    position: relative;
+    padding: 0;
+    background: none;
+    outline: none;
+}
+.theme-btn::after {
+    content: '';
+    position: absolute;
+    top: -4px; left: -4px; right: -4px; bottom: -4px;
+    border: 1px solid transparent;
+    border-radius: 50%;
+    transition: var(--transition-quick);
+}
+.theme-btn.active::after {
+    border-color: var(--accent);
+}
+.theme-btn-brass { background-color: #c2a078; }
+.theme-btn-mint { background-color: #00ffaa; }
+.theme-btn-crimson { background-color: #ff0055; }
+
+/* ========== CUSTOM MOUSE CURSOR ========== */
+.custom-cursor {
+    width: 24px;
+    height: 24px;
+    border: 1.5px solid var(--accent);
+    border-radius: 50%;
+    position: fixed;
+    transform: translate(-50%, -50%);
+    pointer-events: none;
+    z-index: 9999;
+    transition: width 0.3s var(--transition-liquid), height 0.3s var(--transition-liquid), background-color 0.3s var(--transition-liquid);
+    mix-blend-mode: difference;
+}
+
+.custom-cursor-dot {
+    width: 4px;
+    height: 4px;
+    background-color: var(--accent-light);
+    border-radius: 50%;
+    position: fixed;
+    transform: translate(-50%, -50%);
+    pointer-events: none;
+    z-index: 99999;
+}
+
+/* Cursor states on hover */
+.custom-cursor.hover {
+    width: 48px;
+    height: 48px;
+    background-color: rgba(194, 160, 120, 0.1);
+    border-color: var(--accent-light);
+}
+
+@media (hover: none) and (pointer: coarse) {
+    .custom-cursor, .custom-cursor-dot {
+        display: none !important;
+    }
+}
+
+/* ========== RESET & BASE ========== */
+*, *::before, *::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+    scroll-padding-top: 90px;
+    background: var(--bg-dark);
+}
+
+body {
+    font-family: var(--font-sans);
+    background: var(--bg-dark);
+    color: var(--text-secondary);
+    line-height: 1.6;
+    overflow-x: hidden;
+    -webkit-font-smoothing: antialiased;
+    transition: background-color 0.5s ease, color 0.5s ease;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+ul {
+    list-style: none;
+}
+
+img {
+    max-width: 100%;
+    display: block;
+    filter: grayscale(100%);
+    transition: var(--transition-liquid);
+}
+
+img:hover {
+    filter: grayscale(0%);
+}
+
+/* Minimal Custom Scrollbar */
+::-webkit-scrollbar {
+    width: 4px;
+    height: 4px;
+}
+::-webkit-scrollbar-track {
+    background: var(--bg-dark);
+}
+::-webkit-scrollbar-thumb {
+    background: var(--border-bright);
+}
+::-webkit-scrollbar-thumb:hover {
+    background: var(--accent);
+}
+
+/* Selection */
+::selection {
+    background: var(--accent-bright);
+    color: var(--text-primary);
+}
+
+/* ========== UTILITIES & GRID LAYOUT ========== */
+.container {
+    max-width: 1240px;
+    margin: 0 auto;
+    padding: 0 40px;
+}
+
+.section {
+    padding: 120px 0;
+    border-bottom: 1px solid var(--border-dim);
+    position: relative;
+}
+
+/* Section Header (Awwwards Editorial Layout) */
+.section-header {
+    margin-bottom: 80px;
+    position: relative;
+}
+
+.section-num {
+    font-family: var(--font-mono);
+    font-size: 0.8rem;
+    color: var(--accent);
+    letter-spacing: 0.1em;
+    display: block;
+    margin-bottom: 12px;
+}
+
+.section-title {
+    font-family: var(--font-display);
+    font-size: clamp(2.2rem, 5vw, 3.8rem);
+    font-weight: 800;
+    line-height: 0.95;
+    letter-spacing: -0.05em;
+    color: var(--text-primary);
+    text-transform: uppercase;
+}
+
+.section-line {
+    width: 0%;
+    height: 1px;
+    background: linear-gradient(90deg, var(--accent) 0%, var(--border-dim) 100%);
+    margin-top: 24px;
+    transition: width 1.5s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.section-header.revealed .section-line {
+    width: 100%;
+}
+
+.gradient-text {
+    background: linear-gradient(90deg, var(--text-primary) 0%, var(--accent) 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+/* ========== NAVIGATION (EDITORIAL FIXED) ========== */
+.navbar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000;
+    padding: 28px 0;
+    background: rgba(255, 255, 255, 0.85);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    border-bottom: 1px solid var(--border-dim);
+    transition: var(--transition-liquid);
+}
+
+.navbar.scrolled {
+    padding: 16px 0;
+    background: rgba(255, 255, 255, 0.96);
+}
+
+.nav-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.nav-logo {
+    font-family: var(--font-display);
+    font-size: 1.3rem;
+    font-weight: 800;
+    color: var(--text-primary);
+    letter-spacing: -0.05em;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    text-transform: uppercase;
+}
+
+.nav-logo-dot {
+    width: 6px;
+    height: 6px;
+    background: var(--accent);
+    border-radius: 50%;
+}
+
+.nav-menu {
+    display: flex;
+    gap: 32px;
+    align-items: center;
+}
+
+.nav-link {
+    font-family: var(--font-sans);
+    font-size: 0.85rem;
+    font-weight: 500;
+    color: var(--text-secondary);
+    transition: var(--transition-quick);
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+}
+
+.nav-link:hover, .nav-link.active {
+    color: var(--accent);
+}
+
+.nav-cta {
+    background: var(--accent);
+    color: var(--bg-dark) !important;
+    padding: 8px 20px;
+    border-radius: 2px;
+    font-weight: 600;
+    border: 1px solid var(--accent);
+}
+
+.nav-cta:hover {
+    background: transparent;
+    color: var(--accent) !important;
+}
+
+.nav-toggle {
+    display: none;
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 8px;
+}
+
+.nav-toggle span {
+    display: block;
+    width: 24px;
+    height: 1.5px;
+    background: var(--text-primary);
+    margin: 6px 0;
+    transition: var(--transition-quick);
+}
+
+.nav-toggle.active span:nth-child(1) { transform: rotate(45deg) translate(6px, 6px); }
+.nav-toggle.active span:nth-child(2) { opacity: 0; }
+.nav-toggle.active span:nth-child(3) { transform: rotate(-45deg) translate(5px, -5px); }
+
+/* ========== HERO SECTION (THEATRICAL HIGH-CONTRAST) ========== */
+.hero {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    position: relative;
+    padding-top: 100px;
+    border-bottom: 1px solid var(--border-dim);
+    overflow: hidden;
+}
+
+/*.hero-bg-grid */
+.hero-bg-grid {
+    position: absolute;
+    inset: 0;
+    background-image: 
+        linear-gradient(var(--border-dim) 1px, transparent 1px),
+        linear-gradient(90deg, var(--border-dim) 1px, transparent 1px);
+    background-size: 80px 80px;
+    opacity: 0.25;
+    pointer-events: none;
+    animation: gridMove 30s linear infinite;
+}
+
+@keyframes gridMove {
+    0% { background-position: 0 0; }
+    100% { background-position: 80px 80px; }
+}
+
+.hero-container {
+    display: grid;
+    grid-template-columns: 1.2fr 0.8fr;
+    gap: 80px;
+    align-items: center;
+    width: 100%;
+}
+
+.hero-content {
+    display: flex;
+    flex-direction: column;
+}
+
+.hero-badge {
+    align-self: flex-start;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-family: var(--font-mono);
+    font-size: 0.75rem;
+    font-weight: 600;
+    color: var(--accent);
+    border: 1px solid rgba(194, 160, 120, 0.3);
+    background: var(--accent-dim);
+    padding: 5px 14px;
+    border-radius: 1px;
+    margin-bottom: 30px;
+    text-transform: uppercase;
+}
+
+.badge-dot {
+    width: 6px;
+    height: 6px;
+    background: var(--accent);
+    border-radius: 50%;
+    box-shadow: 0 0 10px var(--accent);
+}
+
+.hero-greeting {
+    font-family: var(--font-display);
+    font-size: clamp(1.4rem, 3.5vw, 2.2rem);
+    font-weight: 700;
+    color: var(--text-primary);
+    letter-spacing: -0.02em;
+    text-transform: uppercase;
+    margin-bottom: 16px;
+}
+
+.hero-name {
+    font-family: var(--font-display);
+    font-size: clamp(3rem, 7vw, 5.2rem);
+    font-weight: 800;
+    line-height: 0.9;
+    letter-spacing: -0.05em;
+    color: var(--text-primary);
+    text-transform: uppercase;
+    margin-bottom: 24px;
+}
+
+.hero-title {
+    font-family: var(--font-mono);
+    font-size: 1.3rem;
+    color: var(--accent);
+    margin-bottom: 28px;
+    font-weight: 500;
+}
+
+.hero-title .cursor {
+    color: var(--accent-light);
+    animation: cursor-blink 1s step-end infinite;
+}
+
+.hero-desc {
+    font-size: 1.15rem;
+    font-family: var(--font-sans);
+    color: var(--text-secondary);
+    max-width: 550px;
+    margin-bottom: 40px;
+}
+
+.hero-btns {
+    display: flex;
+    gap: 20px;
+    margin-bottom: 60px;
+}
+
+.btn {
+    font-family: var(--font-sans);
+    font-size: 0.85rem;
+    font-weight: 600;
+    padding: 16px 36px;
+    border-radius: 2px;
+    cursor: pointer;
+    transition: var(--transition-liquid);
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    border: none;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+}
+
+.btn-primary {
+    background: var(--accent);
+    color: var(--bg-dark);
+}
+
+.btn-primary:hover {
+    background: var(--accent-light);
+    transform: translateY(-2px);
+}
+
+.btn-outline {
+    background: transparent;
+    color: var(--text-primary);
+    border: 1px solid var(--border-bright);
+}
+
+.btn-outline:hover {
+    border-color: var(--accent);
+    color: var(--accent);
+    transform: translateY(-2px);
+}
+
+.hero-stats {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    border-top: 1px solid var(--border-dim);
+    padding-top: 32px;
+    gap: 30px;
+}
+
+.stat {
+    display: flex;
+    flex-direction: column;
+}
+
+.stat-num-wrapper {
+    display: flex;
+    align-items: baseline;
+    font-family: var(--font-mono);
+}
+
+.stat-num {
+    font-size: 2rem;
+    font-weight: 700;
+    color: var(--text-primary);
+}
+
+.stat-plus {
+    font-size: 1.4rem;
+    color: var(--accent);
+    margin-left: 2px;
+}
+
+.stat-label {
+    font-size: 0.75rem;
+    color: var(--text-muted);
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    margin-top: 4px;
+}
+
+/* ========== HERO HARDWARE MONITOR PANEL ========== */
+.dashboard-panel {
+    background: #0b0f19;        /* Keep dark monitor look */
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: 2px;
+    overflow: hidden;
+    position: relative;
+    box-shadow: 0 30px 60px rgba(15, 23, 42, 0.15);
+}
+
+.dashboard-panel::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; width: 100%; height: 100%;
+    background: radial-gradient(circle at 100% 0%, rgba(194, 160, 120, 0.03) 0%, transparent 60%);
+    pointer-events: none;
+}
+
+.dashboard-header {
+    background: rgba(0, 0, 0, 0.25);
+    padding: 16px 24px;
+    border-bottom: 1px solid var(--border-dim);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.dashboard-dots {
+    display: flex;
+    gap: 6px;
+}
+
+.dashboard-dot {
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background: var(--border-bright);
+}
+
+.dashboard-dot.active {
+    background: var(--accent);
+    box-shadow: 0 0 6px var(--accent);
+}
+
+.dashboard-title {
+    font-family: var(--font-mono);
+    font-size: 0.7rem;
+    color: var(--text-muted);
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+}
+
+.dashboard-body {
+    padding: 24px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.monitor-row {
+    display: grid;
+    grid-template-columns: 90px 1fr;
+    gap: 16px;
+    font-family: var(--font-mono);
+    font-size: 0.8rem;
+    align-items: center;
+}
+
+.monitor-label {
+    color: var(--text-muted);
+    text-transform: uppercase;
+}
+
+.monitor-val {
+    color: var(--text-primary);
+}
+
+.monitor-val.success {
+    color: var(--accent-light);
+}
+
+/* System Chart */
+.sys-chart-container {
+    height: 140px;
+    background: rgba(0, 0, 0, 0.25);
+    border: 1px solid var(--border-dim);
+    border-radius: 1px;
+    padding: 12px;
+    position: relative;
+    overflow: hidden;
+}
+
+.chart-header {
+    display: flex;
+    justify-content: space-between;
+    font-family: var(--font-mono);
+    font-size: 0.65rem;
+    color: var(--text-muted);
+    margin-bottom: 8px;
+    letter-spacing: 0.05em;
+}
+
+.cpu-graph {
+    width: 100%;
+    height: calc(100% - 18px);
+    display: block;
+}
+
+/* ========== BENTO GRID (ARCHITECTURAL OVERVIEW) ========== */
+.bento-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-auto-rows: minmax(180px, auto);
+    gap: 24px;
+}
+
+.bento-item {
+    background: var(--bg-card);
+    border: 1px solid var(--border-dim);
+    border-radius: 2px;
+    padding: 40px;
+    position: relative;
+    overflow: hidden;
+    transition: var(--transition-liquid);
+}
+
+.bento-item:hover {
+    border-color: var(--accent);
+}
+
+/* Bento Placements */
+.bento-lg {
+    grid-column: span 2;
+    grid-row: span 2;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.bento-md {
+    grid-column: span 1;
+    grid-row: span 2;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.bento-sm {
+    grid-column: span 1;
+    grid-row: span 1;
+    display: flex;
+    align-items: center;
+}
+
+.bento-item h3 {
+    font-family: var(--font-display);
+    font-size: 1.35rem;
+    font-weight: 700;
+    color: var(--text-primary);
+    margin-bottom: 16px;
+    letter-spacing: -0.03em;
+    text-transform: uppercase;
+}
+
+.bento-large-text {
+    font-size: 1.25rem;
+    line-height: 1.7;
+    color: var(--text-secondary);
+}
+
+.bento-large-text p {
+    margin-bottom: 24px;
+}
+
+.bento-large-text p:last-child {
+    margin-bottom: 0;
+}
+
+.bento-desc {
+    font-size: 0.9rem;
+    color: var(--text-muted);
+    line-height: 1.5;
+}
+
+.bento-stat-box {
+    margin-top: 24px;
+}
+
+.bento-stat-num {
+    font-family: var(--font-display);
+    font-size: 2.8rem;
+    font-weight: 800;
+    color: var(--accent);
+    line-height: 1;
+}
+
+.bento-stat-label {
+    font-size: 0.75rem;
+    color: var(--text-muted);
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    margin-top: 6px;
+}
+
+.bento-meta-list {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    width: 100%;
+}
+
+.bento-meta-item {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.bento-meta-icon {
+    width: 44px;
+    height: 44px;
+    border-radius: 2px;
+    background: var(--bg-dark);
+    border: 1px solid var(--border-dim);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--accent);
+    flex-shrink: 0;
+    transition: var(--transition-quick);
+}
+
+.bento-meta-item:hover .bento-meta-icon {
+    color: var(--accent-light);
+    border-color: var(--accent);
+}
+
+.bento-meta-icon svg {
+    width: 20px;
+    height: 20px;
+    stroke: currentColor;
+    stroke-width: 1.5px;
+}
+
+.bento-meta-info {
+    display: flex;
+    flex-direction: column;
+}
+
+.bento-meta-label {
+    font-size: 0.7rem;
+    color: var(--text-muted);
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+}
+
+.bento-meta-val {
+    font-size: 1rem;
+    font-weight: 600;
+    color: var(--text-primary);
+}
+
+/* ========== CAPABILITIES (MINIMALIST GRIDS) ========== */
+.skills-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 24px;
+}
+
+.skill-category {
+    background: var(--bg-card);
+    border: 1px solid var(--border-dim);
+    border-radius: 2px;
+    padding: 40px;
+    transition: var(--transition-liquid);
+}
+
+.skill-category:hover {
+    border-color: var(--accent);
+}
+
+.skill-cat-header {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    margin-bottom: 24px;
+}
+
+.skill-cat-icon {
+    color: var(--accent);
+    display: flex;
+    align-items: center;
+}
+
+.skill-cat-icon svg {
+    width: 28px;
+    height: 28px;
+    stroke: currentColor;
+    stroke-width: 1.5px;
+}
+
+.skill-category h3 {
+    font-family: var(--font-display);
+    font-size: 1.25rem;
+    font-weight: 700;
+    color: var(--text-primary);
+    letter-spacing: -0.02em;
+    text-transform: uppercase;
+}
+
+.skill-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+.tag {
+    font-family: var(--font-mono);
+    font-size: 0.75rem;
+    font-weight: 500;
+    padding: 8px 16px;
+    border-radius: 1px;
+    background: var(--bg-dark);
+    color: var(--text-secondary);
+    border: 1px solid var(--border-dim);
+    transition: var(--transition-quick);
+}
+
+.tag:hover {
+    border-color: var(--accent);
+    color: var(--accent-light);
+}
+
+.tag-ai {
+    border-color: rgba(194, 160, 120, 0.25);
+    color: var(--accent-light);
+}
+
+.tag-ai:hover {
+    background: var(--accent-dim);
+}
+
+/* ========== TIMELINE ROADMAP (EXPERIENCE) ========== */
+.timeline {
+    position: relative;
+    max-width: 900px;
+    margin: 0 auto;
+    padding-left: 48px;
+}
+
+.timeline::before {
+    content: '';
+    position: absolute;
+    left: 8px;
+    top: 4px;
+    bottom: 4px;
+    width: 1px;
+    background: var(--border-dim);
+}
+
+.timeline-item {
+    position: relative;
+    margin-bottom: 60px;
+}
+
+.timeline-item:last-child {
+    margin-bottom: 0;
+}
+
+.timeline-dot {
+    position: absolute;
+    left: -44px;
+    top: 8px;
+    width: 9px;
+    height: 9px;
+    background: var(--bg-dark);
+    border: 1.5px solid var(--border-bright);
+    border-radius: 1px;
+    z-index: 2;
+    transition: var(--transition-quick);
+}
+
+.timeline-item:hover .timeline-dot {
+    background: var(--accent);
+    border-color: var(--accent);
+    box-shadow: 0 0 10px var(--accent);
+}
+
+.timeline-content {
+    background: var(--bg-card);
+    border: 1px solid var(--border-dim);
+    border-radius: 2px;
+    padding: 40px;
+    transition: var(--transition-liquid);
+}
+
+.timeline-item:hover .timeline-content {
+    border-color: var(--border-bright);
+}
+
+.timeline-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-bottom: 24px;
+    border-bottom: 1px solid var(--border-dim);
+    padding-bottom: 20px;
+    flex-wrap: wrap;
+    gap: 16px;
+}
+
+.timeline-title-group h3 {
+    font-family: var(--font-display);
+    font-size: 1.35rem;
+    font-weight: 700;
+    color: var(--text-primary);
+    letter-spacing: -0.02em;
+    text-transform: uppercase;
+}
+
+.timeline-company {
+    font-family: var(--font-sans);
+    font-size: 0.95rem;
+    color: var(--accent);
+    font-weight: 500;
+    display: block;
+    margin-top: 4px;
+}
+
+.timeline-date {
+    font-family: var(--font-mono);
+    font-size: 0.75rem;
+    color: var(--accent-light);
+    background: var(--accent-dim);
+    border: 1px solid rgba(194, 160, 120, 0.25);
+    padding: 6px 14px;
+    border-radius: 1px;
+}
+
+.timeline-projects {
+    display: flex;
+    flex-direction: column;
+    gap: 28px;
+}
+
+.project-block h4 {
+    font-family: var(--font-sans);
+    font-size: 1.05rem;
+    font-weight: 600;
+    color: var(--text-secondary);
+    margin-bottom: 12px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.project-sub {
+    font-family: var(--font-mono);
+    font-size: 0.75rem;
+    color: var(--text-muted);
+    font-weight: normal;
+}
+
+.timeline-content ul {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.timeline-content li {
+    position: relative;
+    padding-left: 16px;
+    font-size: 0.9rem;
+    color: var(--text-secondary);
+    line-height: 1.6;
+}
+
+.timeline-content li::before {
+    content: '—';
+    position: absolute;
+    left: 0;
+    color: var(--border-bright);
+}
+
+/* ========== AI PROJECTS (ARCHIVE SHEETS) ========== */
+.projects-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 24px;
+}
+
+.project-card {
+    background: var(--bg-card);
+    border: 1px solid var(--border-dim);
+    border-radius: 2px;
+    padding: 40px;
+    display: flex;
+    flex-direction: column;
+    transition: var(--transition-liquid);
+}
+
+.project-card:hover {
+    border-color: var(--accent);
+}
+
+.project-icon {
+    color: var(--accent);
+    margin-bottom: 20px;
+    display: flex;
+    align-items: center;
+}
+
+.project-icon svg {
+    width: 32px;
+    height: 32px;
+    stroke: currentColor;
+    stroke-width: 1.5px;
+}
+
+.project-card h3 {
+    font-family: var(--font-display);
+    font-size: 1.45rem;
+    font-weight: 800;
+    color: var(--text-primary);
+    margin-bottom: 4px;
+    letter-spacing: -0.04em;
+    text-transform: uppercase;
+}
+
+.project-subtitle {
+    font-family: var(--font-mono);
+    font-size: 0.75rem;
+    color: var(--text-muted);
+    margin-bottom: 24px;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+}
+
+/* Specs Blueprint Table */
+.project-spec-table {
+    width: 100%;
+    font-family: var(--font-mono);
+    font-size: 0.75rem;
+    border-collapse: collapse;
+    margin-bottom: 28px;
+    background: var(--bg-surface);
+    border: 1px solid var(--border-dim);
+}
+
+.project-spec-table td {
+    padding: 10px 14px;
+    border-bottom: 1px solid var(--border-dim);
+}
+
+.project-spec-table tr:last-child td {
+    border-bottom: none;
+}
+
+.project-spec-label {
+    color: var(--text-muted);
+    text-transform: uppercase;
+    width: 40%;
+}
+
+.project-spec-val {
+    color: var(--text-primary);
+    font-weight: 500;
+}
+
+.project-card ul {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    margin-bottom: 28px;
+    flex-grow: 1;
+}
+
+.project-card li {
+    position: relative;
+    padding-left: 16px;
+    font-size: 0.9rem;
+    color: var(--text-secondary);
+    line-height: 1.6;
+}
+
+.project-card li::before {
+    content: '—';
+    position: absolute;
+    left: 0;
+    color: var(--border-bright);
+}
+
+.project-tags {
+    display: flex;
+    gap: 8px;
+    flex-wrap: wrap;
+    margin-bottom: 24px;
+}
+
+.project-tags span {
+    font-family: var(--font-mono);
+    font-size: 0.7rem;
+    padding: 5px 10px;
+    background: var(--bg-dark);
+    border: 1px solid var(--border-dim);
+    color: var(--accent-light);
+    border-radius: 1px;
+}
+
+.project-link {
+    font-family: var(--font-sans);
+    font-size: 0.85rem;
+    font-weight: 600;
+    color: var(--text-primary);
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+}
+
+.project-link svg {
+    width: 16px;
+    height: 16px;
+    transition: transform 0.3s var(--transition-liquid);
+}
+
+.project-link:hover {
+    color: var(--accent);
+}
+
+.project-link:hover svg {
+    transform: translate(3px, -3px);
+}
+
+/* ========== EDUCATION ========== */
+.education-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 24px;
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+.edu-card {
+    background: var(--bg-card);
+    border: 1px solid var(--border-dim);
+    border-radius: 2px;
+    padding: 40px;
+    transition: var(--transition-liquid);
+}
+
+.edu-card:hover {
+    border-color: var(--accent);
+}
+
+.edu-icon {
+    color: var(--accent);
+    margin-bottom: 20px;
+    display: flex;
+}
+
+.edu-icon svg {
+    width: 28px;
+    height: 28px;
+    stroke: currentColor;
+    stroke-width: 1.5px;
+}
+
+.edu-card h3 {
+    font-family: var(--font-display);
+    font-size: 1.25rem;
+    font-weight: 700;
+    color: var(--text-primary);
+    margin-bottom: 6px;
+    text-transform: uppercase;
+}
+
+.edu-school {
+    font-size: 0.95rem;
+    color: var(--text-secondary);
+    margin-bottom: 16px;
+}
+
+.edu-year {
+    font-family: var(--font-mono);
+    font-size: 0.75rem;
+    color: var(--accent-light);
+    border: 1px solid var(--border-dim);
+    padding: 3px 10px;
+    border-radius: 1px;
+    background: var(--bg-dark);
+}
+
+/* ========== CERTIFICATIONS (ALIGNED INDEX) ========== */
+.cert-subtitle {
+    font-size: 1rem;
+    color: var(--text-secondary);
+    margin-top: -55px;
+    margin-bottom: 60px;
+}
+
+.cert-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 24px;
+}
+
+.cert-card {
+    background: var(--bg-card);
+    border: 1px solid var(--border-dim);
+    border-radius: 2px;
+    padding: 32px;
+    display: flex;
+    flex-direction: column;
+    transition: var(--transition-liquid);
+}
+
+.cert-card:hover {
+    border-color: var(--accent);
+}
+
+.cert-badge {
+    margin-bottom: 20px;
+}
+
+.cert-badge svg {
+    width: 44px;
+    height: 44px;
+}
+
+.cert-card h3 {
+    font-family: var(--font-display);
+    font-size: 1.05rem;
+    font-weight: 700;
+    color: var(--text-primary);
+    margin-bottom: 8px;
+    line-height: 1.4;
+    text-transform: uppercase;
+}
+
+.cert-issuer {
+    font-size: 0.85rem;
+    color: var(--text-muted);
+    margin-bottom: 20px;
+    flex-grow: 1;
+}
+
+.cert-tag {
+    align-self: flex-start;
+    font-family: var(--font-mono);
+    font-size: 0.65rem;
+    font-weight: 600;
+    padding: 3px 10px;
+    border-radius: 1px;
+    border: 1px solid var(--border-dim);
+    background: var(--bg-dark);
+    color: var(--accent-light);
+}
+
+/* ========== CONTACT SECTION ========== */
+.contact-desc {
+    font-size: 1.1rem;
+    color: var(--text-secondary);
+    margin-top: -50px;
+    margin-bottom: 60px;
+}
+
+.contact-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 24px;
+}
+
+.contact-card {
+    background: var(--bg-card);
+    border: 1px solid var(--border-dim);
+    border-radius: 2px;
+    padding: 36px 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    position: relative;
+    cursor: pointer;
+    transition: var(--transition-liquid);
+}
+
+.contact-card:hover {
+    border-color: var(--accent);
+    transform: translateY(-4px);
+}
+
+.contact-icon {
+    width: 44px;
+    height: 44px;
+    border-radius: 2px;
+    background: var(--bg-dark);
+    border: 1px solid var(--border-dim);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--text-muted);
+    margin-bottom: 20px;
+    transition: var(--transition-quick);
+}
+
+.contact-icon svg {
+    width: 20px;
+    height: 20px;
+    stroke: currentColor;
+    stroke-width: 1.5px;
+}
+
+.contact-card:hover .contact-icon {
+    color: var(--accent-light);
+    border-color: var(--accent);
+}
+
+.contact-label {
+    font-size: 0.7rem;
+    color: var(--text-muted);
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    font-weight: 700;
+    margin-bottom: 6px;
+}
+
+.contact-value {
+    font-family: var(--font-mono);
+    font-size: 0.8rem;
+    font-weight: 500;
+    color: var(--text-primary);
+    word-break: break-all;
+}
+
+.copy-tooltip {
+    position: absolute;
+    bottom: -36px;
+    left: 50%;
+    transform: translateX(-50%) translateY(-5px);
+    background: var(--accent);
+    color: var(--bg-dark);
+    font-family: var(--font-mono);
+    font-size: 0.65rem;
+    font-weight: 700;
+    padding: 5px 12px;
+    border-radius: 1px;
+    opacity: 0;
+    pointer-events: none;
+    transition: var(--transition-quick);
+    white-space: nowrap;
+    z-index: 10;
+}
+
+.copy-tooltip.show {
+    opacity: 1;
+    transform: translateX(-50%) translateY(0);
+}
+
+/* ========== FOOTER ========== */
+.footer {
+    padding: 60px 0;
+    background: rgba(0, 0, 0, 0.35);
+    border-top: 1px solid var(--border-dim);
+    text-align: center;
+    font-family: var(--font-mono);
+    font-size: 0.8rem;
+    color: var(--text-muted);
+    letter-spacing: 0.02em;
+}
+
+/* ========== REVEALS & ANIMATIONS ========== */
+.animate-in {
+    opacity: 0;
+    transform: translateY(16px);
+    animation: slideUp 0.8s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+.delay-1 { animation-delay: 0.1s; }
+.delay-2 { animation-delay: 0.2s; }
+.delay-3 { animation-delay: 0.3s; }
+.delay-4 { animation-delay: 0.4s; }
+.delay-5 { animation-delay: 0.5s; }
+
+@keyframes slideUp {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.reveal {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: var(--transition-liquid);
+}
+
+.reveal.revealed {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* ========== RESPONSIVE BRUTALISM ========== */
+@media (max-width: 1024px) {
+    .hero-container {
+        grid-template-columns: 1fr;
+        gap: 50px;
+    }
+    .hero-content {
+        align-items: center;
+        text-align: center;
+    }
+    .hero-badge {
+        align-self: center;
+    }
+    .hero-desc {
+        margin: 0 auto 32px;
+    }
+    .hero-btns {
+        justify-content: center;
+    }
+    .hero-stats {
+        justify-content: center;
+        width: 100%;
+        max-width: 500px;
+        margin: 0 auto;
+    }
+    .dashboard-panel {
+        max-width: 500px;
+        margin: 0 auto;
+        width: 100%;
+    }
+    .skills-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    .bento-grid {
+        grid-template-columns: 1fr 1fr;
+    }
+    .bento-lg {
+        grid-column: span 2;
+    }
+    .bento-md {
+        grid-column: span 1;
+    }
+    .cert-grid {
+        grid-template-columns: 1fr 1fr;
+    }
+    .contact-grid {
+        grid-template-columns: 1fr 1fr;
+        max-width: 500px;
+        margin: 0 auto;
+    }
+}
+
+@media (max-width: 768px) {
+    .section {
+        padding: 80px 0;
+    }
+    .nav-toggle {
+        display: block;
+    }
+    .nav-menu {
+        position: fixed;
+        top: 0;
+        right: -100%;
+        width: 100%;
+        max-width: 280px;
+        height: 100vh;
+        background: var(--bg-dark);
+        border-left: 1px solid var(--border-dim);
+        flex-direction: column;
+        padding: 100px 32px;
+        align-items: flex-start;
+        gap: 20px;
+        transition: var(--transition-liquid);
+    }
+    .nav-menu.active {
+        right: 0;
+    }
+    .nav-link {
+        font-size: 0.95rem;
+        width: 100%;
+        padding: 10px 0;
+    }
+    .nav-cta {
+        margin-top: 20px;
+        width: 100%;
+        text-align: center;
+    }
+    .bento-grid {
+        grid-template-columns: 1fr;
+    }
+    .bento-lg {
+        grid-column: span 1;
+    }
+    .bento-md {
+        grid-column: span 1;
+    }
+    .skills-grid {
+        grid-template-columns: 1fr;
+    }
+    .projects-grid {
+        grid-template-columns: 1fr;
+    }
+    .education-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (max-width: 480px) {
+    .container {
+        padding: 0 24px;
+    }
+    .hero-stats {
+        grid-template-columns: 1fr;
+        gap: 20px;
+        text-align: center;
+    }
+    .hero-btns {
+        flex-direction: column;
+        width: 100%;
+    }
+    .btn {
+        width: 100%;
+        justify-content: center;
+    }
+    .cert-grid {
+        grid-template-columns: 1fr;
+    }
+    .contact-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* ========== DYNAMIC GLOW CARDS & TERMINAL ========== */
+.glow-card {
+    position: relative;
+    background: rgba(255, 255, 255, 0.85) !important;
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+    transition: border-color 0.4s ease, box-shadow 0.4s ease, transform 0.4s cubic-bezier(0.16, 1, 0.3, 1) !important;
+    box-shadow: 0 8px 30px rgba(15, 23, 42, 0.04);
+}
+
+.glow-card::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    border-radius: inherit;
+    background: radial-gradient(
+        300px circle at var(--mouse-x, 50%) var(--mouse-y, 50%),
+        rgba(var(--accent-rgb), 0.06),
+        transparent 80%
+    );
+    opacity: 0;
+    transition: opacity 0.4s ease;
+    pointer-events: none;
+    z-index: 0;
+}
+
+.glow-card:hover::before {
+    opacity: 1;
+}
+
+.glow-card:hover {
+    border-color: var(--accent);
+    box-shadow: 0 15px 35px rgba(15, 23, 42, 0.08), 0 0 20px rgba(var(--accent-rgb), 0.05);
+}
+
+.glow-card > * {
+    position: relative;
+    z-index: 1;
+}
+
+/* Interactive Diagnostics Terminal CSS */
+.terminal-container {
+    background: #090d16;
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: 2px;
+    padding: 14px;
+    font-family: var(--font-mono);
+    font-size: 0.75rem;
+    color: #94a3b8;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    max-height: 180px;
+    transition: var(--transition-liquid);
+    margin-top: 15px;
+}
+
+.terminal-container:focus-within {
+    border-color: var(--accent);
+    box-shadow: 0 0 15px rgba(var(--accent-rgb), 0.15);
+}
+
+.terminal-history {
+    overflow-y: auto;
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    max-height: 110px;
+    scrollbar-width: thin;
+    padding-right: 4px;
+    text-align: left;
+}
+
+.terminal-history::-webkit-scrollbar {
+    width: 3px;
+}
+.terminal-history::-webkit-scrollbar-thumb {
+    background: rgba(255, 255, 255, 0.2);
+}
+
+.terminal-line {
+    line-height: 1.4;
+    word-break: break-all;
+    white-space: pre-wrap;
+}
+
+.terminal-line.system-msg {
+    color: #64748b;
+}
+
+.terminal-line.user-cmd {
+    color: var(--accent);
+    font-weight: 500;
+}
+
+.terminal-line.response-msg {
+    color: #f8fafc;
+}
+
+.terminal-input-row {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    border-top: 1px solid rgba(255, 255, 255, 0.08);
+    padding-top: 8px;
+}
+
+.terminal-prompt {
+    color: var(--accent);
+    font-weight: bold;
+    user-select: none;
+}
+
+#terminalInput {
+    background: transparent;
+    border: none;
+    outline: none;
+    color: #ffffff;
+    font-family: var(--font-mono);
+    font-size: 0.75rem;
+    flex-grow: 1;
+    width: 100%;
+}
+
+/* ========== ANIMATED GRADIENT BACKGROUND BLOBS ========== */
+.blob-bg {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+    overflow: hidden;
+    background: var(--bg-dark);
+    transition: background-color 0.8s ease;
+}
+.blob {
+    position: absolute;
+    width: min(70vw, 600px);
+    height: min(70vw, 600px);
+    border-radius: 50%;
+    filter: blur(140px);
+    opacity: 0.07;
+    mix-blend-mode: multiply;
+    animation: float 28s infinite alternate ease-in-out;
+    transition: background-color 0.8s ease;
+}
+.blob-1 {
+    top: -10%; left: -10%;
+    background: var(--accent);
+}
+.blob-2 {
+    bottom: -10%; right: -10%;
+    background: var(--accent-light);
+    animation-delay: -6s;
+}
+.blob-3 {
+    top: 40%; left: 45%;
+    background: var(--accent);
+    opacity: 0.04;
+    animation-delay: -12s;
+}
+@keyframes float {
+    0% { transform: translate(0, 0) scale(1); }
+    50% { transform: translate(120px, 90px) scale(1.25); }
+    100% { transform: translate(-60px, -110px) scale(0.9); }
+}
