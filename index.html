@@ -1,982 +1,1303 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Jugendra Pal Singh - Senior Backend Engineer Portfolio. 8+ years experience in Node.js, microservices, AI-integrated systems.">
+    <meta name="description"
+        content="Jugendra Pal Singh - Senior Backend Engineer Portfolio. 8+ years experience in Node.js, microservices, AI-integrated systems.">
     <title>Jugendra Pal Singh | Senior Backend Engineer & AI Architect</title>
     <!-- Google Fonts: Space Grotesk (Display & Tech Sans), JetBrains Mono (Diagnostics) -->
-    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;700&display=swap" rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;700&display=swap"
+        rel="stylesheet">
     <!-- Main Stylesheet -->
     <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
 
-<!-- Custom Smooth Mouse Cursor -->
-<div class="custom-cursor" id="customCursor"></div>
-<div class="custom-cursor-dot" id="customCursorDot"></div>
-
-<!-- Navigation Bar -->
-<nav class="navbar" id="navbar">
-    <div class="nav-container container">
-        <a href="#hero" class="nav-logo">
-            <span class="nav-logo-dot"></span>
-            &lt;JPS /&gt;
-        </a>
-        <button class="nav-toggle" id="navToggle" aria-label="Toggle menu">
-            <span></span><span></span><span></span>
-        </button>
-        <ul class="nav-menu" id="navMenu">
-            <li><a href="#about" class="nav-link">About</a></li>
-            <li><a href="#skills" class="nav-link">Skills</a></li>
-            <li><a href="#experience" class="nav-link">Experience</a></li>
-            <li><a href="#projects" class="nav-link">AI Projects</a></li>
-            <li><a href="#certifications" class="nav-link">Certifications</a></li>
-            <li><a href="#education" class="nav-link">Education</a></li>
-            <li><a href="#contact" class="nav-link nav-cta">Contact</a></li>
-        </ul>
+    <!-- Animated Gradient Background Blobs -->
+    <div class="blob-bg">
+        <div class="blob blob-1"></div>
+        <div class="blob blob-2"></div>
+        <div class="blob blob-3"></div>
     </div>
-</nav>
 
-<!-- Hero Section (Typographic & Real-time Live Panel) -->
-<section class="hero" id="hero">
-    <div class="hero-bg-grid"></div>
-    <div class="hero-container container">
-        <div class="hero-content">
-            <div class="hero-badge animate-in">
-                <span class="badge-dot"></span> Active Operations
-            </div>
-            <p class="hero-greeting animate-in delay-1">Jugendra Pal Singh</p>
-            <h1 class="hero-name animate-in delay-2">
-                <span class="gradient-text">Senior Backend</span><br>Engineer
-            </h1>
-            <p class="hero-title animate-in delay-3">
-                <span id="typewriter"></span><span class="cursor">|</span>
-            </p>
-            <p class="hero-desc animate-in delay-4">
-                Designing, scaling, and maintaining high-performance microservices, database clusters, and Retrieval-Augmented Generation (RAG) backend systems.
-            </p>
-            <div class="hero-btns animate-in delay-5">
-                <a href="#contact" class="btn btn-primary">Connect System</a>
-                <a href="#projects" class="btn btn-outline">Explore Projects</a>
-            </div>
-            
-            <div class="hero-stats animate-in delay-5">
-                <div class="stat">
-                    <div class="stat-num-wrapper">
-                        <span class="stat-num counter" data-target="8">0</span>
-                        <span class="stat-plus">+</span>
-                    </div>
-                    <span class="stat-label">Years Experience</span>
-                </div>
-                <div class="stat">
-                    <div class="stat-num-wrapper">
-                        <span class="stat-num counter" data-target="2">0</span>
-                        <span class="stat-plus">L+</span>
-                    </div>
-                    <span class="stat-label">Users Served</span>
-                </div>
-                <div class="stat">
-                    <div class="stat-num-wrapper">
-                        <span class="stat-num counter" data-target="200">0</span>
-                        <span class="stat-plus">GB+</span>
-                    </div>
-                    <span class="stat-label">Data Managed</span>
-                </div>
-            </div>
-        </div>
-        
-        <!-- Live System Diagnostics Dashboard Panel -->
-        <div class="hero-image animate-in delay-2">
-            <div class="dashboard-panel">
-                <div class="dashboard-header">
-                    <div class="dashboard-dots">
-                        <span class="dashboard-dot active"></span>
-                        <span class="dashboard-dot"></span>
-                        <span class="dashboard-dot"></span>
-                    </div>
-                    <span class="dashboard-title">server-monitor.jps.local</span>
-                </div>
-                <div class="dashboard-body">
-                    <div class="monitor-row">
-                        <span class="monitor-label">STATUS</span>
-                        <span class="monitor-val success">ONLINE (ap-south-1)</span>
-                    </div>
-                    <div class="monitor-row">
-                        <span class="monitor-label">ENGINE</span>
-                        <span class="monitor-val">Node.js 22.x LTS</span>
-                    </div>
-                    <div class="monitor-row">
-                        <span class="monitor-label">LATENCY</span>
-                        <span class="monitor-val" id="latencyVal">0.9 ms</span>
-                    </div>
-                    <div class="monitor-row">
-                        <span class="monitor-label">DB SYNC</span>
-                        <span class="monitor-val success">100% OK</span>
-                    </div>
-                    
-                    <!-- Live Sparkline CPU Graph -->
-                    <div class="sys-chart-container">
-                        <div class="chart-header">
-                            <span>CPU LOAD (REAL-TIME)</span>
-                            <span id="liveCpuText">14.2%</span>
-                        </div>
-                        <canvas id="cpuGraph" class="cpu-graph"></canvas>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-</section>
+    <!-- Scroll Progress Indicator -->
+    <div class="scroll-progress" id="scrollProgress"></div>
 
-<!-- About Section (Bento Grid) -->
-<section class="section" id="about">
-    <div class="container">
-        <div class="section-header reveal">
-            <span class="section-num">01 // IDENTITY</span>
-            <h2 class="section-title">Overview</h2>
-            <div class="section-line"></div>
-        </div>
-        
-        <div class="bento-grid">
-            <!-- Large Biography Cell -->
-            <div class="bento-item bento-lg reveal">
-                <h3>System Architecture & Operations</h3>
-                <div class="bento-large-text">
-                    <p>I build high-concurrency, highly resilient backend systems. With a strong grounding in Node.js, microservices architecture, and API gateways, I design data structures capable of processing complex transaction payloads for enterprise and national government platforms.</p>
-                    <p>My technical work focuses on expanding backend capabilities to incorporate AI workflows. This includes implementing Retrieval-Augmented Generation (RAG) pipelines, setting up vector database clusters, building semantic search indexing systems, and developing fast Python/FastAPI microservices.</p>
-                </div>
-            </div>
-            
-            <!-- Mid Stats Cell -->
-            <div class="bento-item bento-md reveal delay-1">
-                <div>
-                    <h3>Operations Scale</h3>
-                    <p class="bento-desc">Production system metrics managed across unified platforms.</p>
-                </div>
-                
-                <div class="bento-stat-box">
-                    <div class="bento-stat-num">8+ Yrs</div>
-                    <div class="bento-stat-label">Core Backend Development</div>
-                </div>
-                
-                <div class="bento-stat-box">
-                    <div class="bento-stat-num">200GB+</div>
-                    <div class="bento-stat-label">Relational & NoSQL Datastores</div>
-                </div>
-            </div>
-            
-            <!-- Small Meta Info Cells -->
-            <div class="bento-item bento-sm reveal delay-1">
-                <div class="bento-meta-list">
-                    <div class="bento-meta-item">
-                        <div class="bento-meta-icon">
-                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M15 10.5a3 3 0 11-6 0 3 3 0 016 0z" /><path stroke-linecap="round" stroke-linejoin="round" d="M19.5 10.5c0 7.142-7.5 11.25-7.5 11.25S4.5 17.642 4.5 10.5a7.5 7.5 0 1115 0z" /></svg>
-                        </div>
-                        <div class="bento-meta-info">
-                            <span class="bento-meta-label">Location</span>
-                            <span class="bento-meta-val">India (UTC+5:30)</span>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            
-            <div class="bento-item bento-sm reveal delay-2">
-                <div class="bento-meta-list">
-                    <div class="bento-meta-item">
-                        <div class="bento-meta-icon">
-                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M4.263 15.918a9 9 0 0015.474 0M12 2.25v19.5m-9.75-9.75h19.5" /></svg>
-                        </div>
-                        <div class="bento-meta-info">
-                            <span class="bento-meta-label">Specialty</span>
-                            <span class="bento-meta-val">Microservices & AI</span>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            
-            <div class="bento-item bento-sm reveal delay-3">
-                <div class="bento-meta-list">
-                    <div class="bento-meta-item">
-                        <div class="bento-meta-icon">
-                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M12 6.042A8.967 8.967 0 006 3.75c-1.052 0-2.062.18-3 .512v14.25A8.987 8.987 0 016 18c2.305 0 4.408.867 6 2.292m0-14.25a8.966 8.966 0 016-2.292c1.052 0 2.062.18 3 .512v14.25A8.987 8.987 0 0018 18a8.967 8.967 0 00-6 2.292m0-14.25v14.25" /></svg>
-                        </div>
-                        <div class="bento-meta-info">
-                            <span class="bento-meta-label">Education</span>
-                            <span class="bento-meta-val">MCA, AMU</span>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-</section>
+    <!-- Custom Smooth Mouse Cursor -->
+    <div class="custom-cursor" id="customCursor"></div>
+    <div class="custom-cursor-dot" id="customCursorDot"></div>
 
-<!-- Skills Section -->
-<section class="section section-alt" id="skills">
-    <div class="container">
-        <div class="section-header reveal">
-            <span class="section-num">02 // CAPABILITIES</span>
-            <h2 class="section-title">Core Competencies</h2>
-            <div class="section-line"></div>
+    <!-- Navigation Bar -->
+    <nav class="navbar" id="navbar">
+        <div class="nav-container container">
+            <a href="#hero" class="nav-logo">
+                <span class="nav-logo-dot"></span>
+                &lt;JPS /&gt;
+            </a>
+            <button class="nav-toggle" id="navToggle" aria-label="Toggle menu">
+                <span></span><span></span><span></span>
+            </button>
+            <ul class="nav-menu" id="navMenu">
+                <li><a href="#about" class="nav-link">About</a></li>
+                <li><a href="#skills" class="nav-link">Skills</a></li>
+                <li><a href="#experience" class="nav-link">Experience</a></li>
+                <li><a href="#projects" class="nav-link">AI Projects</a></li>
+                <li><a href="#certifications" class="nav-link">Certifications</a></li>
+                <li><a href="#education" class="nav-link">Education</a></li>
+                <li class="theme-selector-item">
+                    <div class="theme-selector">
+                        <button class="theme-btn theme-btn-brass active" data-theme="brass" title="Obsidian & Gold"></button>
+                        <button class="theme-btn theme-btn-mint" data-theme="mint" title="Hyper Neon Mint"></button>
+                        <button class="theme-btn theme-btn-crimson" data-theme="crimson" title="Cyberpunk Crimson"></button>
+                    </div>
+                </li>
+                <li><a href="#contact" class="nav-link nav-cta">Contact</a></li>
+            </ul>
         </div>
-        
-        <div class="skills-grid">
-            <div class="skill-category reveal">
-                <div class="skill-cat-header">
-                    <div class="skill-cat-icon">
-                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M5.25 14.25h13.5m-13.5 0a3 3 0 01-3-3m3 3a3 3 0 100 6h13.5a3 3 0 100-6m-16.5-3a3 3 0 013-3h13.5a3 3 0 013 3m-19.5 0a3 3 0 003 3m13.5-3a3 3 0 003 3m-9.75-3h.008v.008H12v-.008z" /></svg>
-                    </div>
-                    <h3>Backend & Architecture</h3>
-                </div>
-                <div class="skill-tags">
-                    <span class="tag">Node.js</span>
-                    <span class="tag">JavaScript</span>
-                    <span class="tag">Express.js</span>
-                    <span class="tag">REST APIs</span>
-                    <span class="tag">Microservices</span>
-                    <span class="tag">Scalable Design</span>
-                    <span class="tag">High Concurrency</span>
-                    <span class="tag">System Design</span>
-                </div>
-            </div>
-            
-            <div class="skill-category reveal delay-1">
-                <div class="skill-cat-header">
-                    <div class="skill-cat-icon">
-                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M20.25 6.375c0 2.278-3.694 4.125-8.25 4.125S3.75 8.653 3.75 6.375m16.5 0c0-2.278-3.694-4.125-8.25-4.125S3.75 4.097 3.75 6.375m16.5 0v11.25c0 2.278-3.694 4.125-8.25 4.125s-8.25-1.847-8.25-4.125V6.375m16.5 0v3.75m-16.5-3.75v3.75m16.5 0v3.75C20.25 16.128 16.556 17.97 12 17.97s-8.25-1.842-8.25-4.125v-3.75m16.5 0v3.75" /></svg>
-                    </div>
-                    <h3>Databases & Caching</h3>
-                </div>
-                <div class="skill-tags">
-                    <span class="tag">MongoDB</span>
-                    <span class="tag">MySQL</span>
-                    <span class="tag">Redis Cluster</span>
-                    <span class="tag">Session Store</span>
-                    <span class="tag">Caching Strategies</span>
-                    <span class="tag">Data Indexes</span>
-                    <span class="tag">Transaction Safety</span>
-                </div>
-            </div>
-            
-            <div class="skill-category reveal delay-2">
-                <div class="skill-cat-header">
-                    <div class="skill-cat-icon">
-                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M9.813 15.904L9 21l8.904-4.43c1.002-.5 2.018-1 3.018-1.542.946-.512 1.83-1.127 2.656-1.82a9.016 9.016 0 00-11.458-13.9c-2.483 1.9-4.323 4.7-5.184 7.9a9.022 9.022 0 003.887 9.596z" /></svg>
-                    </div>
-                    <h3>AI & Advanced Frameworks</h3>
-                </div>
-                <div class="skill-tags">
-                    <span class="tag tag-ai">LLM Integration</span>
-                    <span class="tag tag-ai">RAG Pipelines</span>
-                    <span class="tag tag-ai">Semantic Search</span>
-                    <span class="tag tag-ai">Embeddings</span>
-                    <span class="tag tag-ai">Vector DBs</span>
-                    <span class="tag tag-ai">OpenAI APIs</span>
-                    <span class="tag tag-ai">Python</span>
-                    <span class="tag tag-ai">FastAPI</span>
-                    <span class="tag tag-ai">LangChain</span>
-                </div>
-            </div>
-            
-            <div class="skill-category reveal delay-3">
-                <div class="skill-cat-header">
-                    <div class="skill-cat-icon">
-                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M11.42 15.17L17.25 21A2.67 2.67 0 0021 17.25l-5.83-5.83m-3.75 3.75a3.75 3.75 0 11-5.3-5.3 3.75 3.75 0 015.3 5.3zm6.408-9.083a3.75 3.75 0 110 5.3 3.75 3.75 0 010-5.3z" /></svg>
-                    </div>
-                    <h3>AI Productivity Tools</h3>
-                </div>
-                <div class="skill-tags">
-                    <span class="tag">ChatGPT</span>
-                    <span class="tag">DeepSeek</span>
-                    <span class="tag">GitHub Copilot</span>
-                    <span class="tag">Gemini</span>
-                    <span class="tag">Claude</span>
-                    <span class="tag">Perplexity</span>
-                </div>
-            </div>
-        </div>
-    </div>
-</section>
+    </nav>
 
-<!-- Experience Section -->
-<section class="section" id="experience">
-    <div class="container">
-        <div class="section-header reveal">
-            <span class="section-num">03 // HISTORY</span>
-            <h2 class="section-title">Deployments & Systems</h2>
-            <div class="section-line"></div>
-        </div>
-        
-        <div class="timeline">
-            <!-- NetProphets -->
-            <div class="timeline-item reveal">
-                <div class="timeline-dot"></div>
-                <div class="timeline-content">
-                    <div class="timeline-header">
-                        <div class="timeline-title-group">
-                            <h3>Senior Software Engineer</h3>
-                            <span class="timeline-company">NetProphets Cyberworks Pvt Ltd</span>
-                        </div>
-                        <span class="timeline-date">Nov 2021 – Present</span>
-                    </div>
-                    <div class="timeline-projects">
-                        <div class="project-block">
-                            <h4>🏥 Unified Health Platform <span class="project-sub">(NCD, UWIN, Nikshay, SATH, JANANI)</span></h4>
-                            <ul>
-                                <li>Led backend engineering for health registry platforms, designing secure microservice integration schemas.</li>
-                                <li>Created Patient Master Service utilizing deterministic matching models to filter and merge duplicate records.</li>
-                                <li>Optimized internal service routing schemes, cutting overall system latency by 20%.</li>
-                            </ul>
-                        </div>
-                        <div class="project-block">
-                            <h4>🏥 Ayushman Arogya Mandir – Pan India</h4>
-                            <ul>
-                                <li>Architected stable backend systems for national healthcare platform serving 2+ lakh active registry instances.</li>
-                                <li>Managed 200GB+ MongoDB and MySQL cluster stores with custom index schemas to accelerate analytics queries.</li>
-                                <li>Structured multi-node Redis replication for high-availability session caching.</li>
-                            </ul>
-                        </div>
-                        <div class="project-block">
-                            <h4>🏃 Fit India Movement</h4>
-                            <ul>
-                                <li>Designed high-throughput REST controllers to support multi-million user event registration spikes.</li>
-                                <li>Configured query queues to prevent database locking bottlenecks during heavy traffic windows.</li>
-                            </ul>
-                        </div>
-                        <div class="project-block">
-                            <h4>📋 UKPSC Portal</h4>
-                            <ul>
-                                <li>Built candidate objection workflows and secure admin review desks supporting over 29,000 active users.</li>
-                            </ul>
-                        </div>
-                        <div class="project-block">
-                            <h4>📊 NAS Survey & PGI Analytics</h4>
-                            <ul>
-                                <li>Constructed scalable data processing services for national education data aggregation pipelines.</li>
-                            </ul>
-                        </div>
-                    </div>
+    <!-- Hero Section (Typographic & Real-time Live Panel) -->
+    <section class="hero" id="hero">
+        <div class="hero-bg-grid"></div>
+        <div class="hero-container container">
+            <div class="hero-content">
+                <div class="hero-badge animate-in">
+                    <span class="badge-dot"></span> Active Operations
                 </div>
-            </div>
-            
-            <!-- Provab -->
-            <div class="timeline-item reveal">
-                <div class="timeline-dot"></div>
-                <div class="timeline-content">
-                    <div class="timeline-header">
-                        <div class="timeline-title-group">
-                            <h3>Software Engineer</h3>
-                            <span class="timeline-company">Provab Technosoft</span>
-                        </div>
-                        <span class="timeline-date">Aug 2021 – Oct 2021</span>
-                    </div>
-                    <div class="timeline-projects">
-                        <div class="project-block">
-                            <h4>🎮 Sports Analytics Engine</h4>
-                            <ul>
-                                <li>Developed clean REST API structures in Express for live tournament tracking systems.</li>
-                                <li>Wrote complex MongoDB aggregate procedures to sync telemetry arrays.</li>
-                            </ul>
-                        </div>
-                    </div>
+                <p class="hero-greeting animate-in delay-1">Jugendra Pal Singh</p>
+                <h1 class="hero-name animate-in delay-2">
+                    <span class="gradient-text">Senior Backend</span><br>Engineer
+                </h1>
+                <p class="hero-title animate-in delay-3">
+                    <span id="typewriter"></span><span class="cursor">|</span>
+                </p>
+                <p class="hero-desc animate-in delay-4">
+                    Designing, scaling, and maintaining high-performance microservices, database clusters, and
+                    Retrieval-Augmented Generation (RAG) backend systems.
+                </p>
+                <div class="hero-btns animate-in delay-5">
+                    <a href="#contact" class="btn btn-primary">Connect System</a>
+                    <a href="#projects" class="btn btn-outline">Explore Projects</a>
                 </div>
-            </div>
-            
-            <!-- Day Night -->
-            <div class="timeline-item reveal">
-                <div class="timeline-dot"></div>
-                <div class="timeline-content">
-                    <div class="timeline-header">
-                        <div class="timeline-title-group">
-                            <h3>Software Engineer</h3>
-                            <span class="timeline-company">Day Night Technologies Pvt Ltd</span>
-                        </div>
-                        <span class="timeline-date">Feb 2021 – Sep 2021</span>
-                    </div>
-                    <div class="timeline-projects">
-                        <div class="project-block">
-                            <h4>📈 Financial & Trading Services</h4>
-                            <ul>
-                                <li>Built API modules linking web client dashboards to MetaTrader 4 engines for automated trade alerts.</li>
-                                <li>Wrote back-testing scripts to record execution timing across transactional services.</li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            
-            <!-- Loud Medics -->
-            <div class="timeline-item reveal">
-                <div class="timeline-dot"></div>
-                <div class="timeline-content">
-                    <div class="timeline-header">
-                        <div class="timeline-title-group">
-                            <h3>Software Engineer</h3>
-                            <span class="timeline-company">Loud Medics</span>
-                        </div>
-                        <span class="timeline-date">May 2019 – Feb 2021</span>
-                    </div>
-                    <div class="timeline-projects">
-                        <div class="project-block">
-                            <h4>🛒 Gaming & E-Commerce Core</h4>
-                            <ul>
-                                <li>Authored high-performance order routing scripts for scalable inventory checkout systems.</li>
-                                <li>Set up secure real-time notification modules with WebSockets and Node.js.</li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            
-            <!-- ZMQ -->
-            <div class="timeline-item reveal">
-                <div class="timeline-dot"></div>
-                <div class="timeline-content">
-                    <div class="timeline-header">
-                        <div class="timeline-title-group">
-                            <h3>Software Engineer</h3>
-                            <span class="timeline-company">ZMQ, Delhi</span>
-                        </div>
-                        <span class="timeline-date">Feb 2016 – Jun 2018</span>
-                    </div>
-                    <div class="timeline-projects">
-                        <div class="project-block">
-                            <h4>🌍 Healthcare Solutions for Rural Domains</h4>
-                            <ul>
-                                <li>Designed lightweight, offline-resilient sync REST API engines for health NGO portals.</li>
-                                <li>Configured databases to compress response size in areas with poor network conditions.</li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-</section>
 
-<!-- AI Projects Section (Bento Grid / Spec Card Style) -->
-<section class="section section-alt" id="projects">
-    <div class="container">
-        <div class="section-header reveal">
-            <span class="section-num">04 // PORTFOLIO</span>
-            <h2 class="section-title">AI Projects</h2>
-            <div class="section-line"></div>
+                <div class="hero-stats animate-in delay-5">
+                    <div class="stat">
+                        <div class="stat-num-wrapper">
+                            <span class="stat-num counter" data-target="8">0</span>
+                            <span class="stat-plus">+</span>
+                        </div>
+                        <span class="stat-label">Years Experience</span>
+                    </div>
+                    <div class="stat">
+                        <div class="stat-num-wrapper">
+                            <span class="stat-num counter" data-target="2">0</span>
+                            <span class="stat-plus">L+</span>
+                        </div>
+                        <span class="stat-label">Users Served</span>
+                    </div>
+                    <div class="stat">
+                        <div class="stat-num-wrapper">
+                            <span class="stat-num counter" data-target="200">0</span>
+                            <span class="stat-plus">GB+</span>
+                        </div>
+                        <span class="stat-label">Data Managed</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Live System Diagnostics Dashboard Panel -->
+            <div class="hero-image animate-in delay-2">
+                <div class="dashboard-panel">
+                    <div class="dashboard-header">
+                        <div class="dashboard-dots">
+                            <span class="dashboard-dot active"></span>
+                            <span class="dashboard-dot"></span>
+                            <span class="dashboard-dot"></span>
+                        </div>
+                        <span class="dashboard-title">server-monitor.jps.local</span>
+                    </div>
+                    <div class="dashboard-body">
+                        <div class="monitor-row">
+                            <span class="monitor-label">STATUS</span>
+                            <span class="monitor-val success">ONLINE (ap-south-1)</span>
+                        </div>
+                        <div class="monitor-row">
+                            <span class="monitor-label">ENGINE</span>
+                            <span class="monitor-val">Node.js 22.x LTS</span>
+                        </div>
+                        <div class="monitor-row">
+                            <span class="monitor-label">LATENCY</span>
+                            <span class="monitor-val" id="latencyVal">0.9 ms</span>
+                        </div>
+                        <div class="monitor-row">
+                            <span class="monitor-label">DB SYNC</span>
+                            <span class="monitor-val success">100% OK</span>
+                        </div>
+
+                        <!-- Live Sparkline CPU Graph -->
+                        <div class="sys-chart-container">
+                            <div class="chart-header">
+                                <span>CPU LOAD (REAL-TIME)</span>
+                                <span id="liveCpuText">14.2%</span>
+                            </div>
+                            <canvas id="cpuGraph" class="cpu-graph"></canvas>
+                        </div>
+
+                        <!-- Interactive Diagnostics Terminal -->
+                        <div class="terminal-container">
+                            <div class="terminal-history" id="terminalHistory">
+                                <div class="terminal-line system-msg">SYSTEM DIAGNOSTICS SHELL [v1.0.8]</div>
+                                <div class="terminal-line system-msg">Type 'help' to initialize telemetry commands.</div>
+                            </div>
+                            <div class="terminal-input-row">
+                                <span class="terminal-prompt">jps_local$</span>
+                                <input type="text" id="terminalInput" placeholder="type a command..." autocomplete="off" spellcheck="false">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
-        
-        <div class="projects-grid">
-            <!-- Project 1 -->
-            <div class="project-card reveal">
-                <div class="project-icon">
-                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M12 18h.008v.008H12V18zm0-4.5h.008v.008H12V13.5l-2.25-2.25m2.25 2.25l2.25-2.25M3 7.5A2.25 2.25 0 015.25 5.25h13.5A2.25 2.25 0 0121 7.5v9a2.25 2.25 0 01-2.25 2.25H5.25A2.25 2.25 0 013 16.5v-9z" /></svg>
+    </section>
+
+    <!-- About Section (Bento Grid) -->
+    <section class="section" id="about">
+        <div class="container">
+            <div class="section-header reveal">
+                <span class="section-num">01 // IDENTITY</span>
+                <h2 class="section-title">Overview</h2>
+                <div class="section-line"></div>
+            </div>
+
+            <div class="bento-grid">
+                <!-- Large Biography Cell -->
+                <div class="bento-item bento-lg reveal">
+                    <h3>System Architecture & Operations</h3>
+                    <div class="bento-large-text">
+                        <p>I build high-concurrency, highly resilient backend systems. With a strong grounding in
+                            Node.js, microservices architecture, and API gateways, I design data structures capable of
+                            processing complex transaction payloads for enterprise and national government platforms.
+                        </p>
+                        <p>My technical work focuses on expanding backend capabilities to incorporate AI workflows. This
+                            includes implementing Retrieval-Augmented Generation (RAG) pipelines, setting up vector
+                            database clusters, building semantic search indexing systems, and developing fast
+                            Python/FastAPI microservices.</p>
+                    </div>
                 </div>
-                <h3>DocuMind AI</h3>
-                <p class="project-subtitle">AI-Powered Document Intelligence System</p>
-                
-                <!-- System Specs Table -->
-                <table class="project-spec-table">
-                    <tr>
-                        <td class="project-spec-label">Architecture</td>
-                        <td class="project-spec-val">RAG Pipeline</td>
-                    </tr>
-                    <tr>
-                        <td class="project-spec-label">Language</td>
-                        <td class="project-spec-val">Node.js (TypeScript)</td>
-                    </tr>
-                    <tr>
-                        <td class="project-spec-label">Vector Store</td>
-                        <td class="project-spec-val">Pinecone DB (Cosine Sim)</td>
-                    </tr>
-                    <tr>
-                        <td class="project-spec-label">Embeddings</td>
-                        <td class="project-spec-val">OpenAI text-embedding-3-small</td>
-                    </tr>
-                </table>
-                
-                <ul>
-                    <li>Created a dynamic Retrieval-Augmented Generation (RAG) backend framework for processing large PDF text arrays.</li>
-                    <li>Developed highly efficient custom token chunking systems, maintaining logical context blocks.</li>
-                    <li>Integrated Pinecone vector index querying, achieving sub-200ms document response latency.</li>
-                </ul>
-                
-                <div class="project-tags">
-                    <span>Node.js</span>
-                    <span>Pinecone</span>
-                    <span>RAG</span>
-                    <span>OpenAI API</span>
+
+                <!-- Mid Stats Cell -->
+                <div class="bento-item bento-md reveal delay-1">
+                    <div>
+                        <h3>Operations Scale</h3>
+                        <p class="bento-desc">Production system metrics managed across unified platforms.</p>
+                    </div>
+
+                    <div class="bento-stat-box">
+                        <div class="bento-stat-num">8+ Yrs</div>
+                        <div class="bento-stat-label">Core Backend Development</div>
+                    </div>
+
+                    <div class="bento-stat-box">
+                        <div class="bento-stat-num">200GB+</div>
+                        <div class="bento-stat-label">Relational & NoSQL Datastores</div>
+                    </div>
                 </div>
-                
-                <a href="https://github.com/jogi6643/documnind" target="_blank" class="project-link">
-                    Source Code
-                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" /></svg>
+
+                <!-- Small Meta Info Cells -->
+                <div class="bento-item bento-sm reveal delay-1">
+                    <div class="bento-meta-list">
+                        <div class="bento-meta-item">
+                            <div class="bento-meta-icon">
+                                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                                    stroke="currentColor">
+                                    <path stroke-linecap="round" stroke-linejoin="round"
+                                        d="M15 10.5a3 3 0 11-6 0 3 3 0 016 0z" />
+                                    <path stroke-linecap="round" stroke-linejoin="round"
+                                        d="M19.5 10.5c0 7.142-7.5 11.25-7.5 11.25S4.5 17.642 4.5 10.5a7.5 7.5 0 1115 0z" />
+                                </svg>
+                            </div>
+                            <div class="bento-meta-info">
+                                <span class="bento-meta-label">Location</span>
+                                <span class="bento-meta-val">India (UTC+5:30)</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="bento-item bento-sm reveal delay-2">
+                    <div class="bento-meta-list">
+                        <div class="bento-meta-item">
+                            <div class="bento-meta-icon">
+                                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                                    stroke="currentColor">
+                                    <path stroke-linecap="round" stroke-linejoin="round"
+                                        d="M4.263 15.918a9 9 0 0015.474 0M12 2.25v19.5m-9.75-9.75h19.5" />
+                                </svg>
+                            </div>
+                            <div class="bento-meta-info">
+                                <span class="bento-meta-label">Specialty</span>
+                                <span class="bento-meta-val">Microservices & AI</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="bento-item bento-sm reveal delay-3">
+                    <div class="bento-meta-list">
+                        <div class="bento-meta-item">
+                            <div class="bento-meta-icon">
+                                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                                    stroke="currentColor">
+                                    <path stroke-linecap="round" stroke-linejoin="round"
+                                        d="M12 6.042A8.967 8.967 0 006 3.75c-1.052 0-2.062.18-3 .512v14.25A8.987 8.987 0 016 18c2.305 0 4.408.867 6 2.292m0-14.25a8.966 8.966 0 016-2.292c1.052 0 2.062.18 3 .512v14.25A8.987 8.987 0 0018 18a8.967 8.967 0 00-6 2.292m0-14.25v14.25" />
+                                </svg>
+                            </div>
+                            <div class="bento-meta-info">
+                                <span class="bento-meta-label">Education</span>
+                                <span class="bento-meta-val">MCA, AMU</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Skills Section -->
+    <section class="section section-alt" id="skills">
+        <div class="container">
+            <div class="section-header reveal">
+                <span class="section-num">02 // CAPABILITIES</span>
+                <h2 class="section-title">Core Competencies</h2>
+                <div class="section-line"></div>
+            </div>
+
+            <div class="skills-grid">
+                <div class="skill-category reveal">
+                    <div class="skill-cat-header">
+                        <div class="skill-cat-icon">
+                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                                stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round"
+                                    d="M5.25 14.25h13.5m-13.5 0a3 3 0 01-3-3m3 3a3 3 0 100 6h13.5a3 3 0 100-6m-16.5-3a3 3 0 013-3h13.5a3 3 0 013 3m-19.5 0a3 3 0 003 3m13.5-3a3 3 0 003 3m-9.75-3h.008v.008H12v-.008z" />
+                            </svg>
+                        </div>
+                        <h3>Backend & Architecture</h3>
+                    </div>
+                    <div class="skill-tags">
+                        <span class="tag">Node.js</span>
+                        <span class="tag">JavaScript</span>
+                        <span class="tag">Express.js</span>
+                        <span class="tag">REST APIs</span>
+                        <span class="tag">Microservices</span>
+                        <span class="tag">Scalable Design</span>
+                        <span class="tag">High Concurrency</span>
+                        <span class="tag">System Design</span>
+                    </div>
+                </div>
+
+                <div class="skill-category reveal delay-1">
+                    <div class="skill-cat-header">
+                        <div class="skill-cat-icon">
+                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                                stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round"
+                                    d="M20.25 6.375c0 2.278-3.694 4.125-8.25 4.125S3.75 8.653 3.75 6.375m16.5 0c0-2.278-3.694-4.125-8.25-4.125S3.75 4.097 3.75 6.375m16.5 0v11.25c0 2.278-3.694 4.125-8.25 4.125s-8.25-1.847-8.25-4.125V6.375m16.5 0v3.75m-16.5-3.75v3.75m16.5 0v3.75C20.25 16.128 16.556 17.97 12 17.97s-8.25-1.842-8.25-4.125v-3.75m16.5 0v3.75" />
+                            </svg>
+                        </div>
+                        <h3>Databases & Caching</h3>
+                    </div>
+                    <div class="skill-tags">
+                        <span class="tag">MongoDB</span>
+                        <span class="tag">MySQL</span>
+                        <span class="tag">Redis Cluster</span>
+                        <span class="tag">Session Store</span>
+                        <span class="tag">Caching Strategies</span>
+                        <span class="tag">Data Indexes</span>
+                        <span class="tag">Transaction Safety</span>
+                    </div>
+                </div>
+
+                <div class="skill-category reveal delay-2">
+                    <div class="skill-cat-header">
+                        <div class="skill-cat-icon">
+                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                                stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round"
+                                    d="M9.813 15.904L9 21l8.904-4.43c1.002-.5 2.018-1 3.018-1.542.946-.512 1.83-1.127 2.656-1.82a9.016 9.016 0 00-11.458-13.9c-2.483 1.9-4.323 4.7-5.184 7.9a9.022 9.022 0 003.887 9.596z" />
+                            </svg>
+                        </div>
+                        <h3>AI & Advanced Frameworks</h3>
+                    </div>
+                    <div class="skill-tags">
+                        <span class="tag tag-ai">LLM Integration</span>
+                        <span class="tag tag-ai">RAG Pipelines</span>
+                        <span class="tag tag-ai">Semantic Search</span>
+                        <span class="tag tag-ai">Embeddings</span>
+                        <span class="tag tag-ai">Vector DBs</span>
+                        <span class="tag tag-ai">OpenAI APIs</span>
+                        <span class="tag tag-ai">Python</span>
+                        <span class="tag tag-ai">FastAPI</span>
+                        <span class="tag tag-ai">LangChain</span>
+                    </div>
+                </div>
+
+                <div class="skill-category reveal delay-3">
+                    <div class="skill-cat-header">
+                        <div class="skill-cat-icon">
+                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                                stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round"
+                                    d="M11.42 15.17L17.25 21A2.67 2.67 0 0021 17.25l-5.83-5.83m-3.75 3.75a3.75 3.75 0 11-5.3-5.3 3.75 3.75 0 015.3 5.3zm6.408-9.083a3.75 3.75 0 110 5.3 3.75 3.75 0 010-5.3z" />
+                            </svg>
+                        </div>
+                        <h3>AI Productivity Tools</h3>
+                    </div>
+                    <div class="skill-tags">
+                        <span class="tag">ChatGPT</span>
+                        <span class="tag">DeepSeek</span>
+                        <span class="tag">GitHub Copilot</span>
+                        <span class="tag">Gemini</span>
+                        <span class="tag">Claude</span>
+                        <span class="tag">Perplexity</span>
+                    </div>
+                </div>
+
+                <!-- AWS Cloud Services -->
+                <div class="skill-category reveal delay-4">
+                    <div class="skill-cat-header">
+                        <div class="skill-cat-icon">
+                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                                stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round"
+                                    d="M2.25 15a4.5 4.5 0 004.5 4.5H18a3.75 3.75 0 001.332-7.257 3 3 0 00-3.758-3.848 5.25 5.25 0 00-10.233 2.33A4.502 4.502 0 002.25 15z" />
+                            </svg>
+                        </div>
+                        <h3>Cloud Services (AWS)</h3>
+                    </div>
+                    <div class="skill-tags">
+                        <span class="tag">AWS IAM</span>
+                        <span class="tag">AWS EC2</span>
+                        <span class="tag">AWS S3</span>
+                        <span class="tag">AWS RDS</span>
+                        <span class="tag">CloudWatch</span>
+                        <span class="tag">Auto Scaling</span>
+                    </div>
+                </div>
+
+                <!-- Containers & DevOps -->
+                <div class="skill-category reveal delay-5">
+                    <div class="skill-cat-header">
+                        <div class="skill-cat-icon">
+                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                                stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round"
+                                    d="M10.34 15.84c-.68-.69-.68-1.8 0-2.49l3.19-3.19c.68-.69 1.8-.68 2.49 0l3.19 3.19c.69.68.69 1.8 0 2.49l-3.19 3.19c-.69.69-1.8.69-2.49 0l-3.19-3.19z" />
+                                <path stroke-linecap="round" stroke-linejoin="round"
+                                    d="M4.785 8.16l3.19-3.19c.68-.69 1.8-.68 2.49 0l3.19 3.19c.69.68.69 1.8 0 2.49l-3.19 3.19c-.69.69-1.8.69-2.49 0l-3.19-3.19z" />
+                            </svg>
+                        </div>
+                        <h3>Containers & DevOps</h3>
+                    </div>
+                    <div class="skill-tags">
+                        <span class="tag tag-ai">Docker</span>
+                        <span class="tag">Containers</span>
+                        <span class="tag">CI / CD</span>
+                        <span class="tag">GitHub Actions</span>
+                        <span class="tag">Git</span>
+                        <span class="tag">Linux</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Experience Section -->
+    <section class="section" id="experience">
+        <div class="container">
+            <div class="section-header reveal">
+                <span class="section-num">03 // HISTORY</span>
+                <h2 class="section-title">Deployments & Systems</h2>
+                <div class="section-line"></div>
+            </div>
+
+            <div class="timeline">
+                <!-- NetProphets -->
+                <div class="timeline-item reveal">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-content">
+                        <div class="timeline-header">
+                            <div class="timeline-title-group">
+                                <h3>Senior Software Engineer</h3>
+                                <span class="timeline-company">NetProphets Cyberworks Pvt Ltd</span>
+                            </div>
+                            <span class="timeline-date">Nov 2021 – Present</span>
+                        </div>
+                        <div class="timeline-projects">
+                            <div class="project-block">
+                                <h4>🏥 Unified Health Platform <span class="project-sub">(NCD, UWIN, Nikshay, SATH,
+                                        JANANI)</span></h4>
+                                <ul>
+                                    <li>Led backend engineering for health registry platforms, designing secure
+                                        microservice integration schemas.</li>
+                                    <li>Created Patient Master Service utilizing deterministic matching models to filter
+                                        and merge duplicate records.</li>
+                                    <li>Optimized internal service routing schemes, cutting overall system latency by
+                                        20%.</li>
+                                </ul>
+                            </div>
+                            <div class="project-block">
+                                <h4>🏥 Ayushman Arogya Mandir – Pan India</h4>
+                                <ul>
+                                    <li>Architected stable backend systems for national healthcare platform serving 2+
+                                        lakh active registry instances.</li>
+                                    <li>Managed 200GB+ MongoDB and MySQL cluster stores with custom index schemas to
+                                        accelerate analytics queries.</li>
+                                    <li>Structured multi-node Redis replication for high-availability session caching.
+                                    </li>
+                                </ul>
+                            </div>
+                            <div class="project-block">
+                                <h4>🏃 Fit India Movement</h4>
+                                <ul>
+                                    <li>Designed high-throughput REST controllers to support multi-million user event
+                                        registration spikes.</li>
+                                    <li>Configured query queues to prevent database locking bottlenecks during heavy
+                                        traffic windows.</li>
+                                </ul>
+                            </div>
+                            <div class="project-block">
+                                <h4>📋 UKPSC Portal</h4>
+                                <ul>
+                                    <li>Built candidate objection workflows and secure admin review desks supporting
+                                        over 29,000 active users.</li>
+                                </ul>
+                            </div>
+                            <div class="project-block">
+                                <h4>📊 NAS Survey & PGI Analytics</h4>
+                                <ul>
+                                    <li>Constructed scalable data processing services for national education data
+                                        aggregation pipelines.</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Provab -->
+                <div class="timeline-item reveal">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-content">
+                        <div class="timeline-header">
+                            <div class="timeline-title-group">
+                                <h3>Software Engineer</h3>
+                                <span class="timeline-company">Provab Technosoft</span>
+                            </div>
+                            <span class="timeline-date">Aug 2021 – Oct 2021</span>
+                        </div>
+                        <div class="timeline-projects">
+                            <div class="project-block">
+                                <h4>🎮 Sports Analytics Engine</h4>
+                                <ul>
+                                    <li>Developed clean REST API structures in Express for live tournament tracking
+                                        systems.</li>
+                                    <li>Wrote complex MongoDB aggregate procedures to sync telemetry arrays.</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Day Night -->
+                <div class="timeline-item reveal">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-content">
+                        <div class="timeline-header">
+                            <div class="timeline-title-group">
+                                <h3>Software Engineer</h3>
+                                <span class="timeline-company">Day Night Technologies Pvt Ltd</span>
+                            </div>
+                            <span class="timeline-date">Feb 2021 – Sep 2021</span>
+                        </div>
+                        <div class="timeline-projects">
+                            <div class="project-block">
+                                <h4>📈 Financial & Trading Services</h4>
+                                <ul>
+                                    <li>Built API modules linking web client dashboards to MetaTrader 4 engines for
+                                        automated trade alerts.</li>
+                                    <li>Wrote back-testing scripts to record execution timing across transactional
+                                        services.</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Loud Medics -->
+                <div class="timeline-item reveal">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-content">
+                        <div class="timeline-header">
+                            <div class="timeline-title-group">
+                                <h3>Software Engineer</h3>
+                                <span class="timeline-company">Loud Medics</span>
+                            </div>
+                            <span class="timeline-date">May 2019 – Feb 2021</span>
+                        </div>
+                        <div class="timeline-projects">
+                            <div class="project-block">
+                                <h4>🛒 Gaming & E-Commerce Core</h4>
+                                <ul>
+                                    <li>Authored high-performance order routing scripts for scalable inventory checkout
+                                        systems.</li>
+                                    <li>Set up secure real-time notification modules with WebSockets and Node.js.</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- ZMQ -->
+                <div class="timeline-item reveal">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-content">
+                        <div class="timeline-header">
+                            <div class="timeline-title-group">
+                                <h3>Software Engineer</h3>
+                                <span class="timeline-company">ZMQ, Delhi</span>
+                            </div>
+                            <span class="timeline-date">Feb 2016 – Jun 2018</span>
+                        </div>
+                        <div class="timeline-projects">
+                            <div class="project-block">
+                                <h4>🌍 Healthcare Solutions for Rural Domains</h4>
+                                <ul>
+                                    <li>Designed lightweight, offline-resilient sync REST API engines for health NGO
+                                        portals.</li>
+                                    <li>Configured databases to compress response size in areas with poor network
+                                        conditions.</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- AI Projects Section (Bento Grid / Spec Card Style) -->
+    <section class="section section-alt" id="projects">
+        <div class="container">
+            <div class="section-header reveal">
+                <span class="section-num">04 // PORTFOLIO</span>
+                <h2 class="section-title">AI Projects</h2>
+                <div class="section-line"></div>
+            </div>
+
+            <div class="projects-grid">
+                <!-- Project 1 -->
+                <div class="project-card reveal">
+                    <div class="project-icon">
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round"
+                                d="M12 18h.008v.008H12V18zm0-4.5h.008v.008H12V13.5l-2.25-2.25m2.25 2.25l2.25-2.25M3 7.5A2.25 2.25 0 015.25 5.25h13.5A2.25 2.25 0 0121 7.5v9a2.25 2.25 0 01-2.25 2.25H5.25A2.25 2.25 0 013 16.5v-9z" />
+                        </svg>
+                    </div>
+                    <h3>DocuMind AI</h3>
+                    <p class="project-subtitle">AI-Powered Document Intelligence System</p>
+
+                    <!-- System Specs Table -->
+                    <table class="project-spec-table">
+                        <tr>
+                            <td class="project-spec-label">Architecture</td>
+                            <td class="project-spec-val">RAG Pipeline</td>
+                        </tr>
+                        <tr>
+                            <td class="project-spec-label">Language</td>
+                            <td class="project-spec-val">Node.js (TypeScript)</td>
+                        </tr>
+                        <tr>
+                            <td class="project-spec-label">Vector Store</td>
+                            <td class="project-spec-val">Pinecone DB (Cosine Sim)</td>
+                        </tr>
+                        <tr>
+                            <td class="project-spec-label">Embeddings</td>
+                            <td class="project-spec-val">OpenAI text-embedding-3-small</td>
+                        </tr>
+                    </table>
+
+                    <ul>
+                        <li>Created a dynamic Retrieval-Augmented Generation (RAG) backend framework for processing
+                            large PDF text arrays.</li>
+                        <li>Developed highly efficient custom token chunking systems, maintaining logical context
+                            blocks.</li>
+                        <li>Integrated Pinecone vector index querying, achieving sub-200ms document response latency.
+                        </li>
+                    </ul>
+
+                    <div class="project-tags">
+                        <span>Node.js</span>
+                        <span>Pinecone</span>
+                        <span>RAG</span>
+                        <span>OpenAI API</span>
+                    </div>
+
+                    <a href="https://github.com/jogi6643/documnind" target="_blank" class="project-link">
+                        Source Code
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
+                        </svg>
+                    </a>
+                </div>
+
+                <!-- Project 2 -->
+                <div class="project-card reveal delay-1">
+                    <div class="project-icon">
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round"
+                                d="M8.625 12a.375.375 0 11-.75 0 .375.375 0 01.75 0zm0 0H8.25m4.125 0a.375.375 0 11-.75 0 .375.375 0 01.75 0zm0 0H12m4.125 0a.375.375 0 11-.75 0 .375.375 0 01.75 0zm0 0h-.375M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z" />
+                        </svg>
+                    </div>
+                    <h3>AI Support Agent</h3>
+                    <p class="project-subtitle">Intelligent Customer Support Backend</p>
+
+                    <!-- System Specs Table -->
+                    <table class="project-spec-table">
+                        <tr>
+                            <td class="project-spec-label">Language</td>
+                            <td class="project-spec-val">Python / FastAPI</td>
+                        </tr>
+                        <tr>
+                            <td class="project-spec-label">Cache Storage</td>
+                            <td class="project-spec-val">Redis Cluster (Memory)</td>
+                        </tr>
+                        <tr>
+                            <td class="project-spec-label">Framework</td>
+                            <td class="project-spec-val">LangChain / OpenAI</td>
+                        </tr>
+                        <tr>
+                            <td class="project-spec-label">Concurrency</td>
+                            <td class="project-spec-val">Asynchronous loop</td>
+                        </tr>
+                    </table>
+
+                    <ul>
+                        <li>Built semantic user query sorting pipelines to automatically categorize incoming support
+                            emails.</li>
+                        <li>Designed Redis-based persistent chatbot conversation memory caches to retain thread context.
+                        </li>
+                        <li>Configured FastAPI router arrays to manage connections synchronously under high concurrent
+                            load.</li>
+                    </ul>
+
+                    <div class="project-tags">
+                        <span>Python</span>
+                        <span>FastAPI</span>
+                        <span>Redis</span>
+                        <span>LangChain</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Education Section -->
+    <section class="section" id="education">
+        <div class="container">
+            <div class="section-header reveal">
+                <span class="section-num">05 // EDUCATION</span>
+                <h2 class="section-title">Education</h2>
+                <div class="section-line"></div>
+            </div>
+
+            <div class="education-grid">
+                <div class="edu-card reveal">
+                    <div class="edu-icon">
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round"
+                                d="M4.26 10.147a60.436 60.436 0 00-.491 6.347A48.62 48.62 0 0112 20.9m10.25-10.753c-.124-2.28-1.9-4.086-4.117-4.092A48.297 48.297 0 0012 4.5c-2.31 0-4.52.26-6.633.758a4.125 4.125 0 00-4.117 4.093v4.22c0 1.01.54 1.94 1.4 2.427l3.6 2.04" />
+                        </svg>
+                    </div>
+                    <h3>Master of Computer Applications</h3>
+                    <p class="edu-school">Aligarh Muslim University</p>
+                    <p class="edu-year">2016</p>
+                </div>
+
+                <div class="edu-card reveal delay-1">
+                    <div class="edu-icon">
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round"
+                                d="M4.26 10.147a60.436 60.436 0 00-.491 6.347A48.62 48.62 0 0112 20.9m10.25-10.753c-.124-2.28-1.9-4.086-4.117-4.092A48.297 48.297 0 0012 4.5c-2.31 0-4.52.26-6.633.758a4.125 4.125 0 00-4.117 4.093v4.22c0 1.01.54 1.94 1.4 2.427l3.6 2.04" />
+                        </svg>
+                    </div>
+                    <h3>Bachelor of Information Technology</h3>
+                    <p class="edu-school">Aligarh Muslim University</p>
+                    <p class="edu-year">2012</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Certifications Section -->
+    <section class="section section-alt" id="certifications">
+        <div class="container">
+            <div class="section-header reveal">
+                <span class="section-num">06 // CREDENTIALS</span>
+                <h2 class="section-title">Certifications</h2>
+                <div class="section-line"></div>
+            </div>
+            <p class="cert-subtitle reveal">Validated training across advanced statistics, machine learning pipelines,
+                and distributed engineering clusters</p>
+
+            <div class="cert-grid">
+                <!-- Cert 1 -->
+                <div class="cert-card reveal">
+                    <div class="cert-badge">
+                        <svg viewBox="0 0 80 80" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <circle cx="40" cy="40" r="36" stroke="#27272a" stroke-width="1" />
+                            <path d="M40 22L43 32H54L45 38L48 48L40 42L32 48L35 38L26 32H37L40 22Z" fill="#c2a078"
+                                opacity=".95" />
+                        </svg>
+                    </div>
+                    <h3>Data Science with R</h3>
+                    <p class="cert-issuer">Statistical Computing &amp; Data Analysis</p>
+                    <div class="cert-tag">R Statistics</div>
+                </div>
+
+                <!-- Cert 2 -->
+                <div class="cert-card reveal delay-1">
+                    <div class="cert-badge">
+                        <svg viewBox="0 0 80 80" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <circle cx="40" cy="40" r="36" stroke="#27272a" stroke-width="1" />
+                            <path d="M40 22L43 32H54L45 38L48 48L40 42L32 48L35 38L26 32H37L40 22Z" fill="#c2a078"
+                                opacity=".95" />
+                        </svg>
+                    </div>
+                    <h3>Data Science with Python</h3>
+                    <p class="cert-issuer">Python Analytics &amp; ML Foundations</p>
+                    <div class="cert-tag">Python</div>
+                </div>
+
+                <!-- Cert 3 -->
+                <div class="cert-card reveal delay-2">
+                    <div class="cert-badge">
+                        <svg viewBox="0 0 80 80" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <circle cx="40" cy="40" r="36" stroke="#27272a" stroke-width="1" />
+                            <path d="M40 22L43 32H54L45 38L48 48L40 42L32 48L35 38L26 32H37L40 22Z" fill="#c2a078"
+                                opacity=".95" />
+                        </svg>
+                    </div>
+                    <h3>Machine Learning Advanced</h3>
+                    <p class="cert-issuer">Advanced ML Algorithms &amp; Neural Networks</p>
+                    <div class="cert-tag">Machine Learning</div>
+                </div>
+
+                <!-- Cert 4 -->
+                <div class="cert-card reveal">
+                    <div class="cert-badge">
+                        <svg viewBox="0 0 80 80" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <circle cx="40" cy="40" r="36" stroke="#27272a" stroke-width="1" />
+                            <path d="M40 22L43 32H54L45 38L48 48L40 42L32 48L35 38L26 32H37L40 22Z" fill="#c2a078"
+                                opacity=".95" />
+                        </svg>
+                    </div>
+                    <h3>Python for Data Science</h3>
+                    <p class="cert-issuer">Data Manipulation &amp; Visualization</p>
+                    <div class="cert-tag">Python</div>
+                </div>
+
+                <!-- Cert 5 -->
+                <div class="cert-card reveal delay-1">
+                    <div class="cert-badge">
+                        <svg viewBox="0 0 80 80" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <circle cx="40" cy="40" r="36" stroke="#27272a" stroke-width="1" />
+                            <path d="M40 22L43 32H54L45 38L48 48L40 42L32 48L35 38L26 32H37L40 22Z" fill="#c2a078"
+                                opacity=".95" />
+                        </svg>
+                    </div>
+                    <h3>Tableau Desktop Qualified</h3>
+                    <p class="cert-issuer">Data Visualization &amp; Business Intelligence</p>
+                    <div class="cert-tag">Tableau</div>
+                </div>
+
+                <!-- Cert 6 -->
+                <div class="cert-card reveal delay-2">
+                    <div class="cert-badge">
+                        <svg viewBox="0 0 80 80" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <circle cx="40" cy="40" r="36" stroke="#27272a" stroke-width="1" />
+                            <path d="M40 22L43 32H54L45 38L48 48L40 42L32 48L35 38L26 32H37L40 22Z" fill="#c2a078"
+                                opacity=".95" />
+                        </svg>
+                    </div>
+                    <h3>Big Data Hadoop &amp; Spark</h3>
+                    <p class="cert-issuer">Distributed Computing &amp; MapReduce Architectures</p>
+                    <div class="cert-tag">Big Data</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section class="section" id="contact">
+        <div class="container">
+            <div class="section-header reveal">
+                <span class="section-num">07 // SYSTEM ACCESS</span>
+                <h2 class="section-title">Secure Connection</h2>
+                <div class="section-line"></div>
+            </div>
+            <p class="contact-desc reveal">Click on any communications card to copy specific connection credentials to
+                clipboard.</p>
+
+            <div class="contact-grid reveal delay-1">
+                <!-- Email -->
+                <div class="contact-card" data-copy="jogi.amu@gmail.com">
+                    <div class="contact-icon">
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round"
+                                d="M21.75 6.75v10.5a2.25 2.25 0 01-2.25 2.25h-15a2.25 2.25 0 01-2.25-2.25V6.75m19.5 0A2.25 2.25 0 0019.5 4.5h-15a2.25 2.25 0 00-2.25 2.25m19.5 0v.243a2.25 2.25 0 01-1.07 1.916l-7.5 4.615a2.25 2.25 0 01-2.36 0L3.32 8.91a2.25 2.25 0 01-1.07-1.916V6.75" />
+                        </svg>
+                    </div>
+                    <span class="contact-label">Email</span>
+                    <span class="contact-value">jogi.amu@gmail.com</span>
+                    <span class="copy-tooltip">Copied!</span>
+                </div>
+
+                <!-- Phone -->
+                <div class="contact-card" data-copy="+918700488718">
+                    <div class="contact-icon">
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round"
+                                d="M2.25 6.75c0 8.284 6.716 15 15 15h2.25a2.25 2.25 0 002.25-2.25v-1.372c0-.516-.351-.966-.852-1.091l-4.423-1.106c-.44-.11-.902.055-1.173.417l-.97 1.293c-2.824-1.802-5.14-4.118-6.943-6.94l1.293-.97c.363-.271.527-.734.417-1.173L6.963 3.102a1.125 1.125 0 00-1.091-.852H4.5A2.25 2.25 0 002.25 4.5v2.25z" />
+                        </svg>
+                    </div>
+                    <span class="contact-label">Phone</span>
+                    <span class="contact-value">+91-8700488718</span>
+                    <span class="copy-tooltip">Copied!</span>
+                </div>
+
+                <!-- LinkedIn -->
+                <a href="https://www.linkedin.com/in/jogi6643/" target="_blank" class="contact-card">
+                    <div class="contact-icon">
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round"
+                                d="M13.19 8.688a4.5 4.5 0 011.242 7.244l-4.5 4.5a4.5 4.5 0 01-6.364-6.364l1.757-1.757m13.35-.622l1.757-1.757a4.5 4.5 0 00-6.364-6.364l-4.5 4.5a4.5 4.5 0 001.242 7.244" />
+                        </svg>
+                    </div>
+                    <span class="contact-label">LinkedIn</span>
+                    <span class="contact-value">linkedin/in/jogi6643</span>
+                </a>
+
+                <!-- GitHub -->
+                <a href="https://github.com/jogi6643" target="_blank" class="contact-card">
+                    <div class="contact-icon">
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round"
+                                d="M17.25 6.75L22.5 12l-5.25 5.25m-10.5 0L1.5 12l5.25-5.25m7.5-3l-4.5 16.5" />
+                        </svg>
+                    </div>
+                    <span class="contact-label">GitHub</span>
+                    <span class="contact-value">github.com/jogi6643</span>
                 </a>
             </div>
-            
-            <!-- Project 2 -->
-            <div class="project-card reveal delay-1">
-                <div class="project-icon">
-                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M8.625 12a.375.375 0 11-.75 0 .375.375 0 01.75 0zm0 0H8.25m4.125 0a.375.375 0 11-.75 0 .375.375 0 01.75 0zm0 0H12m4.125 0a.375.375 0 11-.75 0 .375.375 0 01.75 0zm0 0h-.375M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z" /></svg>
-                </div>
-                <h3>AI Support Agent</h3>
-                <p class="project-subtitle">Intelligent Customer Support Backend</p>
-                
-                <!-- System Specs Table -->
-                <table class="project-spec-table">
-                    <tr>
-                        <td class="project-spec-label">Language</td>
-                        <td class="project-spec-val">Python / FastAPI</td>
-                    </tr>
-                    <tr>
-                        <td class="project-spec-label">Cache Storage</td>
-                        <td class="project-spec-val">Redis Cluster (Memory)</td>
-                    </tr>
-                    <tr>
-                        <td class="project-spec-label">Framework</td>
-                        <td class="project-spec-val">LangChain / OpenAI</td>
-                    </tr>
-                    <tr>
-                        <td class="project-spec-label">Concurrency</td>
-                        <td class="project-spec-val">Asynchronous loop</td>
-                    </tr>
-                </table>
-                
-                <ul>
-                    <li>Built semantic user query sorting pipelines to automatically categorize incoming support emails.</li>
-                    <li>Designed Redis-based persistent chatbot conversation memory caches to retain thread context.</li>
-                    <li>Configured FastAPI router arrays to manage connections synchronously under high concurrent load.</li>
-                </ul>
-                
-                <div class="project-tags">
-                    <span>Python</span>
-                    <span>FastAPI</span>
-                    <span>Redis</span>
-                    <span>LangChain</span>
-                </div>
-            </div>
         </div>
-    </div>
-</section>
+    </section>
 
-<!-- Education Section -->
-<section class="section" id="education">
-    <div class="container">
-        <div class="section-header reveal">
-            <span class="section-num">05 // EDUCATION</span>
-            <h2 class="section-title">Education</h2>
-            <div class="section-line"></div>
-        </div>
-        
-        <div class="education-grid">
-            <div class="edu-card reveal">
-                <div class="edu-icon">
-                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M4.26 10.147a60.436 60.436 0 00-.491 6.347A48.62 48.62 0 0112 20.9m10.25-10.753c-.124-2.28-1.9-4.086-4.117-4.092A48.297 48.297 0 0012 4.5c-2.31 0-4.52.26-6.633.758a4.125 4.125 0 00-4.117 4.093v4.22c0 1.01.54 1.94 1.4 2.427l3.6 2.04" /></svg>
-                </div>
-                <h3>Master of Computer Applications</h3>
-                <p class="edu-school">Aligarh Muslim University</p>
-                <p class="edu-year">2016</p>
-            </div>
-            
-            <div class="edu-card reveal delay-1">
-                <div class="edu-icon">
-                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M4.26 10.147a60.436 60.436 0 00-.491 6.347A48.62 48.62 0 0112 20.9m10.25-10.753c-.124-2.28-1.9-4.086-4.117-4.092A48.297 48.297 0 0012 4.5c-2.31 0-4.52.26-6.633.758a4.125 4.125 0 00-4.117 4.093v4.22c0 1.01.54 1.94 1.4 2.427l3.6 2.04" /></svg>
-                </div>
-                <h3>Bachelor of Information Technology</h3>
-                <p class="edu-school">Aligarh Muslim University</p>
-                <p class="edu-year">2012</p>
-            </div>
-        </div>
-    </div>
-</section>
+    <!-- Footer -->
+    <footer class="footer">
+        <p>&copy; 2026 Jugendra Pal Singh // REST API Core Systems. Built with pure Zinc &amp; Brass.</p>
+    </footer>
 
-<!-- Certifications Section -->
-<section class="section section-alt" id="certifications">
-    <div class="container">
-        <div class="section-header reveal">
-            <span class="section-num">06 // CREDENTIALS</span>
-            <h2 class="section-title">Certifications</h2>
-            <div class="section-line"></div>
-        </div>
-        <p class="cert-subtitle reveal">Validated training across advanced statistics, machine learning pipelines, and distributed engineering clusters</p>
-        
-        <div class="cert-grid">
-            <!-- Cert 1 -->
-            <div class="cert-card reveal">
-                <div class="cert-badge">
-                    <svg viewBox="0 0 80 80" fill="none" xmlns="http://www.w3.org/2000/svg">
-                        <circle cx="40" cy="40" r="36" stroke="#27272a" stroke-width="1"/>
-                        <path d="M40 22L43 32H54L45 38L48 48L40 42L32 48L35 38L26 32H37L40 22Z" fill="#c2a078" opacity=".95"/>
-                    </svg>
-                </div>
-                <h3>Data Science with R</h3>
-                <p class="cert-issuer">Statistical Computing &amp; Data Analysis</p>
-                <div class="cert-tag">R Statistics</div>
-            </div>
-            
-            <!-- Cert 2 -->
-            <div class="cert-card reveal delay-1">
-                <div class="cert-badge">
-                    <svg viewBox="0 0 80 80" fill="none" xmlns="http://www.w3.org/2000/svg">
-                        <circle cx="40" cy="40" r="36" stroke="#27272a" stroke-width="1"/>
-                        <path d="M40 22L43 32H54L45 38L48 48L40 42L32 48L35 38L26 32H37L40 22Z" fill="#c2a078" opacity=".95"/>
-                    </svg>
-                </div>
-                <h3>Data Science with Python</h3>
-                <p class="cert-issuer">Python Analytics &amp; ML Foundations</p>
-                <div class="cert-tag">Python</div>
-            </div>
-            
-            <!-- Cert 3 -->
-            <div class="cert-card reveal delay-2">
-                <div class="cert-badge">
-                    <svg viewBox="0 0 80 80" fill="none" xmlns="http://www.w3.org/2000/svg">
-                        <circle cx="40" cy="40" r="36" stroke="#27272a" stroke-width="1"/>
-                        <path d="M40 22L43 32H54L45 38L48 48L40 42L32 48L35 38L26 32H37L40 22Z" fill="#c2a078" opacity=".95"/>
-                    </svg>
-                </div>
-                <h3>Machine Learning Advanced</h3>
-                <p class="cert-issuer">Advanced ML Algorithms &amp; Neural Networks</p>
-                <div class="cert-tag">Machine Learning</div>
-            </div>
-            
-            <!-- Cert 4 -->
-            <div class="cert-card reveal">
-                <div class="cert-badge">
-                    <svg viewBox="0 0 80 80" fill="none" xmlns="http://www.w3.org/2000/svg">
-                        <circle cx="40" cy="40" r="36" stroke="#27272a" stroke-width="1"/>
-                        <path d="M40 22L43 32H54L45 38L48 48L40 42L32 48L35 38L26 32H37L40 22Z" fill="#c2a078" opacity=".95"/>
-                    </svg>
-                </div>
-                <h3>Python for Data Science</h3>
-                <p class="cert-issuer">Data Manipulation &amp; Visualization</p>
-                <div class="cert-tag">Python</div>
-            </div>
-            
-            <!-- Cert 5 -->
-            <div class="cert-card reveal delay-1">
-                <div class="cert-badge">
-                    <svg viewBox="0 0 80 80" fill="none" xmlns="http://www.w3.org/2000/svg">
-                        <circle cx="40" cy="40" r="36" stroke="#27272a" stroke-width="1"/>
-                        <path d="M40 22L43 32H54L45 38L48 48L40 42L32 48L35 38L26 32H37L40 22Z" fill="#c2a078" opacity=".95"/>
-                    </svg>
-                </div>
-                <h3>Tableau Desktop Qualified</h3>
-                <p class="cert-issuer">Data Visualization &amp; Business Intelligence</p>
-                <div class="cert-tag">Tableau</div>
-            </div>
-            
-            <!-- Cert 6 -->
-            <div class="cert-card reveal delay-2">
-                <div class="cert-badge">
-                    <svg viewBox="0 0 80 80" fill="none" xmlns="http://www.w3.org/2000/svg">
-                        <circle cx="40" cy="40" r="36" stroke="#27272a" stroke-width="1"/>
-                        <path d="M40 22L43 32H54L45 38L48 48L40 42L32 48L35 38L26 32H37L40 22Z" fill="#c2a078" opacity=".95"/>
-                    </svg>
-                </div>
-                <h3>Big Data Hadoop &amp; Spark</h3>
-                <p class="cert-issuer">Distributed Computing &amp; MapReduce Architectures</p>
-                <div class="cert-tag">Big Data</div>
-            </div>
-        </div>
-    </div>
-</section>
+    <script>
+        // Custom Cursor Controller
+        const cursor = document.getElementById('customCursor');
+        const cursorDot = document.getElementById('customCursorDot');
+        let mouseX = 0, mouseY = 0;
+        let cursorX = 0, cursorY = 0;
 
-<!-- Contact Section -->
-<section class="section" id="contact">
-    <div class="container">
-        <div class="section-header reveal">
-            <span class="section-num">07 // SYSTEM ACCESS</span>
-            <h2 class="section-title">Secure Connection</h2>
-            <div class="section-line"></div>
-        </div>
-        <p class="contact-desc reveal">Click on any communications card to copy specific connection credentials to clipboard.</p>
-        
-        <div class="contact-grid reveal delay-1">
-            <!-- Email -->
-            <div class="contact-card" data-copy="jogi.amu@gmail.com">
-                <div class="contact-icon">
-                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M21.75 6.75v10.5a2.25 2.25 0 01-2.25 2.25h-15a2.25 2.25 0 01-2.25-2.25V6.75m19.5 0A2.25 2.25 0 0019.5 4.5h-15a2.25 2.25 0 00-2.25 2.25m19.5 0v.243a2.25 2.25 0 01-1.07 1.916l-7.5 4.615a2.25 2.25 0 01-2.36 0L3.32 8.91a2.25 2.25 0 01-1.07-1.916V6.75" /></svg>
-                </div>
-                <span class="contact-label">Email</span>
-                <span class="contact-value">jogi.amu@gmail.com</span>
-                <span class="copy-tooltip">Copied!</span>
-            </div>
-            
-            <!-- Phone -->
-            <div class="contact-card" data-copy="+918700488718">
-                <div class="contact-icon">
-                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M2.25 6.75c0 8.284 6.716 15 15 15h2.25a2.25 2.25 0 002.25-2.25v-1.372c0-.516-.351-.966-.852-1.091l-4.423-1.106c-.44-.11-.902.055-1.173.417l-.97 1.293c-2.824-1.802-5.14-4.118-6.943-6.94l1.293-.97c.363-.271.527-.734.417-1.173L6.963 3.102a1.125 1.125 0 00-1.091-.852H4.5A2.25 2.25 0 002.25 4.5v2.25z" /></svg>
-                </div>
-                <span class="contact-label">Phone</span>
-                <span class="contact-value">+91-8700488718</span>
-                <span class="copy-tooltip">Copied!</span>
-            </div>
-            
-            <!-- LinkedIn -->
-            <a href="https://www.linkedin.com/in/jogi6643/" target="_blank" class="contact-card">
-                <div class="contact-icon">
-                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M13.19 8.688a4.5 4.5 0 011.242 7.244l-4.5 4.5a4.5 4.5 0 01-6.364-6.364l1.757-1.757m13.35-.622l1.757-1.757a4.5 4.5 0 00-6.364-6.364l-4.5 4.5a4.5 4.5 0 001.242 7.244" /></svg>
-                </div>
-                <span class="contact-label">LinkedIn</span>
-                <span class="contact-value">linkedin/in/jogi6643</span>
-            </a>
-            
-            <!-- GitHub -->
-            <a href="https://github.com/jogi6643" target="_blank" class="contact-card">
-                <div class="contact-icon">
-                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M17.25 6.75L22.5 12l-5.25 5.25m-10.5 0L1.5 12l5.25-5.25m7.5-3l-4.5 16.5" /></svg>
-                </div>
-                <span class="contact-label">GitHub</span>
-                <span class="contact-value">github.com/jogi6643</span>
-            </a>
-        </div>
-    </div>
-</section>
+        document.addEventListener('mousemove', (e) => {
+            mouseX = e.clientX;
+            mouseY = e.clientY;
 
-<!-- Footer -->
-<footer class="footer">
-    <p>&copy; 2026 Jugendra Pal Singh // REST API Core Systems. Built with pure Zinc &amp; Brass.</p>
-</footer>
-
-<script>
-// Custom Cursor Controller
-const cursor = document.getElementById('customCursor');
-const cursorDot = document.getElementById('customCursorDot');
-let mouseX = 0, mouseY = 0;
-let cursorX = 0, cursorY = 0;
-
-document.addEventListener('mousemove', (e) => {
-    mouseX = e.clientX;
-    mouseY = e.clientY;
-    
-    cursorDot.style.left = mouseX + 'px';
-    cursorDot.style.top = mouseY + 'px';
-});
-
-// Clean lerp/easing animation for the trailing circle
-function animateCursor() {
-    const ease = 0.15;
-    cursorX += (mouseX - cursorX) * ease;
-    cursorY += (mouseY - cursorY) * ease;
-    
-    cursor.style.left = cursorX + 'px';
-    cursor.style.top = cursorY + 'px';
-    
-    requestAnimationFrame(animateCursor);
-}
-animateCursor();
-
-// Morph cursor ring on hovering interactive nodes
-document.querySelectorAll('a, button, .contact-card, .btn, .bento-item, .nav-toggle').forEach(el => {
-    el.addEventListener('mouseenter', () => {
-        cursor.classList.add('hover');
-    });
-    el.addEventListener('mouseleave', () => {
-        cursor.classList.remove('hover');
-    });
-});
-
-// Navbar Scrolled State Trigger
-const navbar = document.getElementById('navbar');
-window.addEventListener('scroll', () => {
-    navbar.classList.toggle('scrolled', window.scrollY > 30);
-});
-
-// Mobile burger navigation toggler
-const navToggle = document.getElementById('navToggle');
-const navMenu = document.getElementById('navMenu');
-navToggle.addEventListener('click', () => {
-    navMenu.classList.toggle('active');
-    navToggle.classList.toggle('active');
-});
-
-document.querySelectorAll('.nav-link').forEach(link => {
-    link.addEventListener('click', () => {
-        navMenu.classList.remove('active');
-        navToggle.classList.remove('active');
-    });
-});
-
-// Scroll animations observer (reveals element & triggers section line expansion)
-const revealElements = document.querySelectorAll('.reveal, .section-header');
-const observer = new IntersectionObserver((entries) => {
-    entries.forEach(entry => {
-        if (entry.isIntersecting) {
-            entry.target.classList.add('revealed');
-        }
-    });
-}, { threshold: 0.05, rootMargin: '0px 0px -45px 0px' });
-revealElements.forEach(el => observer.observe(el));
-
-// Soft scroll targets
-document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-    anchor.addEventListener('click', function(e) {
-        e.preventDefault();
-        const target = document.querySelector(this.getAttribute('href'));
-        if (target) {
-            target.scrollIntoView({ behavior: 'smooth', block: 'start' });
-        }
-    });
-});
-
-// Sync current navigation link on scroll
-const sections = document.querySelectorAll('section');
-window.addEventListener('scroll', () => {
-    let current = '';
-    sections.forEach(section => {
-        const top = section.offsetTop - 120;
-        if (window.scrollY >= top) {
-            current = section.getAttribute('id');
-        }
-    });
-    document.querySelectorAll('.nav-link').forEach(link => {
-        link.classList.remove('active');
-        if (link.getAttribute('href') === '#' + current) {
-            link.classList.add('active');
-        }
-    });
-});
-
-// Monospace Typewriter text controller
-const typewriter = document.getElementById('typewriter');
-const titles = [
-    'System Architecture // scaling APIs',
-    'Microservices Builder // High Concurrency',
-    'AI Integrations // Vector DB RAG Pipelines'
-];
-let titleIndex = 0;
-let charIndex = 0;
-let isDeleting = false;
-
-function type() {
-    const current = titles[titleIndex];
-    if (isDeleting) {
-        typewriter.textContent = current.substring(0, charIndex--);
-    } else {
-        typewriter.textContent = current.substring(0, charIndex++);
-    }
-    
-    let speed = isDeleting ? 25 : 55;
-    
-    if (!isDeleting && charIndex > current.length) {
-        speed = 2500;
-        isDeleting = true;
-    } else if (isDeleting && charIndex < 0) {
-        isDeleting = false;
-        titleIndex = (titleIndex + 1) % titles.length;
-        speed = 500;
-    }
-    setTimeout(type, speed);
-}
-type();
-
-// Counter statistics animator
-const counters = document.querySelectorAll('.counter');
-const counterObserver = new IntersectionObserver((entries) => {
-    entries.forEach(entry => {
-        if (entry.isIntersecting) {
-            const el = entry.target;
-            const target = +el.dataset.target;
-            const duration = 1500;
-            const step = target / (duration / 16);
-            let current = 0;
-            
-            const updateNum = () => {
-                current += step;
-                if (current < target) {
-                    el.textContent = Math.floor(current);
-                    requestAnimationFrame(updateNum);
-                } else {
-                    el.textContent = target;
-                }
-            };
-            updateNum();
-            counterObserver.unobserve(el);
-        }
-    });
-}, { threshold: 0.5 });
-counters.forEach(c => counterObserver.observe(c));
-
-// Copy Contact Details trigger
-document.querySelectorAll('.contact-card[data-copy]').forEach(card => {
-    card.addEventListener('click', () => {
-        const textToCopy = card.getAttribute('data-copy');
-        navigator.clipboard.writeText(textToCopy).then(() => {
-            const tooltip = card.querySelector('.copy-tooltip');
-            tooltip.classList.add('show');
-            setTimeout(() => {
-                tooltip.classList.remove('show');
-            }, 1800);
+            cursorDot.style.left = mouseX + 'px';
+            cursorDot.style.top = mouseY + 'px';
         });
-    });
-});
 
-// Live Sparkline Chart & Diagnostics (DASHBOARD PANEL - Brass Styled)
-const cpuCanvas = document.getElementById('cpuGraph');
-const cpuCtx = cpuCanvas.getContext('2d');
-const liveCpuText = document.getElementById('liveCpuText');
-const latencyVal = document.getElementById('latencyVal');
-let cpuData = Array(45).fill(25);
+        // Clean lerp/easing animation for the trailing circle
+        function animateCursor() {
+            const ease = 0.15;
+            cursorX += (mouseX - cursorX) * ease;
+            cursorY += (mouseY - cursorY) * ease;
 
-function drawCpuChart() {
-    cpuCanvas.width = cpuCanvas.clientWidth;
-    cpuCanvas.height = cpuCanvas.clientHeight;
-    
-    // Shift points and add random-walk mock cpu telemetry load
-    cpuData.shift();
-    const lastVal = cpuData[cpuData.length - 1];
-    let newVal = lastVal + (Math.random() - 0.5) * 8;
-    newVal = Math.max(12, Math.min(55, newVal));
-    cpuData.push(newVal);
-    
-    liveCpuText.textContent = `${newVal.toFixed(1)}%`;
-    
-    // Random latency updates (e.g. 0.8ms to 1.5ms)
-    const mockLatency = (0.7 + Math.random() * 0.8).toFixed(1);
-    latencyVal.textContent = `${mockLatency} ms`;
-    
-    cpuCtx.clearRect(0, 0, cpuCanvas.width, cpuCanvas.height);
-    
-    // Draw fine grid lines
-    cpuCtx.strokeStyle = '#1a1a1a';
-    cpuCtx.lineWidth = 0.5;
-    for (let i = 0; i < cpuCanvas.height; i += 20) {
-        cpuCtx.beginPath();
-        cpuCtx.moveTo(0, i);
-        cpuCtx.lineTo(cpuCanvas.width, i);
-        cpuCtx.stroke();
-    }
-    for (let i = 0; i < cpuCanvas.width; i += 40) {
-        cpuCtx.beginPath();
-        cpuCtx.moveTo(i, 0);
-        cpuCtx.lineTo(i, cpuCanvas.height);
-        cpuCtx.stroke();
-    }
-    
-    // Draw graph line (Brass Colored)
-    cpuCtx.strokeStyle = '#c2a078';
-    cpuCtx.lineWidth = 1.5;
-    cpuCtx.beginPath();
-    
-    const step = cpuCanvas.width / (cpuData.length - 1);
-    for (let i = 0; i < cpuData.length; i++) {
-        const x = i * step;
-        const y = cpuCanvas.height - (cpuData[i] / 100) * cpuCanvas.height * 0.7 - 6;
-        if (i === 0) cpuCtx.moveTo(x, y);
-        else cpuCtx.lineTo(x, y);
-    }
-    cpuCtx.stroke();
-    
-    // Color fill under line (Translucent Brass Gradient)
-    cpuCtx.lineTo(cpuCanvas.width, cpuCanvas.height);
-    cpuCtx.lineTo(0, cpuCanvas.height);
-    const gradient = cpuCtx.createLinearGradient(0, 0, 0, cpuCanvas.height);
-    gradient.addColorStop(0, 'rgba(194, 160, 120, 0.08)');
-    gradient.addColorStop(1, 'rgba(194, 160, 120, 0)');
-    cpuCtx.fillStyle = gradient;
-    cpuCtx.fill();
-}
+            cursor.style.left = cursorX + 'px';
+            cursor.style.top = cursorY + 'px';
 
-setInterval(drawCpuChart, 300);
-</script>
+            requestAnimationFrame(animateCursor);
+        }
+        animateCursor();
+
+        // Morph cursor ring on hovering interactive nodes
+        document.querySelectorAll('a, button, .contact-card, .btn, .bento-item, .nav-toggle').forEach(el => {
+            el.addEventListener('mouseenter', () => {
+                cursor.classList.add('hover');
+            });
+            el.addEventListener('mouseleave', () => {
+                cursor.classList.remove('hover');
+            });
+        });
+
+        // Navbar Scrolled State Trigger
+        const navbar = document.getElementById('navbar');
+        window.addEventListener('scroll', () => {
+            navbar.classList.toggle('scrolled', window.scrollY > 30);
+        });
+
+        // Mobile burger navigation toggler
+        const navToggle = document.getElementById('navToggle');
+        const navMenu = document.getElementById('navMenu');
+        navToggle.addEventListener('click', () => {
+            navMenu.classList.toggle('active');
+            navToggle.classList.toggle('active');
+        });
+
+        document.querySelectorAll('.nav-link').forEach(link => {
+            link.addEventListener('click', () => {
+                navMenu.classList.remove('active');
+                navToggle.classList.remove('active');
+            });
+        });
+
+        // Scroll animations observer (reveals element & triggers section line expansion)
+        const revealElements = document.querySelectorAll('.reveal, .section-header');
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('revealed');
+                }
+            });
+        }, { threshold: 0.05, rootMargin: '0px 0px -45px 0px' });
+        revealElements.forEach(el => observer.observe(el));
+
+        // Soft scroll targets
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                }
+            });
+        });
+
+        // Sync current navigation link on scroll
+        const sections = document.querySelectorAll('section');
+        window.addEventListener('scroll', () => {
+            let current = '';
+            sections.forEach(section => {
+                const top = section.offsetTop - 120;
+                if (window.scrollY >= top) {
+                    current = section.getAttribute('id');
+                }
+            });
+            document.querySelectorAll('.nav-link').forEach(link => {
+                link.classList.remove('active');
+                if (link.getAttribute('href') === '#' + current) {
+                    link.classList.add('active');
+                }
+            });
+        });
+
+        // Monospace Typewriter text controller
+        const typewriter = document.getElementById('typewriter');
+        const titles = [
+            'System Architecture // scaling APIs',
+            'Microservices Builder // High Concurrency',
+            'AI Integrations // Vector DB RAG Pipelines'
+        ];
+        let titleIndex = 0;
+        let charIndex = 0;
+        let isDeleting = false;
+
+        function type() {
+            const current = titles[titleIndex];
+            if (isDeleting) {
+                typewriter.textContent = current.substring(0, charIndex--);
+            } else {
+                typewriter.textContent = current.substring(0, charIndex++);
+            }
+
+            let speed = isDeleting ? 25 : 55;
+
+            if (!isDeleting && charIndex > current.length) {
+                speed = 2500;
+                isDeleting = true;
+            } else if (isDeleting && charIndex < 0) {
+                isDeleting = false;
+                titleIndex = (titleIndex + 1) % titles.length;
+                speed = 500;
+            }
+            setTimeout(type, speed);
+        }
+        type();
+
+        // Counter statistics animator
+        const counters = document.querySelectorAll('.counter');
+        const counterObserver = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    const el = entry.target;
+                    const target = +el.dataset.target;
+                    const duration = 1500;
+                    const step = target / (duration / 16);
+                    let current = 0;
+
+                    const updateNum = () => {
+                        current += step;
+                        if (current < target) {
+                            el.textContent = Math.floor(current);
+                            requestAnimationFrame(updateNum);
+                        } else {
+                            el.textContent = target;
+                        }
+                    };
+                    updateNum();
+                    counterObserver.unobserve(el);
+                }
+            });
+        }, { threshold: 0.5 });
+        counters.forEach(c => counterObserver.observe(c));
+
+        // Copy Contact Details trigger
+        document.querySelectorAll('.contact-card[data-copy]').forEach(card => {
+            card.addEventListener('click', () => {
+                const textToCopy = card.getAttribute('data-copy');
+                navigator.clipboard.writeText(textToCopy).then(() => {
+                    const tooltip = card.querySelector('.copy-tooltip');
+                    tooltip.classList.add('show');
+                    setTimeout(() => {
+                        tooltip.classList.remove('show');
+                    }, 1800);
+                });
+            });
+        });
+
+        // Live Sparkline Chart & Diagnostics (DASHBOARD PANEL - Responsive & Glowing)
+        const cpuCanvas = document.getElementById('cpuGraph');
+        const cpuCtx = cpuCanvas.getContext('2d');
+        const liveCpuText = document.getElementById('liveCpuText');
+        const latencyVal = document.getElementById('latencyVal');
+        let cpuData = Array(45).fill(25);
+
+        function drawCpuChart() {
+            cpuCanvas.width = cpuCanvas.clientWidth;
+            cpuCanvas.height = cpuCanvas.clientHeight;
+
+            // Shift points and add random-walk mock cpu telemetry load
+            cpuData.shift();
+            const lastVal = cpuData[cpuData.length - 1];
+            let newVal = lastVal + (Math.random() - 0.5) * 8;
+            newVal = Math.max(12, Math.min(55, newVal));
+            cpuData.push(newVal);
+
+            liveCpuText.textContent = `${newVal.toFixed(1)}%`;
+
+            // Random latency updates (e.g. 0.8ms to 1.5ms)
+            const mockLatency = (0.7 + Math.random() * 0.8).toFixed(1);
+            latencyVal.textContent = `${mockLatency} ms`;
+
+            cpuCtx.clearRect(0, 0, cpuCanvas.width, cpuCanvas.height);
+
+            // Draw fine grid lines
+            cpuCtx.strokeStyle = '#1a1a1a';
+            cpuCtx.lineWidth = 0.5;
+            for (let i = 0; i < cpuCanvas.height; i += 20) {
+                cpuCtx.beginPath();
+                cpuCtx.moveTo(0, i);
+                cpuCtx.lineTo(cpuCanvas.width, i);
+                cpuCtx.stroke();
+            }
+            for (let i = 0; i < cpuCanvas.width; i += 40) {
+                cpuCtx.beginPath();
+                cpuCtx.moveTo(i, 0);
+                cpuCtx.lineTo(i, cpuCanvas.height);
+                cpuCtx.stroke();
+            }
+
+            // Fetch dynamic styles from document body
+            const activeAccent = getComputedStyle(document.body).getPropertyValue('--accent').trim() || '#c2a078';
+            const activeAccentRgb = getComputedStyle(document.body).getPropertyValue('--accent-rgb').trim() || '194, 160, 120';
+
+            // Draw graph line
+            cpuCtx.strokeStyle = activeAccent;
+            cpuCtx.lineWidth = 2.0;
+            cpuCtx.beginPath();
+
+            const step = cpuCanvas.width / (cpuData.length - 1);
+            for (let i = 0; i < cpuData.length; i++) {
+                const x = i * step;
+                const y = cpuCanvas.height - (cpuData[i] / 100) * cpuCanvas.height * 0.7 - 6;
+                if (i === 0) cpuCtx.moveTo(x, y);
+                else cpuCtx.lineTo(x, y);
+            }
+            cpuCtx.stroke();
+
+            // Color fill under line (Translucent Gradient matching theme)
+            cpuCtx.lineTo(cpuCanvas.width, cpuCanvas.height);
+            cpuCtx.lineTo(0, cpuCanvas.height);
+            const gradient = cpuCtx.createLinearGradient(0, 0, 0, cpuCanvas.height);
+            gradient.addColorStop(0, `rgba(${activeAccentRgb}, 0.12)`);
+            gradient.addColorStop(1, `rgba(${activeAccentRgb}, 0)`);
+            cpuCtx.fillStyle = gradient;
+            cpuCtx.fill();
+
+            // Draw glowing leading indicator dot
+            const leadX = cpuCanvas.width;
+            const leadY = cpuCanvas.height - (cpuData[cpuData.length - 1] / 100) * cpuCanvas.height * 0.7 - 6;
+            cpuCtx.shadowColor = activeAccent;
+            cpuCtx.shadowBlur = 10;
+            cpuCtx.fillStyle = '#ffffff';
+            cpuCtx.beginPath();
+            cpuCtx.arc(leadX - 3, leadY, 4, 0, 2 * Math.PI);
+            cpuCtx.fill();
+            cpuCtx.shadowBlur = 0; // Reset shadow blur
+        }
+
+        setInterval(drawCpuChart, 300);
+
+        // --- NEW PREMIUM INTERACTIONS & BEHAVIORS ---
+
+        // 1. Scroll Progress Bar logic
+        const scrollProgress = document.getElementById('scrollProgress');
+        window.addEventListener('scroll', () => {
+            const totalHeight = document.documentElement.scrollHeight - window.innerHeight;
+            if (totalHeight > 0) {
+                const progress = (window.scrollY / totalHeight) * 100;
+                scrollProgress.style.width = progress + '%';
+            }
+        });
+
+        // 2. Theme Toggler / Accent Selector logic
+        const themeBtns = document.querySelectorAll('.theme-btn');
+        themeBtns.forEach(btn => {
+            btn.addEventListener('click', () => {
+                const theme = btn.getAttribute('data-theme');
+                
+                // Set active states
+                themeBtns.forEach(b => b.classList.remove('active'));
+                btn.classList.add('active');
+                
+                // Toggle theme on body
+                document.body.className = '';
+                if (theme !== 'brass') {
+                    document.body.classList.add('theme-' + theme);
+                }
+                
+                // Save choice
+                localStorage.setItem('jps-portfolio-theme', theme);
+            });
+        });
+
+        // Load saved theme
+        const savedTheme = localStorage.getItem('jps-portfolio-theme');
+        if (savedTheme) {
+            const activeBtn = document.querySelector(`.theme-btn[data-theme="${savedTheme}"]`);
+            if (activeBtn) {
+                activeBtn.click();
+            }
+        }
+
+        // 3. Dynamic Cursor-Follow Glow for Cards
+        document.querySelectorAll('.bento-item, .skill-category, .timeline-content, .project-card, .edu-card, .cert-card, .contact-card').forEach(el => {
+            el.classList.add('glow-card');
+        });
+
+        document.querySelectorAll('.glow-card').forEach(card => {
+            card.addEventListener('mousemove', (e) => {
+                const rect = card.getBoundingClientRect();
+                const x = e.clientX - rect.left;
+                const y = e.clientY - rect.top;
+                card.style.setProperty('--mouse-x', `${x}px`);
+                card.style.setProperty('--mouse-y', `${y}px`);
+            });
+        });
+
+        // 4. Interactive Diagnostics Terminal
+        const terminalInput = document.getElementById('terminalInput');
+        const terminalHistory = document.getElementById('terminalHistory');
+
+        const terminalCommands = {
+            help: 'Available operations:\n  about     - Identity profile metadata\n  skills    - Capabilities summary\n  contact   - Secure communications channels\n  ping      - Test network latency\n  matrix    - Toggle green matrix override\n  clear     - Wipe console history',
+            about: 'SYSTEM PROFILE:\nSubject: Jugendra Pal Singh\nRole: Senior Backend Engineer & AI Architect\nExperience: 8+ years\nMission: Build secure, resilient, high-concurrency architectures.',
+            skills: 'CAPABILITIES REGISTRY:\n- Back-end: Node.js (Express, REST, microservices)\n- Cloud (AWS): IAM, EC2, S3, RDS, CloudWatch, Auto Scaling\n- DevOps/Containers: Docker, CI/CD, Git, Linux\n- Databases: MongoDB, MySQL, Redis Cluster\n- Advanced AI: RAG, Pinecone Vector DB, FastAPI',
+            contact: 'COMMUNICATION DESK:\n- Email: jogi.amu@gmail.com\n- Tel: +91-8700488718\n- LinkedIn: linkedin/in/jogi6643\n- GitHub: github.com/jogi6643',
+            ping: 'PINGing 127.0.0.1 with 32 bytes of data:\nReply from 127.0.0.1: bytes=32 time=0.9ms TTL=64\nReply from 127.0.0.1: bytes=32 time=1.1ms TTL=64\nPing statistics: Sent=2, Received=2, Lost=0 (0% loss)'
+        };
+
+        if (terminalInput) {
+            terminalInput.addEventListener('keydown', (e) => {
+                if (e.key === 'Enter') {
+                    const inputVal = terminalInput.value.trim().toLowerCase();
+                    terminalInput.value = '';
+                    
+                    if (!inputVal) return;
+                    
+                    appendTerminalLine(`jps_local$ ${inputVal}`, 'user-cmd');
+                    
+                    setTimeout(() => {
+                        executeTerminalCommand(inputVal);
+                    }, 150);
+                }
+            });
+        }
+
+        function appendTerminalLine(text, className) {
+            const line = document.createElement('div');
+            line.className = `terminal-line ${className}`;
+            line.textContent = text;
+            terminalHistory.appendChild(line);
+            terminalHistory.scrollTop = terminalHistory.scrollHeight;
+        }
+
+        let matrixInterval = null;
+        function executeTerminalCommand(cmd) {
+            if (cmd === 'clear') {
+                terminalHistory.innerHTML = '';
+                return;
+            }
+            
+            if (cmd === 'matrix') {
+                if (matrixInterval) {
+                    clearInterval(matrixInterval);
+                    matrixInterval = null;
+                    appendTerminalLine('Matrix mode deactivated.', 'system-msg');
+                } else {
+                    appendTerminalLine('Initializing Matrix core telemetry...', 'system-msg');
+                    let count = 0;
+                    matrixInterval = setInterval(() => {
+                        const randomBinary = Array(25).fill(0).map(() => Math.random() > 0.5 ? '1' : '0').join(' ');
+                        appendTerminalLine(randomBinary, 'response-msg');
+                        count++;
+                        if (count > 15) {
+                            clearInterval(matrixInterval);
+                            matrixInterval = null;
+                            appendTerminalLine('Telemetry dump complete.', 'system-msg');
+                        }
+                    }, 100);
+                }
+                return;
+            }
+            
+            if (terminalCommands[cmd]) {
+                appendTerminalLine(terminalCommands[cmd], 'response-msg');
+            } else {
+                appendTerminalLine(`Command not found: '${cmd}'. Type 'help' for support.`, 'system-msg');
+            }
+        }
+    </script>
 </body>
+
 </html>
