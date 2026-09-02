@@ -630,7 +630,8 @@ img:hover {
 }
 
 .monitor-val {
-    color: var(--text-primary);
+    /* Panel background is fixed dark, so keep this text light for contrast */
+    color: #e2e8f0;
 }
 
 .monitor-val.success {
@@ -1044,6 +1045,10 @@ img:hover {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     gap: 24px;
+}
+
+.project-card-wide {
+    grid-column: span 2;
 }
 
 .project-card {
@@ -1559,6 +1564,9 @@ img:hover {
     }
     .projects-grid {
         grid-template-columns: 1fr;
+    }
+    .project-card-wide {
+        grid-column: span 1;
     }
     .education-grid {
         grid-template-columns: 1fr;
