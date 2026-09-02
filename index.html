@@ -5,9 +5,24 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description"
-        content="Jugendra Pal Singh - AI / GenAI Engineer and Senior Backend Engineer. 8+ years building LangGraph agents, RAG pipelines, real-time Voice AI, and Node.js/Python microservices on AWS.">
-    <title>Jugendra Pal Singh | AI / GenAI Engineer &amp; Senior Backend Engineer</title>
+        content="Jugendra Pal Singh - Backend / AI / GenAI Engineer and Senior Backend Engineer. 8+ years building LangGraph agents, RAG pipelines, real-time Voice AI, and Node.js/Python microservices on AWS.">
+    <title>Jugendra Pal Singh | Backend / AI / GenAI Engineer &amp; Senior Backend Engineer</title>
+    <meta name="author" content="Jugendra Pal Singh">
+    <meta name="theme-color" content="#06010f">
+    <link rel="canonical" href="https://jogi6643.github.io/portfolio/">
+    <!-- Inline favicon (no extra request, no 404) -->
+    <link rel="icon"
+        href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='6' fill='%2306010f'/%3E%3Ctext x='16' y='22' font-family='monospace' font-size='16' font-weight='bold' text-anchor='middle' fill='%23a855f7'%3EJ%3C/text%3E%3C/svg%3E">
+    <!-- Open Graph / social preview -->
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Jugendra Pal Singh | AI / GenAI Engineer &amp; Senior Backend Engineer">
+    <meta property="og:description"
+        content="8+ years building LangGraph agents, RAG pipelines, real-time Voice AI, and Node.js/Python microservices on AWS.">
+    <meta property="og:url" content="https://jogi6643.github.io/portfolio/">
+    <meta name="twitter:card" content="summary_large_image">
     <!-- Google Fonts: Space Grotesk (Display & Tech Sans), JetBrains Mono (Diagnostics) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link
         href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;700&display=swap"
         rel="stylesheet">
@@ -38,7 +53,8 @@
                 <span class="nav-logo-dot"></span>
                 &lt;JPS /&gt;
             </a>
-            <button class="nav-toggle" id="navToggle" aria-label="Toggle menu">
+            <button class="nav-toggle" id="navToggle" aria-label="Toggle menu" aria-expanded="false"
+                aria-controls="navMenu">
                 <span></span><span></span><span></span>
             </button>
             <ul class="nav-menu" id="navMenu">
@@ -46,13 +62,18 @@
                 <li><a href="#skills" class="nav-link">Skills</a></li>
                 <li><a href="#experience" class="nav-link">Experience</a></li>
                 <li><a href="#projects" class="nav-link">AI Projects</a></li>
-                <li><a href="#certifications" class="nav-link">Certifications</a></li>
                 <li><a href="#education" class="nav-link">Education</a></li>
+                <li><a href="#certifications" class="nav-link">Certifications</a></li>
                 <li class="theme-selector-item">
-                    <div class="theme-selector">
-                        <button class="theme-btn theme-btn-brass active" data-theme="brass" title="Obsidian & Gold"></button>
-                        <button class="theme-btn theme-btn-mint" data-theme="mint" title="Hyper Neon Mint"></button>
-                        <button class="theme-btn theme-btn-crimson" data-theme="crimson" title="Cyberpunk Crimson"></button>
+                    <div class="theme-selector" role="group" aria-label="Accent colour theme">
+                        <button class="theme-btn theme-btn-nebula active" data-theme="nebula"
+                            title="Nebula — Violet &amp; Cyan" aria-label="Nebula theme: violet and cyan"></button>
+                        <button class="theme-btn theme-btn-azure" data-theme="azure" title="Azure — Sky &amp; Indigo"
+                            aria-label="Azure theme: sky blue and indigo"></button>
+                        <button class="theme-btn theme-btn-mint" data-theme="mint" title="Mint — Emerald &amp; Aqua"
+                            aria-label="Mint theme: emerald and aqua"></button>
+                        <button class="theme-btn theme-btn-ember" data-theme="ember" title="Ember — Orange &amp; Rose"
+                            aria-label="Ember theme: orange and rose"></button>
                     </div>
                 </li>
                 <li><a href="#contact" class="nav-link nav-cta">Contact</a></li>
@@ -95,8 +116,8 @@
                     </div>
                     <div class="stat">
                         <div class="stat-num-wrapper">
-                            <span class="stat-num counter" data-target="2">0</span>
-                            <span class="stat-plus">L+</span>
+                            <span class="stat-num counter" data-target="200">0</span>
+                            <span class="stat-plus">K+</span>
                         </div>
                         <span class="stat-label">Users Served</span>
                     </div>
@@ -156,11 +177,13 @@
                         <div class="terminal-container">
                             <div class="terminal-history" id="terminalHistory">
                                 <div class="terminal-line system-msg">SYSTEM DIAGNOSTICS SHELL [v1.0.8]</div>
-                                <div class="terminal-line system-msg">Type 'help' to initialize telemetry commands.</div>
+                                <div class="terminal-line system-msg">Type 'help' to initialize telemetry commands.
+                                </div>
                             </div>
                             <div class="terminal-input-row">
                                 <span class="terminal-prompt">jps_local$</span>
-                                <input type="text" id="terminalInput" placeholder="type a command..." autocomplete="off" spellcheck="false">
+                                <input type="text" id="terminalInput" placeholder="type a command..." autocomplete="off"
+                                    spellcheck="false">
                             </div>
                         </div>
                     </div>
@@ -675,7 +698,8 @@
                     </table>
 
                     <ul>
-                        <li><strong>Voice Pipeline:</strong> End-to-end voicebot for inbound and outbound calling &mdash;
+                        <li><strong>Voice Pipeline:</strong> End-to-end voicebot for inbound and outbound calling
+                            &mdash;
                             Twilio Media Streams (G.711 &micro;-law, 8 kHz) &rarr; WebSocket &rarr; VAD &rarr; streaming
                             STT &rarr; LangGraph agent &rarr; streaming LLM &rarr; streaming TTS, with barge-in
                             detection and echo guard for natural interruption handling.</li>
@@ -694,7 +718,8 @@
                         <li><strong>Prompt &amp; Cost Optimisation:</strong> Two-tier routing (regex/intent classifier
                             &rarr; fast model &rarr; main model) with per-turn latency budgeting across endpointing,
                             STT, agent reasoning and TTS.</li>
-                        <li><strong>Deployment &amp; Scale:</strong> Multi-stage non-root Docker images (separate CPU and
+                        <li><strong>Deployment &amp; Scale:</strong> Multi-stage non-root Docker images (separate CPU
+                            and
                             GPU builds), Kubernetes manifests (deployments, HPA, network policies, PDB), Redis-
                             externalised state for stateless pod scaling, and vLLM serving with continuous batching and
                             prefix caching.</li>
@@ -715,7 +740,8 @@
                         <span>Kubernetes</span>
                     </div>
 
-                    <a href="https://github.com/jogi6643/voice-boot" target="_blank" class="project-link">
+                    <a href="https://github.com/jogi6643/voice-boot" target="_blank" rel="noopener noreferrer"
+                        class="project-link">
                         Source Code
                         <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
@@ -770,7 +796,8 @@
                         <span>Semantic Search</span>
                     </div>
 
-                    <a href="https://github.com/jogi6643/documnind" target="_blank" class="project-link">
+                    <a href="https://github.com/jogi6643/documnind" target="_blank" rel="noopener noreferrer"
+                        class="project-link">
                         Source Code
                         <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
@@ -875,17 +902,17 @@
                 <h2 class="section-title">Certifications</h2>
                 <div class="section-line"></div>
             </div>
-            <p class="cert-subtitle reveal">Validated training across advanced statistics, machine learning pipelines,
-                and distributed engineering clusters</p>
+            <p class="cert-subtitle reveal">Formal training across statistics, machine learning, data visualisation and
+                distributed data processing.</p>
 
             <div class="cert-grid">
                 <!-- Cert 1 -->
                 <div class="cert-card reveal">
                     <div class="cert-badge">
                         <svg viewBox="0 0 80 80" fill="none" xmlns="http://www.w3.org/2000/svg">
-                            <circle cx="40" cy="40" r="36" stroke="#27272a" stroke-width="1" />
-                            <path d="M40 22L43 32H54L45 38L48 48L40 42L32 48L35 38L26 32H37L40 22Z" fill="#c2a078"
-                                opacity=".95" />
+                            <circle cx="40" cy="40" r="36" stroke="currentColor" stroke-width="1" opacity=".35" />
+                            <path d="M40 22L43 32H54L45 38L48 48L40 42L32 48L35 38L26 32H37L40 22Z"
+                                fill="currentColor" />
                         </svg>
                     </div>
                     <h3>Data Science with R</h3>
@@ -897,9 +924,9 @@
                 <div class="cert-card reveal delay-1">
                     <div class="cert-badge">
                         <svg viewBox="0 0 80 80" fill="none" xmlns="http://www.w3.org/2000/svg">
-                            <circle cx="40" cy="40" r="36" stroke="#27272a" stroke-width="1" />
-                            <path d="M40 22L43 32H54L45 38L48 48L40 42L32 48L35 38L26 32H37L40 22Z" fill="#c2a078"
-                                opacity=".95" />
+                            <circle cx="40" cy="40" r="36" stroke="currentColor" stroke-width="1" opacity=".35" />
+                            <path d="M40 22L43 32H54L45 38L48 48L40 42L32 48L35 38L26 32H37L40 22Z"
+                                fill="currentColor" />
                         </svg>
                     </div>
                     <h3>Data Science with Python</h3>
@@ -911,9 +938,9 @@
                 <div class="cert-card reveal delay-2">
                     <div class="cert-badge">
                         <svg viewBox="0 0 80 80" fill="none" xmlns="http://www.w3.org/2000/svg">
-                            <circle cx="40" cy="40" r="36" stroke="#27272a" stroke-width="1" />
-                            <path d="M40 22L43 32H54L45 38L48 48L40 42L32 48L35 38L26 32H37L40 22Z" fill="#c2a078"
-                                opacity=".95" />
+                            <circle cx="40" cy="40" r="36" stroke="currentColor" stroke-width="1" opacity=".35" />
+                            <path d="M40 22L43 32H54L45 38L48 48L40 42L32 48L35 38L26 32H37L40 22Z"
+                                fill="currentColor" />
                         </svg>
                     </div>
                     <h3>Machine Learning Advanced</h3>
@@ -925,9 +952,9 @@
                 <div class="cert-card reveal">
                     <div class="cert-badge">
                         <svg viewBox="0 0 80 80" fill="none" xmlns="http://www.w3.org/2000/svg">
-                            <circle cx="40" cy="40" r="36" stroke="#27272a" stroke-width="1" />
-                            <path d="M40 22L43 32H54L45 38L48 48L40 42L32 48L35 38L26 32H37L40 22Z" fill="#c2a078"
-                                opacity=".95" />
+                            <circle cx="40" cy="40" r="36" stroke="currentColor" stroke-width="1" opacity=".35" />
+                            <path d="M40 22L43 32H54L45 38L48 48L40 42L32 48L35 38L26 32H37L40 22Z"
+                                fill="currentColor" />
                         </svg>
                     </div>
                     <h3>Python for Data Science</h3>
@@ -939,9 +966,9 @@
                 <div class="cert-card reveal delay-1">
                     <div class="cert-badge">
                         <svg viewBox="0 0 80 80" fill="none" xmlns="http://www.w3.org/2000/svg">
-                            <circle cx="40" cy="40" r="36" stroke="#27272a" stroke-width="1" />
-                            <path d="M40 22L43 32H54L45 38L48 48L40 42L32 48L35 38L26 32H37L40 22Z" fill="#c2a078"
-                                opacity=".95" />
+                            <circle cx="40" cy="40" r="36" stroke="currentColor" stroke-width="1" opacity=".35" />
+                            <path d="M40 22L43 32H54L45 38L48 48L40 42L32 48L35 38L26 32H37L40 22Z"
+                                fill="currentColor" />
                         </svg>
                     </div>
                     <h3>Tableau Desktop Qualified</h3>
@@ -953,9 +980,9 @@
                 <div class="cert-card reveal delay-2">
                     <div class="cert-badge">
                         <svg viewBox="0 0 80 80" fill="none" xmlns="http://www.w3.org/2000/svg">
-                            <circle cx="40" cy="40" r="36" stroke="#27272a" stroke-width="1" />
-                            <path d="M40 22L43 32H54L45 38L48 48L40 42L32 48L35 38L26 32H37L40 22Z" fill="#c2a078"
-                                opacity=".95" />
+                            <circle cx="40" cy="40" r="36" stroke="currentColor" stroke-width="1" opacity=".35" />
+                            <path d="M40 22L43 32H54L45 38L48 48L40 42L32 48L35 38L26 32H37L40 22Z"
+                                fill="currentColor" />
                         </svg>
                     </div>
                     <h3>Big Data Hadoop &amp; Spark</h3>
@@ -974,12 +1001,13 @@
                 <h2 class="section-title">Secure Connection</h2>
                 <div class="section-line"></div>
             </div>
-            <p class="contact-desc reveal">Click on any communications card to copy specific connection credentials to
-                clipboard.</p>
+            <p class="contact-desc reveal">Click the email or phone card to copy it to your clipboard &mdash; LinkedIn
+                and GitHub open in a new tab.</p>
 
             <div class="contact-grid reveal delay-1">
                 <!-- Email -->
-                <div class="contact-card" data-copy="jogi.amu@gmail.com">
+                <div class="contact-card" data-copy="jogi.amu@gmail.com" role="button" tabindex="0"
+                    aria-label="Copy email address jogi.amu@gmail.com">
                     <div class="contact-icon">
                         <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                             <path stroke-linecap="round" stroke-linejoin="round"
@@ -992,7 +1020,8 @@
                 </div>
 
                 <!-- Phone -->
-                <div class="contact-card" data-copy="+918700488718">
+                <div class="contact-card" data-copy="+918700488718" role="button" tabindex="0"
+                    aria-label="Copy phone number +91 8700488718">
                     <div class="contact-icon">
                         <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                             <path stroke-linecap="round" stroke-linejoin="round"
@@ -1005,23 +1034,26 @@
                 </div>
 
                 <!-- LinkedIn -->
-                <a href="https://www.linkedin.com/in/jogi6643/" target="_blank" class="contact-card">
+                <a href="https://www.linkedin.com/in/jogi6643/" target="_blank" rel="noopener noreferrer"
+                    class="contact-card">
                     <div class="contact-icon">
-                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                            <path stroke-linecap="round" stroke-linejoin="round"
-                                d="M13.19 8.688a4.5 4.5 0 011.242 7.244l-4.5 4.5a4.5 4.5 0 01-6.364-6.364l1.757-1.757m13.35-.622l1.757-1.757a4.5 4.5 0 00-6.364-6.364l-4.5 4.5a4.5 4.5 0 001.242 7.244" />
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"
+                            aria-hidden="true">
+                            <path
+                                d="M20.45 20.45h-3.55v-5.57c0-1.33-.02-3.04-1.85-3.04-1.85 0-2.13 1.45-2.13 2.94v5.67H9.35V9h3.41v1.56h.05c.47-.9 1.63-1.85 3.36-1.85 3.6 0 4.27 2.37 4.27 5.45v6.29zM5.34 7.43a2.06 2.06 0 110-4.12 2.06 2.06 0 010 4.12zM7.12 20.45H3.55V9h3.57v11.45zM22.22 0H1.77C.79 0 0 .77 0 1.73v20.54C0 23.22.79 24 1.77 24h20.45c.98 0 1.78-.78 1.78-1.73V1.73C24 .77 23.2 0 22.22 0z" />
                         </svg>
                     </div>
                     <span class="contact-label">LinkedIn</span>
-                    <span class="contact-value">linkedin/in/jogi6643</span>
+                    <span class="contact-value">linkedin.com/in/jogi6643</span>
                 </a>
 
                 <!-- GitHub -->
-                <a href="https://github.com/jogi6643" target="_blank" class="contact-card">
+                <a href="https://github.com/jogi6643" target="_blank" rel="noopener noreferrer" class="contact-card">
                     <div class="contact-icon">
-                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                            <path stroke-linecap="round" stroke-linejoin="round"
-                                d="M17.25 6.75L22.5 12l-5.25 5.25m-10.5 0L1.5 12l5.25-5.25m7.5-3l-4.5 16.5" />
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"
+                            aria-hidden="true">
+                            <path
+                                d="M12 .3a12 12 0 00-3.8 23.4c.6.1.8-.3.8-.6v-2.2c-3.3.7-4-1.6-4-1.6-.6-1.4-1.4-1.8-1.4-1.8-1-.7 0-.7 0-.7 1.2.1 1.8 1.2 1.8 1.2 1 1.8 2.8 1.3 3.5 1 .1-.8.4-1.3.7-1.6-2.7-.3-5.5-1.3-5.5-6 0-1.3.5-2.4 1.2-3.2-.1-.3-.5-1.5.1-3.2 0 0 1-.3 3.3 1.2a12.6 12.6 0 016 0C17 4.7 18 5 18 5c.6 1.7.2 2.9.1 3.2.8.8 1.2 1.9 1.2 3.2 0 4.7-2.8 5.7-5.5 6 .4.4.8 1.1.8 2.2v3.3c0 .3.2.7.8.6A12 12 0 0012 .3z" />
                         </svg>
                     </div>
                     <span class="contact-label">GitHub</span>
@@ -1033,10 +1065,15 @@
 
     <!-- Footer -->
     <footer class="footer">
-        <p>&copy; 2026 Jugendra Pal Singh // AI, GenAI &amp; Backend Systems. Built with pure Zinc &amp; Brass.</p>
+        <p>&copy; <span id="footerYear">2026</span> Jugendra Pal Singh // AI, GenAI &amp; Backend Systems.
+            Hand-built with vanilla HTML, CSS &amp; JavaScript.</p>
     </footer>
 
     <script>
+        // Footer year (kept in sync instead of hardcoded)
+        const footerYear = document.getElementById('footerYear');
+        if (footerYear) footerYear.textContent = new Date().getFullYear();
+
         // Custom Cursor Controller
         const cursor = document.getElementById('customCursor');
         const cursorDot = document.getElementById('customCursorDot');
@@ -1074,25 +1111,31 @@
             });
         });
 
-        // Navbar Scrolled State Trigger
+        // Navbar Scrolled State Trigger (runs inside the shared scroll handler below)
         const navbar = document.getElementById('navbar');
-        window.addEventListener('scroll', () => {
-            navbar.classList.toggle('scrolled', window.scrollY > 30);
-        });
 
         // Mobile burger navigation toggler
         const navToggle = document.getElementById('navToggle');
         const navMenu = document.getElementById('navMenu');
         navToggle.addEventListener('click', () => {
-            navMenu.classList.toggle('active');
-            navToggle.classList.toggle('active');
+            const isOpen = navMenu.classList.toggle('active');
+            navToggle.classList.toggle('active', isOpen);
+            navToggle.setAttribute('aria-expanded', String(isOpen));
         });
 
+        function closeNav() {
+            navMenu.classList.remove('active');
+            navToggle.classList.remove('active');
+            navToggle.setAttribute('aria-expanded', 'false');
+        }
+
         document.querySelectorAll('.nav-link').forEach(link => {
-            link.addEventListener('click', () => {
-                navMenu.classList.remove('active');
-                navToggle.classList.remove('active');
-            });
+            link.addEventListener('click', closeNav);
+        });
+
+        // Escape closes the mobile drawer
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape' && navMenu.classList.contains('active')) closeNav();
         });
 
         // Scroll animations observer (reveals element & triggers section line expansion)
@@ -1117,23 +1160,21 @@
             });
         });
 
-        // Sync current navigation link on scroll
-        const sections = document.querySelectorAll('section');
-        window.addEventListener('scroll', () => {
+        // Sync current navigation link on scroll (runs inside the shared handler below)
+        const sections = document.querySelectorAll('section[id]');
+        const navLinks = document.querySelectorAll('.nav-link');
+
+        function syncActiveNavLink() {
             let current = '';
             sections.forEach(section => {
-                const top = section.offsetTop - 120;
-                if (window.scrollY >= top) {
+                if (window.scrollY >= section.offsetTop - 120) {
                     current = section.getAttribute('id');
                 }
             });
-            document.querySelectorAll('.nav-link').forEach(link => {
-                link.classList.remove('active');
-                if (link.getAttribute('href') === '#' + current) {
-                    link.classList.add('active');
-                }
+            navLinks.forEach(link => {
+                link.classList.toggle('active', link.getAttribute('href') === '#' + current);
             });
-        });
+        }
 
         // Monospace Typewriter text controller
         const typewriter = document.getElementById('typewriter');
@@ -1198,16 +1239,46 @@
         counters.forEach(c => counterObserver.observe(c));
 
         // Copy Contact Details trigger
+        function showCopyTooltip(card, message) {
+            const tooltip = card.querySelector('.copy-tooltip');
+            if (!tooltip) return;
+            tooltip.textContent = message;
+            tooltip.classList.add('show');
+            setTimeout(() => tooltip.classList.remove('show'), 1800);
+        }
+
+        function copyToClipboard(text) {
+            if (navigator.clipboard && window.isSecureContext) {
+                return navigator.clipboard.writeText(text);
+            }
+            // Fallback for non-secure origins, where navigator.clipboard is unavailable
+            return new Promise((resolve, reject) => {
+                const ta = document.createElement('textarea');
+                ta.value = text;
+                ta.setAttribute('readonly', '');
+                ta.style.position = 'fixed';
+                ta.style.opacity = '0';
+                document.body.appendChild(ta);
+                ta.select();
+                const ok = document.execCommand('copy');
+                document.body.removeChild(ta);
+                ok ? resolve() : reject(new Error('copy failed'));
+            });
+        }
+
         document.querySelectorAll('.contact-card[data-copy]').forEach(card => {
-            card.addEventListener('click', () => {
-                const textToCopy = card.getAttribute('data-copy');
-                navigator.clipboard.writeText(textToCopy).then(() => {
-                    const tooltip = card.querySelector('.copy-tooltip');
-                    tooltip.classList.add('show');
-                    setTimeout(() => {
-                        tooltip.classList.remove('show');
-                    }, 1800);
-                });
+            const doCopy = () => {
+                copyToClipboard(card.getAttribute('data-copy'))
+                    .then(() => showCopyTooltip(card, 'Copied!'))
+                    .catch(() => showCopyTooltip(card, 'Copy failed'));
+            };
+            card.addEventListener('click', doCopy);
+            // role="button" elements must also respond to Enter and Space
+            card.addEventListener('keydown', (e) => {
+                if (e.key === 'Enter' || e.key === ' ') {
+                    e.preventDefault();
+                    doCopy();
+                }
             });
         });
 
@@ -1254,8 +1325,8 @@
             }
 
             // Fetch dynamic styles from document body
-            const activeAccent = getComputedStyle(document.body).getPropertyValue('--accent').trim() || '#c2a078';
-            const activeAccentRgb = getComputedStyle(document.body).getPropertyValue('--accent-rgb').trim() || '194, 160, 120';
+            const activeAccent = getComputedStyle(document.body).getPropertyValue('--accent').trim() || '#a855f7';
+            const activeAccentRgb = getComputedStyle(document.body).getPropertyValue('--accent-rgb').trim() || '168, 85, 247';
 
             // Draw graph line
             cpuCtx.strokeStyle = activeAccent;
@@ -1292,49 +1363,102 @@
             cpuCtx.shadowBlur = 0; // Reset shadow blur
         }
 
-        setInterval(drawCpuChart, 300);
+        // Only repaint the sparkline while the panel is actually visible — it used to
+        // run every 300ms for the lifetime of the page, hidden tab or not.
+        let cpuTimer = null;
+        let cpuPanelVisible = false;
+
+        function setCpuTimer() {
+            const shouldRun = cpuPanelVisible && !document.hidden;
+            if (shouldRun && !cpuTimer) {
+                cpuTimer = setInterval(drawCpuChart, 300);
+            } else if (!shouldRun && cpuTimer) {
+                clearInterval(cpuTimer);
+                cpuTimer = null;
+            }
+        }
+
+        new IntersectionObserver((entries) => {
+            cpuPanelVisible = entries[0].isIntersecting;
+            setCpuTimer();
+        }, { threshold: 0 }).observe(cpuCanvas);
+
+        document.addEventListener('visibilitychange', setCpuTimer);
+        drawCpuChart();
 
         // --- NEW PREMIUM INTERACTIONS & BEHAVIORS ---
 
         // 1. Scroll Progress Bar logic
         const scrollProgress = document.getElementById('scrollProgress');
-        window.addEventListener('scroll', () => {
+
+        function updateScrollProgress() {
             const totalHeight = document.documentElement.scrollHeight - window.innerHeight;
             if (totalHeight > 0) {
-                const progress = (window.scrollY / totalHeight) * 100;
-                scrollProgress.style.width = progress + '%';
+                scrollProgress.style.width = ((window.scrollY / totalHeight) * 100) + '%';
             }
-        });
+        }
+
+        // Single rAF-throttled scroll handler for the navbar, nav sync and progress bar.
+        // Previously these were three separate unthrottled listeners, each doing layout
+        // reads on every scroll event.
+        let scrollQueued = false;
+        function onScroll() {
+            if (scrollQueued) return;
+            scrollQueued = true;
+            requestAnimationFrame(() => {
+                navbar.classList.toggle('scrolled', window.scrollY > 30);
+                syncActiveNavLink();
+                updateScrollProgress();
+                scrollQueued = false;
+            });
+        }
+        window.addEventListener('scroll', onScroll, { passive: true });
+        onScroll();
 
         // 2. Theme Toggler / Accent Selector logic
         const themeBtns = document.querySelectorAll('.theme-btn');
-        themeBtns.forEach(btn => {
-            btn.addEventListener('click', () => {
-                const theme = btn.getAttribute('data-theme');
-                
-                // Set active states
-                themeBtns.forEach(b => b.classList.remove('active'));
-                btn.classList.add('active');
-                
-                // Toggle theme on body
-                document.body.className = '';
-                if (theme !== 'brass') {
-                    document.body.classList.add('theme-' + theme);
-                }
-                
-                // Save choice
-                localStorage.setItem('jps-portfolio-theme', theme);
+        const THEMES = ['nebula', 'azure', 'mint', 'ember'];
+
+        function applyTheme(theme) {
+            if (!THEMES.includes(theme)) theme = 'nebula';
+
+            // Remove only the theme-* classes, never every class on <body>
+            THEMES.forEach(t => document.body.classList.remove('theme-' + t));
+            document.body.classList.add('theme-' + theme);
+
+            themeBtns.forEach(b => {
+                const isActive = b.getAttribute('data-theme') === theme;
+                b.classList.toggle('active', isActive);
+                b.setAttribute('aria-pressed', String(isActive));
             });
+
+            // Keep the browser chrome colour in sync with the palette
+            const meta = document.querySelector('meta[name="theme-color"]');
+            if (meta) {
+                meta.setAttribute('content',
+                    getComputedStyle(document.body).getPropertyValue('--bg-dark').trim());
+            }
+
+            // Repaint the sparkline so it picks up the new accent even while its
+            // interval is paused (panel off-screen or tab hidden)
+            if (typeof drawCpuChart === 'function') drawCpuChart();
+
+            try {
+                localStorage.setItem('jps-portfolio-theme', theme);
+            } catch (e) { /* private browsing: preference just won't persist */ }
+        }
+
+        themeBtns.forEach(btn => {
+            btn.addEventListener('click', () => applyTheme(btn.getAttribute('data-theme')));
         });
 
-        // Load saved theme
-        const savedTheme = localStorage.getItem('jps-portfolio-theme');
-        if (savedTheme) {
-            const activeBtn = document.querySelector(`.theme-btn[data-theme="${savedTheme}"]`);
-            if (activeBtn) {
-                activeBtn.click();
-            }
-        }
+        // Restore the saved theme (map the old 'brass'/'crimson' keys onto the new names)
+        let savedTheme = 'nebula';
+        try {
+            savedTheme = localStorage.getItem('jps-portfolio-theme') || 'nebula';
+        } catch (e) { /* storage unavailable */ }
+        const LEGACY = { brass: 'nebula', crimson: 'ember' };
+        applyTheme(LEGACY[savedTheme] || savedTheme);
 
         // 3. Dynamic Cursor-Follow Glow for Cards
         document.querySelectorAll('.bento-item, .skill-category, .timeline-content, .project-card, .edu-card, .cert-card, .contact-card').forEach(el => {
@@ -1359,7 +1483,7 @@
             help: 'Available operations:\n  about     - Identity profile metadata\n  skills    - Capabilities summary\n  contact   - Secure communications channels\n  ping      - Test network latency\n  matrix    - Toggle green matrix override\n  clear     - Wipe console history',
             about: 'SYSTEM PROFILE:\nSubject: Jugendra Pal Singh\nRole: AI / GenAI Engineer & Senior Backend Engineer\nExperience: 8+ years backend, production GenAI delivery\nBase: Delhi NCR, India (open to Noida onsite)\nMission: Ship agentic, low-latency AI systems on solid backend foundations.',
             skills: 'CAPABILITIES REGISTRY:\n- GenAI/LLM: LangGraph, LangChain, tool calling, MCP, RAG, prompt eval, guardrails\n- Voice AI: streaming STT/TTS, VAD, barge-in, Twilio media streams, latency budgeting\n- ML Serving: Python, FastAPI, vLLM, model routing, PyTest + golden eval sets\n- Back-end: Node.js, TypeScript, Express, REST, microservices, event-driven systems\n- Cloud/DevOps: AWS (EC2, RDS, S3, Lambda, SQS/SNS), Docker, Kubernetes, CI/CD\n- Data: MongoDB, MySQL, Redis, Kafka, RabbitMQ, indexing & query optimization',
-            contact: 'COMMUNICATION DESK:\n- Email: jogi.amu@gmail.com\n- Tel: +91-8700488718\n- LinkedIn: linkedin/in/jogi6643\n- GitHub: github.com/jogi6643',
+            contact: 'COMMUNICATION DESK:\n- Email: jogi.amu@gmail.com\n- Tel: +91-8700488718\n- LinkedIn: linkedin.com/in/jogi6643\n- GitHub: github.com/jogi6643',
             ping: 'PINGing 127.0.0.1 with 32 bytes of data:\nReply from 127.0.0.1: bytes=32 time=0.9ms TTL=64\nReply from 127.0.0.1: bytes=32 time=1.1ms TTL=64\nPing statistics: Sent=2, Received=2, Lost=0 (0% loss)'
         };
 
@@ -1368,11 +1492,11 @@
                 if (e.key === 'Enter') {
                     const inputVal = terminalInput.value.trim().toLowerCase();
                     terminalInput.value = '';
-                    
+
                     if (!inputVal) return;
-                    
+
                     appendTerminalLine(`jps_local$ ${inputVal}`, 'user-cmd');
-                    
+
                     setTimeout(() => {
                         executeTerminalCommand(inputVal);
                     }, 150);
@@ -1394,7 +1518,7 @@
                 terminalHistory.innerHTML = '';
                 return;
             }
-            
+
             if (cmd === 'matrix') {
                 if (matrixInterval) {
                     clearInterval(matrixInterval);
@@ -1416,7 +1540,7 @@
                 }
                 return;
             }
-            
+
             if (terminalCommands[cmd]) {
                 appendTerminalLine(terminalCommands[cmd], 'response-msg');
             } else {
